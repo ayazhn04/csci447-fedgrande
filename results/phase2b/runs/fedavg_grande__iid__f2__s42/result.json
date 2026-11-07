@@ -1,0 +1,174 @@
+{
+  "job_id": "fedavg_grande__iid__f2__s42",
+  "method": "fedavg_grande",
+  "kind": "grande",
+  "procedure": "fedavg",
+  "partition": "iid",
+  "fold": 2,
+  "seed": 42,
+  "split_id": "C2/outer2/splits_inner_v1",
+  "partition_file_sha256": "a4dced57c3b8524a6711a62ceebc3875bfc06b2c90c0776677780d232e57e771",
+  "prep_file_sha256": "ebedf53cb47684edcced90b58461ddf19be22abe56cbeb43a8c21ce20c748110",
+  "encoded_dim": 502,
+  "n_clients": 21,
+  "n_fit": 5357,
+  "n_val": 1340,
+  "n_test": 1681,
+  "class_weights": [
+    0.16464439034461975,
+    0.8353555798530579
+  ],
+  "val_threshold": 0.64,
+  "val_at_0.5": {
+    "n": 1340,
+    "pos": 222,
+    "roc_auc": 0.8317781108478782,
+    "macro_f1": 0.6681208286985539,
+    "accuracy": 0.744776119402985,
+    "confusion_[[tn,fp],[fn,tp]]": [
+      [
+        821,
+        297
+      ],
+      [
+        45,
+        177
+      ]
+    ]
+  },
+  "test_at_0.5": {
+    "n": 1681,
+    "pos": 276,
+    "roc_auc": 0.8367399040693176,
+    "macro_f1": 0.6777841671458693,
+    "accuracy": 0.7572873289708507,
+    "confusion_[[tn,fp],[fn,tp]]": [
+      [
+        1054,
+        351
+      ],
+      [
+        57,
+        219
+      ]
+    ]
+  },
+  "test_at_val_threshold": {
+    "n": 1681,
+    "pos": 276,
+    "roc_auc": 0.8367399040693176,
+    "macro_f1": 0.6990488978404387,
+    "accuracy": 0.8096371207614516,
+    "confusion_[[tn,fp],[fn,tp]]": [
+      [
+        1190,
+        215
+      ],
+      [
+        105,
+        171
+      ]
+    ]
+  },
+  "best_step": 84,
+  "steps_executed": 94,
+  "best_val_auc": 0.8317781108478782,
+  "info": {
+    "best_step": 84,
+    "steps_executed": 94,
+    "best_val_auc": 0.8317781108478782,
+    "client_weights": [
+      130.0,
+      418.0,
+      120.0,
+      405.0,
+      130.0,
+      34.0,
+      316.0,
+      149.0,
+      502.0,
+      99.0,
+      597.0,
+      274.0,
+      110.0,
+      447.0,
+      421.0,
+      54.0,
+      172.0,
+      50.0,
+      268.0,
+      60.0,
+      601.0
+    ],
+    "inactive_clients": []
+  },
+  "communication": {
+    "trainable_parameters": 809984,
+    "payload_bytes_per_model": 3239936,
+    "bytes_once_at_init_buffers": 2150400,
+    "bytes_server_to_clients_per_round": 68038656,
+    "bytes_clients_to_server_per_round": 68038656,
+    "bytes_per_round_total": 136077312,
+    "cumulative_bytes_to_best_round": 11432644608,
+    "cumulative_bytes_to_final_round": 12793417728,
+    "buffers_policy": "features_by_estimator sent once at init; structural index lists regenerated from depth"
+  },
+  "trainable_parameters": 809984,
+  "seconds_total": 302.1824024170055,
+  "peak_rss_mb": 2496.40625,
+  "resolved_training_config": {
+    "batch_size": 256,
+    "batch_rule": "max(1, min(256, n//2)), shuffled, drop_last",
+    "class_weights": "global training-fold counts: w_k = (1/n_k) / sum_j (1/n_j)",
+    "loss": "class-weighted cross-entropy",
+    "max_epochs": 100,
+    "max_rounds": 100,
+    "local_epochs": 1,
+    "patience": 10,
+    "warmup": 10,
+    "min_delta_auc": 0.0001,
+    "selection": "pooled validation ROC-AUC (centralized/FedAvg); local-only: client validation ROC-AUC, or weighted validation loss if the client's validation has one class; if a client has no validation rows: train for the median best epoch of the other clients",
+    "fedavg": "full participation; weights = client training-row counts; trainable params only; fresh local Adam per round; clients with < 2 training rows get weight 0 for that fold (recorded)",
+    "model_kwargs": {
+      "n_estimators": 256,
+      "depth": 5,
+      "selected_variables": 0.8
+    }
+  },
+  "config_file": "/Users/aya_uzbekbay/csci447-fedgrande/configs/phase2b/core.json",
+  "config_sha256": "c0d578fff58858dd5f7021aaad46ac908124fa929e101ed67eb3b2174eae9226",
+  "smoke_overrides": {
+    "max_rounds": null,
+    "max_epochs": null
+  },
+  "meta": {
+    "created_utc": "2026-11-07T07:37:16.373409+00:00",
+    "project_commit": "615aeeb238b581970f2c8449238805deac87e0cf",
+    "project_tracked_changes": [],
+    "conda_env": "fedgrande-dev",
+    "python": "3.12.14",
+    "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-dev/bin/python",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "GRANDE": "1.0.0",
+      "torch": "2.7.1",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "category-encoders": "2.9.0",
+      "openml": "0.15.1"
+    },
+    "grande": {
+      "impl": "dev",
+      "worktree": "/Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_dev_db79c860",
+      "expected_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "head_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "commit_matches": true,
+      "tracked_changes": []
+    },
+    "torch_threads": 6,
+    "torch_float32_matmul_precision": "highest"
+  }
+}

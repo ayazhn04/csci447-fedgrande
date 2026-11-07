@@ -1,0 +1,1 @@
+[central_mlp__none__f1__s42] 2s best 6/16 valAUC 0.8571297361190978 testAUC 0.8613 F1@.5 0.6998 RSS 461MB

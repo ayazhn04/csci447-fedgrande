@@ -1,0 +1,1 @@
+[local_grande__iid__f0__s2026] 106s best None/None valAUC None testAUC 0.7566 F1@.5 0.6529 RSS 1600MB

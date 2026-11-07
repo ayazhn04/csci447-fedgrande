@@ -1,0 +1,1 @@
+[fedavg_mlp__natural__f4__s42] 5s best 52/62 valAUC 0.8733965488195229 testAUC 0.8377 F1@.5 0.6745 RSS 540MB

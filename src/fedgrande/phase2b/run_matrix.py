@@ -19,10 +19,12 @@ from fedgrande.phase2b.run_job import job_id  # noqa: E402
 
 def jobs(cfg, stage):
     out = []
-    parts = {"core": ["natural", "iid"]}[stage]
+    parts = {"core": ["natural", "iid"], "dirichlet": ["dirichlet0.1"]}[stage]  # 'dirichlet' = amendment A1
     for seed in cfg["seeds"]["model_seeds"]:
         for fold in cfg["outer_split"]["folds"]:
             for method, m in cfg["methods"].items():
+                if stage == "dirichlet" and m["procedure"] == "centralized":
+                    continue  # partition-independent; reused from the core stage
                 for part in (["none"] if m["procedure"] == "centralized" else parts):
                     out.append((method, part, fold, seed))
     return out

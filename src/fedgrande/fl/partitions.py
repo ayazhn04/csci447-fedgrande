@@ -83,3 +83,41 @@ def describe(client: np.ndarray, y: np.ndarray, meta: pd.DataFrame, target_sizes
         out["target_rows"] = np.asarray(target_sizes)[out.client.to_numpy()]
         out["size_deviation"] = out.rows - out.target_rows
     return out
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# Amendment A1 (after the B2 core matrix): Dirichlet label-skew stress test, size-matched to the natural waves.
+# ---------------------------------------------------------------------------------------------------------------
+def _waterfill(total: int, p: np.ndarray, cap: np.ndarray) -> np.ndarray:
+    """Integer allocation of `total` proportional to p with per-client caps (excess redistributed by p)."""
+    alloc = np.zeros(len(p))
+    free = np.ones(len(p), dtype=bool)
+    remaining = float(total)
+    while remaining > 1e-9 and free.any():
+        share = remaining * p * free / (p * free).sum()
+        take = np.minimum(share, cap - alloc)
+        alloc += take
+        remaining -= take.sum()
+        free &= alloc < cap - 1e-9
+    base = np.floor(alloc).astype(int)
+    rem = total - base.sum()
+    order = np.argsort(-(alloc - base) + 1e9 * (base >= cap), kind="stable")
+    base[order[:rem]] += 1
+    return base
+
+
+def dirichlet_size_matched(meta: pd.DataFrame, y: np.ndarray, alpha: float, seed: int):
+    """21 clients with the natural wave sizes; the share of POSITIVE rows per client ~ Dirichlet(alpha * 1).
+
+    Positive-row targets = water-filled total positives by the Dirichlet proportions (capped at client size);
+    negative targets = size - positive target. Whole leakage groups are then dealt by quota (as for 'iid').
+    """
+    nat = natural(meta)
+    sizes = np.bincount(nat)
+    rng = np.random.default_rng([seed, 1])
+    p = rng.dirichlet([alpha] * len(sizes))
+    t_pos = _waterfill(int(y.sum()), p, sizes.astype(float))
+    t_neg = sizes - t_pos
+    assign = _deal(_groups(meta, y), t_pos, t_neg, rng)
+    client = pd.Series(assign).loc[meta.leakage_group_id.to_numpy()].to_numpy().astype(int)
+    return client, {"dirichlet_proportions": p.tolist(), "target_pos": t_pos.tolist(), "target_neg": t_neg.tolist()}

@@ -107,6 +107,10 @@ def main(parts=("natural", "iid"), tag="core"):
         for model in ("grande", "mlp"):
             gaps[f"fedavg_{model}_iid_minus_natural_oof_auc"] = msd(seedvals(f"fedavg_{model}", "iid") - seedvals(f"fedavg_{model}", "natural"))
         gaps["local_grande_iid_minus_natural_oof_auc"] = msd(seedvals("local_grande", "iid") - seedvals("local_grande", "natural"))
+    if {"natural", "dirichlet0.1"} <= set(parts):
+        for m_ in ("fedavg_grande", "fedavg_mlp", "local_grande"):
+            gaps[f"{m_}_dirichlet0.1_minus_natural_oof_auc"] = msd(seedvals(m_, "dirichlet0.1") - seedvals(m_, "natural"))
+            gaps[f"{m_}_dirichlet0.1_minus_iid_oof_auc"] = msd(seedvals(m_, "dirichlet0.1") - seedvals(m_, "iid"))
     fold_pairs = []
     rt = runs.set_index(["method", "partition", "fold", "seed"]).test_auc
     for part in parts:

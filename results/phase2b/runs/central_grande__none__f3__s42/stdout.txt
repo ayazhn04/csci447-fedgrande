@@ -1,0 +1,1 @@
+[central_grande__none__f3__s42] 106s best 31/41 valAUC 0.8660948325227645 testAUC 0.8451 F1@.5 0.6803 RSS 2578MB

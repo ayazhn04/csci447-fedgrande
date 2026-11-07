@@ -1,0 +1,1 @@
+[fedavg_grande__natural__f0__s2026] 305s best 69/79 valAUC 0.8304807490854003 testAUC 0.8830 F1@.5 0.7124 RSS 2491MB

@@ -209,4 +209,29 @@ come from pre-freeze engineering. They are not part of any result.
 
 ## Amendments
 
-None at freeze time.
+### A1 — Dirichlet α = 0.1 stress test (added after B2 completed and was verified; before any B3 run)
+
+- **Why.** The specification asked for this optional B3 step. B2 finished in 4.1 h of compute with 0 failures, and disk
+  stayed at 24 GiB free. B2 showed natural ≈ IID for FedAvg, so a controlled stronger heterogeneity is needed to
+  separate the hypotheses.
+- **Design.**
+  - 21 clients with **the natural wave sizes**. Quantity skew is therefore identical to the natural and IID partitions;
+    only the label distribution changes.
+  - Each client's share of the positive rows is drawn from Dirichlet(0.1·1₂₁), using partition seed 7 with stream id 1.
+  - Positive targets are water-filled under client-size caps; negative target = size − positive target.
+  - Whole leakage groups are dealt by quota, using the same routine as the IID partition.
+- **Outcome** (`results/phase2b/prepare/partition_dirichlet0.1.json`): sizes within 1 row of target; 12 clients have
+  0 positives and 4 are all positive; no leakage group crosses clients.
+- **Files.** The partition is stored separately in `data/derived/phase2b/partitions_dirichlet_v1.csv`. The frozen
+  `partitions_v1.csv` is untouched.
+- **Code changes.** All in the same commit as this amendment:
+  - `partitions.dirichlet_size_matched`;
+  - `run_job.py` reads the separate partition file when the partition is `dirichlet0.1`;
+  - `run_matrix.py` gains a `dirichlet` stage;
+  - `aggregate.py` gains Dirichlet gap entries.
+- **Unchanged.** Everything else (preprocessing, folds, seeds, models, training, stopping, thresholds and metrics) is
+  unchanged from `core.json` (`configs/phase2b/amendment_A1_dirichlet.json`).
+- **Runs.** Only the partitioned methods are run: local, FedAvg GRANDE and FedAvg MLP, × 5 folds × 3 seeds = 45 jobs.
+  The centralized B2 runs are reused because they are partition-independent.
+- **Label.** "Controlled synthetic heterogeneity stress test". The local-only edge-case rules of §7 apply unchanged.
+  Many clients have single-class validation sets and therefore use validation-loss selection.

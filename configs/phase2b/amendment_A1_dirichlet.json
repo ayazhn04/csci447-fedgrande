@@ -1,0 +1,10 @@
+{
+  "amendment": "A1",
+  "partition_name": "dirichlet0.1",
+  "alpha": 0.1,
+  "partition_seed": 7,
+  "design": "controlled synthetic heterogeneity stress test: 21 clients with the natural wave sizes (same quantity skew as natural and IID); per-client share of positive rows ~ Dirichlet(0.1 * 1_21), water-filled with client-size caps; whole leakage groups dealt by positive/negative quota",
+  "methods": ["local_grande", "fedavg_grande", "fedavg_mlp"],
+  "centralized_reused": "central_grande and central_mlp are partition-independent; their B2 runs are reused",
+  "everything_else": "identical to core.json (preprocessing, folds, seeds, training, stopping, thresholds)"
+}

@@ -202,3 +202,19 @@ class TestDiagnosticsAndComm(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestDirichletAmendment(Base):
+    def test_dirichlet_partition_groups_and_sizes(self):
+        cl, info = P.dirichlet_size_matched(self.meta, self.y, 0.1, 7)
+        saved = pd.read_csv(PREP / "partitions_dirichlet_v1.csv")
+        np.testing.assert_array_equal(cl, saved["client_dirichlet0.1"].to_numpy())
+        self.assertEqual(int(pd.DataFrame({"g": self.meta.leakage_group_id, "c": cl}).groupby("g").c.nunique().max()), 1)
+        dev = np.bincount(cl, minlength=21) - np.bincount(self.parts.client_natural.to_numpy())
+        self.assertLessEqual(int(np.abs(dev).max()), 1)
+        self.assertEqual(int(np.bincount(cl, weights=self.y).sum()), int(self.y.sum()))
+
+    def test_waterfill_respects_caps(self):
+        out = P._waterfill(10, np.array([0.9, 0.05, 0.05]), np.array([3.0, 10.0, 10.0]))
+        self.assertEqual(int(out.sum()), 10)
+        self.assertLessEqual(int(out[0]), 3)

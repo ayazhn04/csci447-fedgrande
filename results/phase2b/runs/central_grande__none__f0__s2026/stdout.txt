@@ -1,0 +1,1 @@
+[central_grande__none__f0__s2026] 180s best 50/60 valAUC 0.868922142177956 testAUC 0.8852 F1@.5 0.7121 RSS 2392MB

@@ -65,7 +65,8 @@ def main():
 
     P = np.load(PREP / f"prep_C2_outer{a.fold}.npz", allow_pickle=False)
     Z, roles, n_numeric = P["Z"], P["roles"], int(P["n_numeric"])
-    parts = pd.read_csv(PREP / "partitions_v1.csv")
+    part_file = PREP / ("partitions_dirichlet_v1.csv" if a.partition.startswith("dirichlet") else "partitions_v1.csv")  # amendment A1
+    parts = pd.read_csv(part_file)
     from fedgrande.fl.features import load_modeling
     _, y, meta = load_modeling()
     g = meta.leakage_group_id.to_numpy()
@@ -121,7 +122,7 @@ def main():
     thr = select_threshold(y[val], p[val])
     res = {
         "job_id": jid, "method": a.method, "kind": kind, "procedure": proc, "partition": a.partition, "fold": a.fold, "seed": a.seed,
-        "split_id": f"C2/outer{a.fold}/splits_inner_v1", "partition_file_sha256": sha256_file(PREP / "partitions_v1.csv"),
+        "split_id": f"C2/outer{a.fold}/splits_inner_v1", "partition_file": part_file.name, "partition_file_sha256": sha256_file(part_file),
         "prep_file_sha256": sha256_file(PREP / f"prep_C2_outer{a.fold}.npz"), "encoded_dim": int(Z.shape[1]),
         "n_clients": K, "n_fit": int(fit.sum()), "n_val": int(val.sum()), "n_test": int(test.sum()),
         "class_weights": w.tolist(), "val_threshold": thr,

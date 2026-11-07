@@ -1,0 +1,1 @@
+[fedavg_grande__iid__f1__s447] 298s best 80/90 valAUC 0.8396308542585137 testAUC 0.8391 F1@.5 0.6732 RSS 2694MB

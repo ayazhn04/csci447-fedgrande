@@ -1,0 +1,1 @@
+[fedavg_mlp__iid__f2__s2026] 5s best 32/42 valAUC 0.8302792953955745 testAUC 0.8491 F1@.5 0.6734 RSS 553MB

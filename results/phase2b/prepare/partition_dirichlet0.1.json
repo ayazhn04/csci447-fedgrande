@@ -1,0 +1,149 @@
+{
+  "config": {
+    "amendment": "A1",
+    "partition_name": "dirichlet0.1",
+    "alpha": 0.1,
+    "partition_seed": 7,
+    "design": "controlled synthetic heterogeneity stress test: 21 clients with the natural wave sizes (same quantity skew as natural and IID); per-client share of positive rows ~ Dirichlet(0.1 * 1_21), water-filled with client-size caps; whole leakage groups dealt by positive/negative quota",
+    "methods": [
+      "local_grande",
+      "fedavg_grande",
+      "fedavg_mlp"
+    ],
+    "centralized_reused": "central_grande and central_mlp are partition-independent; their B2 runs are reused",
+    "everything_else": "identical to core.json (preprocessing, folds, seeds, training, stopping, thresholds)"
+  },
+  "dirichlet_proportions": [
+    0.12823957365370078,
+    1.0213700682653641e-07,
+    0.00039522455359401786,
+    2.3580383376458768e-05,
+    1.4716302746486205e-06,
+    0.1499777989848944,
+    0.327587745052585,
+    6.886445762380948e-05,
+    2.838493020977909e-07,
+    0.0006279226515499847,
+    1.1155151236711165e-11,
+    2.173586362887102e-09,
+    8.399169292431048e-05,
+    1.9303750098081256e-07,
+    0.2361705881377083,
+    3.4419422929157973e-10,
+    0.08930964917321581,
+    1.3843457364427594e-12,
+    0.00597891896609634,
+    0.06071954632604104,
+    0.0008145427822851385
+  ],
+  "target_pos": [
+    200,
+    0,
+    1,
+    0,
+    0,
+    50,
+    512,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    378,
+    0,
+    143,
+    0,
+    10,
+    84,
+    1
+  ],
+  "target_neg": [
+    0,
+    608,
+    199,
+    648,
+    190,
+    0,
+    0,
+    200,
+    800,
+    161,
+    882,
+    392,
+    180,
+    720,
+    306,
+    96,
+    137,
+    72,
+    440,
+    0,
+    967
+  ],
+  "leakage_groups_crossing_clients": 0,
+  "max_abs_size_deviation": 1,
+  "pos_rate_min": 0.0,
+  "pos_rate_max": 1.0,
+  "clients_with_zero_pos": 12,
+  "clients_all_pos": 4,
+  "per_fold_edge_cases": [
+    {
+      "fold": 0,
+      "clients_without_fit_pos": 13,
+      "clients_without_val_rows": 0,
+      "clients_single_class_val": 19
+    },
+    {
+      "fold": 1,
+      "clients_without_fit_pos": 13,
+      "clients_without_val_rows": 0,
+      "clients_single_class_val": 17
+    },
+    {
+      "fold": 2,
+      "clients_without_fit_pos": 12,
+      "clients_without_val_rows": 0,
+      "clients_single_class_val": 18
+    },
+    {
+      "fold": 3,
+      "clients_without_fit_pos": 12,
+      "clients_without_val_rows": 0,
+      "clients_single_class_val": 19
+    },
+    {
+      "fold": 4,
+      "clients_without_fit_pos": 14,
+      "clients_without_val_rows": 0,
+      "clients_single_class_val": 18
+    }
+  ],
+  "file": "data/derived/phase2b/partitions_dirichlet_v1.csv",
+  "sha256": "126cde0933b7e71f06d7ac3257ce5032e0894b36531e3264868fbb3d9edbc13c",
+  "meta": {
+    "created_utc": "2026-11-07T10:57:54.566624+00:00",
+    "project_commit": "615aeeb238b581970f2c8449238805deac87e0cf",
+    "project_tracked_changes": [
+      "M src/fedgrande/fl/partitions.py"
+    ],
+    "conda_env": "fedgrande-dev",
+    "python": "3.12.14",
+    "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-dev/bin/python",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "GRANDE": "1.0.0",
+      "torch": "2.7.1",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "category-encoders": "2.9.0",
+      "openml": "0.15.1"
+    },
+    "torch_threads": 6,
+    "torch_float32_matmul_precision": "highest"
+  }
+}

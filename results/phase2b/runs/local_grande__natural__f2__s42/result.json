@@ -1,0 +1,365 @@
+{
+  "job_id": "local_grande__natural__f2__s42",
+  "method": "local_grande",
+  "kind": "grande",
+  "procedure": "local_only",
+  "partition": "natural",
+  "fold": 2,
+  "seed": 42,
+  "split_id": "C2/outer2/splits_inner_v1",
+  "partition_file_sha256": "a4dced57c3b8524a6711a62ceebc3875bfc06b2c90c0776677780d232e57e771",
+  "prep_file_sha256": "ebedf53cb47684edcced90b58461ddf19be22abe56cbeb43a8c21ce20c748110",
+  "encoded_dim": 502,
+  "n_clients": 21,
+  "n_fit": 5357,
+  "n_val": 1340,
+  "n_test": 1681,
+  "class_weights": [
+    0.16464439034461975,
+    0.8353555798530579
+  ],
+  "val_threshold": 0.59,
+  "val_at_0.5": {
+    "n": 1340,
+    "pos": 222,
+    "roc_auc": 0.7664587664587664,
+    "macro_f1": 0.648233491659477,
+    "accuracy": 0.744776119402985,
+    "confusion_[[tn,fp],[fn,tp]]": [
+      [
+        850,
+        268
+      ],
+      [
+        74,
+        148
+      ]
+    ]
+  },
+  "test_at_0.5": {
+    "n": 1681,
+    "pos": 276,
+    "roc_auc": 0.7392361648357317,
+    "macro_f1": 0.6180185136460401,
+    "accuracy": 0.7287328970850684,
+    "confusion_[[tn,fp],[fn,tp]]": [
+      [
+        1065,
+        340
+      ],
+      [
+        116,
+        160
+      ]
+    ]
+  },
+  "test_at_val_threshold": {
+    "n": 1681,
+    "pos": 276,
+    "roc_auc": 0.7392361648357317,
+    "macro_f1": 0.6424659693962542,
+    "accuracy": 0.8298631766805473,
+    "confusion_[[tn,fp],[fn,tp]]": [
+      [
+        1306,
+        99
+      ],
+      [
+        187,
+        89
+      ]
+    ]
+  },
+  "best_step": null,
+  "steps_executed": null,
+  "best_val_auc": null,
+  "info": {
+    "clients": [
+      {
+        "client": 0,
+        "rule": "val_auc",
+        "best_step": 26,
+        "steps_executed": 36,
+        "n_fit": 128,
+        "n_val": 26,
+        "fit_pos": 44,
+        "val_pos": 10
+      },
+      {
+        "client": 1,
+        "rule": "val_auc",
+        "best_step": 22,
+        "steps_executed": 32,
+        "n_fit": 402,
+        "n_val": 100,
+        "fit_pos": 42,
+        "val_pos": 10
+      },
+      {
+        "client": 2,
+        "rule": "val_auc",
+        "best_step": 7,
+        "steps_executed": 17,
+        "n_fit": 106,
+        "n_val": 44,
+        "fit_pos": 14,
+        "val_pos": 6
+      },
+      {
+        "client": 3,
+        "rule": "val_auc",
+        "best_step": 47,
+        "steps_executed": 57,
+        "n_fit": 396,
+        "n_val": 118,
+        "fit_pos": 74,
+        "val_pos": 22
+      },
+      {
+        "client": 4,
+        "rule": "val_auc",
+        "best_step": 17,
+        "steps_executed": 27,
+        "n_fit": 125,
+        "n_val": 30,
+        "fit_pos": 30,
+        "val_pos": 12
+      },
+      {
+        "client": 5,
+        "rule": "val_auc",
+        "best_step": 1,
+        "steps_executed": 11,
+        "n_fit": 32,
+        "n_val": 6,
+        "fit_pos": 8,
+        "val_pos": 2
+      },
+      {
+        "client": 6,
+        "rule": "val_auc",
+        "best_step": 59,
+        "steps_executed": 69,
+        "n_fit": 332,
+        "n_val": 74,
+        "fit_pos": 52,
+        "val_pos": 12
+      },
+      {
+        "client": 7,
+        "rule": "val_auc",
+        "best_step": 9,
+        "steps_executed": 19,
+        "n_fit": 132,
+        "n_val": 24,
+        "fit_pos": 22,
+        "val_pos": 4
+      },
+      {
+        "client": 8,
+        "rule": "val_auc",
+        "best_step": 1,
+        "steps_executed": 11,
+        "n_fit": 500,
+        "n_val": 132,
+        "fit_pos": 86,
+        "val_pos": 14
+      },
+      {
+        "client": 9,
+        "rule": "val_auc",
+        "best_step": 23,
+        "steps_executed": 33,
+        "n_fit": 92,
+        "n_val": 42,
+        "fit_pos": 16,
+        "val_pos": 12
+      },
+      {
+        "client": 10,
+        "rule": "val_auc",
+        "best_step": 2,
+        "steps_executed": 12,
+        "n_fit": 564,
+        "n_val": 120,
+        "fit_pos": 82,
+        "val_pos": 16
+      },
+      {
+        "client": 11,
+        "rule": "val_auc",
+        "best_step": 6,
+        "steps_executed": 16,
+        "n_fit": 272,
+        "n_val": 52,
+        "fit_pos": 24,
+        "val_pos": 8
+      },
+      {
+        "client": 12,
+        "rule": "val_auc",
+        "best_step": 9,
+        "steps_executed": 19,
+        "n_fit": 110,
+        "n_val": 26,
+        "fit_pos": 18,
+        "val_pos": 4
+      },
+      {
+        "client": 13,
+        "rule": "val_auc",
+        "best_step": 46,
+        "steps_executed": 56,
+        "n_fit": 494,
+        "n_val": 120,
+        "fit_pos": 82,
+        "val_pos": 24
+      },
+      {
+        "client": 14,
+        "rule": "val_auc",
+        "best_step": 24,
+        "steps_executed": 34,
+        "n_fit": 398,
+        "n_val": 140,
+        "fit_pos": 90,
+        "val_pos": 16
+      },
+      {
+        "client": 15,
+        "rule": "val_auc",
+        "best_step": 2,
+        "steps_executed": 12,
+        "n_fit": 60,
+        "n_val": 18,
+        "fit_pos": 16,
+        "val_pos": 4
+      },
+      {
+        "client": 16,
+        "rule": "val_auc",
+        "best_step": 1,
+        "steps_executed": 11,
+        "n_fit": 182,
+        "n_val": 46,
+        "fit_pos": 36,
+        "val_pos": 4
+      },
+      {
+        "client": 17,
+        "rule": "val_loss",
+        "best_step": 100,
+        "steps_executed": 100,
+        "n_fit": 48,
+        "n_val": 8,
+        "fit_pos": 6,
+        "val_pos": 0
+      },
+      {
+        "client": 18,
+        "rule": "val_auc",
+        "best_step": 28,
+        "steps_executed": 38,
+        "n_fit": 310,
+        "n_val": 70,
+        "fit_pos": 46,
+        "val_pos": 14
+      },
+      {
+        "client": 19,
+        "rule": "val_auc",
+        "best_step": 4,
+        "steps_executed": 14,
+        "n_fit": 50,
+        "n_val": 18,
+        "fit_pos": 8,
+        "val_pos": 2
+      },
+      {
+        "client": 20,
+        "rule": "val_auc",
+        "best_step": 44,
+        "steps_executed": 54,
+        "n_fit": 624,
+        "n_val": 126,
+        "fit_pos": 86,
+        "val_pos": 26
+      }
+    ],
+    "best_step": null,
+    "steps_executed": null
+  },
+  "communication": {
+    "bytes_per_round_total": 0,
+    "note": "no communication"
+  },
+  "local_model_consensus": {
+    "n_clients": 21,
+    "n_nodes": 7936,
+    "consensus_mean": 0.7369791666666667,
+    "consensus_median": 0.7619047619047619,
+    "frac_nodes_unanimous": 0.1305443548387097,
+    "frac_nodes_modal_numeric": 0.1314264112903226,
+    "thr_sd_numeric_nodes_mean": 0.15176836144156114,
+    "thr_sd_numeric_nodes_median": 0.13690923154354095,
+    "thr_sd_onehot_nodes_mean": 0.129494185432582
+  },
+  "trainable_parameters": 809984,
+  "seconds_total": 91.20375674997922,
+  "peak_rss_mb": 1813.28125,
+  "resolved_training_config": {
+    "batch_size": 256,
+    "batch_rule": "max(1, min(256, n//2)), shuffled, drop_last",
+    "class_weights": "global training-fold counts: w_k = (1/n_k) / sum_j (1/n_j)",
+    "loss": "class-weighted cross-entropy",
+    "max_epochs": 100,
+    "max_rounds": 100,
+    "local_epochs": 1,
+    "patience": 10,
+    "warmup": 10,
+    "min_delta_auc": 0.0001,
+    "selection": "pooled validation ROC-AUC (centralized/FedAvg); local-only: client validation ROC-AUC, or weighted validation loss if the client's validation has one class; if a client has no validation rows: train for the median best epoch of the other clients",
+    "fedavg": "full participation; weights = client training-row counts; trainable params only; fresh local Adam per round; clients with < 2 training rows get weight 0 for that fold (recorded)",
+    "model_kwargs": {
+      "n_estimators": 256,
+      "depth": 5,
+      "selected_variables": 0.8
+    }
+  },
+  "config_file": "/Users/aya_uzbekbay/csci447-fedgrande/configs/phase2b/core.json",
+  "config_sha256": "c0d578fff58858dd5f7021aaad46ac908124fa929e101ed67eb3b2174eae9226",
+  "smoke_overrides": {
+    "max_rounds": null,
+    "max_epochs": null
+  },
+  "meta": {
+    "created_utc": "2026-11-07T07:25:39.604910+00:00",
+    "project_commit": "615aeeb238b581970f2c8449238805deac87e0cf",
+    "project_tracked_changes": [],
+    "conda_env": "fedgrande-dev",
+    "python": "3.12.14",
+    "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-dev/bin/python",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "GRANDE": "1.0.0",
+      "torch": "2.7.1",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "category-encoders": "2.9.0",
+      "openml": "0.15.1"
+    },
+    "grande": {
+      "impl": "dev",
+      "worktree": "/Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_dev_db79c860",
+      "expected_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "head_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "commit_matches": true,
+      "tracked_changes": []
+    },
+    "torch_threads": 6,
+    "torch_float32_matmul_precision": "highest"
+  }
+}

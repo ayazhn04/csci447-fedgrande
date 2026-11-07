@@ -1,0 +1,29 @@
+{
+  "relation": {
+    "cons_consensus_mean_mean_to_best": {
+      "spearman_rho_vs_fold_gap_all_runs": -0.19911012235817574,
+      "n_runs": 30,
+      "within_partition": {
+        "iid": -0.2071428571428571,
+        "natural": -0.15714285714285714
+      }
+    },
+    "cons_global_agreement_mean_to_best": {
+      "spearman_rho_vs_fold_gap_all_runs": -0.2004449388209121,
+      "n_runs": 30,
+      "within_partition": {
+        "iid": -0.1857142857142857,
+        "natural": -0.15714285714285714
+      }
+    },
+    "cos_to_aggregate_mean_mean_to_best": {
+      "spearman_rho_vs_fold_gap_all_runs": 0.39488320355951056,
+      "n_runs": 30,
+      "within_partition": {
+        "iid": 0.6607142857142856,
+        "natural": 0.28928571428571426
+      }
+    }
+  },
+  "note": "descriptive; fold-seed runs are not independent"
+}

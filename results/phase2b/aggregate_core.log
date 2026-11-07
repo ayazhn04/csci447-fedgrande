@@ -1,0 +1,76 @@
+        method partition  oof_auc_mean  oof_auc_sd  oof_f1_05_mean  oof_f1_05_sd  oof_f1_valthr_mean  oof_f1_valthr_sd  oof_acc_05_mean  oof_acc_05_sd  n_seeds
+central_grande      none      0.856727    0.000910        0.697220      0.002052            0.723493          0.008084         0.781571       0.003327        3
+   central_mlp      none      0.847874    0.004649        0.693868      0.007835            0.720036          0.005342         0.781093       0.014077        3
+ fedavg_grande       iid      0.844568    0.000476        0.680553      0.001121            0.702036          0.004907         0.761677       0.001672        3
+ fedavg_grande   natural      0.843751    0.000878        0.682841      0.000664            0.704987          0.001581         0.764303       0.000419        3
+    fedavg_mlp       iid      0.847150    0.002379        0.684822      0.004705            0.715224          0.003296         0.768004       0.006323        3
+    fedavg_mlp   natural      0.850133    0.001324        0.690668      0.004263            0.718981          0.003778         0.774409       0.006025        3
+  local_grande       iid      0.737115    0.004861        0.603190      0.010200            0.636484          0.011574         0.697143       0.017000        3
+  local_grande   natural      0.740828    0.011915        0.605065      0.008975            0.634536          0.003667         0.692886       0.006387        3
+{
+ "central_minus_fedavg_grande_natural_oof_auc": {
+  "mean": 0.012975843339642893,
+  "sd": 0.0005474983934897853,
+  "n_seeds": 3
+ },
+ "central_minus_fedavg_mlp_natural_oof_auc": {
+  "mean": -0.0022585990752362153,
+  "sd": 0.0056789715012113915,
+  "n_seeds": 3
+ },
+ "central_minus_local_grande_natural_oof_auc": {
+  "mean": 0.1158993839509701,
+  "sd": 0.012652923178769529,
+  "n_seeds": 3
+ },
+ "fedavg_minus_local_grande_natural_oof_auc": {
+  "mean": 0.1029235406113272,
+  "sd": 0.012792585492308573,
+  "n_seeds": 3
+ },
+ "fedavg_grande_minus_fedavg_mlp_natural_oof_auc": {
+  "mean": -0.006381775055122829,
+  "sd": 0.001387946335011584,
+  "n_seeds": 3
+ },
+ "central_minus_fedavg_grande_iid_oof_auc": {
+  "mean": 0.012159357469974172,
+  "sd": 0.00128501066397647,
+  "n_seeds": 3
+ },
+ "central_minus_fedavg_mlp_iid_oof_auc": {
+  "mean": 0.0007238783199616794,
+  "sd": 0.007016106022269095,
+  "n_seeds": 3
+ },
+ "central_minus_local_grande_iid_oof_auc": {
+  "mean": 0.11961174552287535,
+  "sd": 0.004261613710845321,
+  "n_seeds": 3
+ },
+ "fedavg_minus_local_grande_iid_oof_auc": {
+  "mean": 0.10745238805290118,
+  "sd": 0.005336430839551038,
+  "n_seeds": 3
+ },
+ "fedavg_grande_minus_fedavg_mlp_iid_oof_auc": {
+  "mean": -0.002582811790256212,
+  "sd": 0.0019713642142584744,
+  "n_seeds": 3
+ },
+ "fedavg_grande_iid_minus_natural_oof_auc": {
+  "mean": 0.0008164858696687224,
+  "sd": 0.0010544453645880713,
+  "n_seeds": 3
+ },
+ "fedavg_mlp_iid_minus_natural_oof_auc": {
+  "mean": -0.0029824773951978947,
+  "sd": 0.0018529765755652603,
+  "n_seeds": 3
+ },
+ "local_grande_iid_minus_natural_oof_auc": {
+  "mean": -0.0037123615719052427,
+  "sd": 0.013498329577217558,
+  "n_seeds": 3
+ }
+}

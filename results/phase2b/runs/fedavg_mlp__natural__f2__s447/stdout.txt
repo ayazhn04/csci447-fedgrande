@@ -1,0 +1,1 @@
+[fedavg_mlp__natural__f2__s447] 9s best 98/100 valAUC 0.8392480136666184 testAUC 0.8606 F1@.5 0.7060 RSS 533MB

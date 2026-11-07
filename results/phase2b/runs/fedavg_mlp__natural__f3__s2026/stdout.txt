@@ -1,0 +1,1 @@
+[fedavg_mlp__natural__f3__s2026] 5s best 41/51 valAUC 0.8564163984933905 testAUC 0.8354 F1@.5 0.6771 RSS 545MB
