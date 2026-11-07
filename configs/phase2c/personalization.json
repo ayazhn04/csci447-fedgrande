@@ -1,0 +1,17 @@
+{
+  "protocol_version": "phase2c-v1",
+  "partition": "dirichlet0.1",
+  "folds": [0, 1, 2, 3, 4],
+  "seeds": [42, 447, 2026],
+  "global_checkpoints": "data/derived/phase2c/global_ckpt/fedavg_grande__dirichlet0.1__f{fold}__s{seed}.pt (regenerated, bitwise-verified Phase 2B best global states)",
+  "P1_intercept": {"objective": "unweighted binary cross-entropy on client FIT rows + (lam/2) b^2", "lam": 1.0, "solver": "Newton, max 100 iters, tol 1e-12"},
+  "P2_P3_finetune": {"objective": "unweighted cross-entropy on client FIT rows", "optimizer": "Adam",
+                     "lr": {"leaf_classes_array": 0.01, "estimator_weights": 0.005}, "betas": [0.9, 0.95],
+                     "max_epochs": 20, "patience": 5, "min_delta": 0.0001, "batch_size": 256,
+                     "batch_rule": "max(1, min(256, n//2)), shuffled (generator seeded by seed, client, epoch), drop_last",
+                     "selection": "client validation ROC-AUC if both classes present, else validation cross-entropy; epoch 0 (global state) is a candidate; best state restored"},
+  "threshold": "per (method, fold, seed): maximize validation macro-F1 on pooled validation predictions over grid 0.05..0.95 step 0.01, ties -> closest to 0.5",
+  "metrics_fold": ["roc_auc", "macro_f1@0.5", "macro_f1@val_threshold", "log_loss", "brier", "ece_10_equal_width_bins"],
+  "within_client": "pooled OOF test predictions per client per seed; AUC/macro-F1 only for clients with both classes; log loss, Brier, accuracy for all",
+  "torch": {"threads": 6, "float32_matmul_precision": "highest"}
+}

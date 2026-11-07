@@ -44,6 +44,7 @@ def main():
     ap.add_argument("--out-root", default=str(ROOT / "results" / "phase2b" / "runs"))
     ap.add_argument("--max-rounds", type=int)
     ap.add_argument("--max-epochs", type=int)
+    ap.add_argument("--save-state", help="optional path: torch.save the selected global/central model state_dict (Phase 2C)")
     a = ap.parse_args()
     cfg = json.load(open(a.config))
     m = cfg["methods"][a.method]
@@ -105,6 +106,9 @@ def main():
             pd.DataFrame(info.pop("rounds")).to_csv(os.path.join(out, "rounds.csv"), index=False)
             info.pop("init_buffers")
             final_models = [model]
+    if a.save_state and proc in ("centralized", "fedavg"):
+        os.makedirs(os.path.dirname(os.path.abspath(a.save_state)), exist_ok=True)
+        torch.save(final_models[0].state_dict(), a.save_state)
     curve = info.pop("curve", None)
     if curve is not None:
         pd.DataFrame(curve).to_csv(os.path.join(out, "curve.csv"), index=False)
