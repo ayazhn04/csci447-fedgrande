@@ -1,0 +1,28 @@
+[fedavg_grande__natural__f0__s42] 301s best 93/100 valAUC 0.8299368241228706 testAUC 0.8826 F1@.5 0.7081 RSS 2772MB
+real 303.19
+user 657.63
+sys 326.67
+[fedavg_grande64__natural__f0__s42] 52s best 43/53 valAUC 0.8200535061000176 testAUC 0.8788 F1@.5 0.7025 RSS 1328MB
+real 54.14
+user 83.09
+sys 46.32
+[fedavg_grande64__iid__f0__s42] 89s best 98/100 valAUC 0.8297031378426728 testAUC 0.8776 F1@.5 0.7008 RSS 1295MB
+real 91.42
+user 151.67
+sys 79.79
+[fedavg_grande_int8__natural__f0__s42] 325s best 98/100 valAUC 0.8304485164950282 testAUC 0.8830 F1@.5 0.7063 RSS 2707MB
+real 327.22
+user 677.59
+sys 330.89
+[fedavg_grande_int8__iid__f0__s42] 334s best 100/100 valAUC 0.8329062515109027 testAUC 0.8836 F1@.5 0.7091 RSS 2729MB
+real 336.81
+user 687.29
+sys 330.52
+[fedavg_grande64_int8__natural__f0__s42] 59s best 44/54 valAUC 0.8205289368080065 testAUC 0.8792 F1@.5 0.7017 RSS 1318MB
+real 61.69
+user 90.56
+sys 52.03
+[fedavg_grande64_int8__iid__f0__s42] 73s best 58/68 valAUC 0.8257586745958839 testAUC 0.8775 F1@.5 0.6925 RSS 1318MB
+real 75.83
+user 111.95
+sys 62.20

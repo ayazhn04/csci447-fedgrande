@@ -55,7 +55,8 @@ def main():
         tcfg["max_rounds"] = a.max_rounds
     if a.max_epochs:
         tcfg["max_epochs"] = a.max_epochs
-    tcfg["model_kwargs"] = cfg["model_kwargs"][kind]
+    tcfg["model_kwargs"] = m.get("model_kwargs", cfg["model_kwargs"][kind])   # Phase 2D: per-method override
+    tcfg["uplink"] = m.get("uplink", "fp32")
     torch.set_num_threads(cfg["torch"]["threads"])
     torch.set_float32_matmul_precision(cfg["torch"]["float32_matmul_precision"])
 
@@ -103,6 +104,8 @@ def main():
             once = {"features_by_estimator": info["init_buffers"]["features_by_estimator"]} if kind == "grande" else {}
             comm_rec = comm.accounting(trainable_state(model), once, n_clients=int(sum(np.array(info["client_weights"]) > 0)),
                                        rounds_executed=info["steps_executed"], best_round=info["best_step"])
+            comm_rec["v2"] = comm.accounting_v2(trainable_state(model), once, n_clients=int(sum(np.array(info["client_weights"]) > 0)),
+                                                rounds_executed=info["steps_executed"], best_round=info["best_step"], uplink=tcfg["uplink"])
             pd.DataFrame(info.pop("rounds")).to_csv(os.path.join(out, "rounds.csv"), index=False)
             info.pop("init_buffers")
             final_models = [model]

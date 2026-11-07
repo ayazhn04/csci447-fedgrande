@@ -184,10 +184,27 @@ def fedavg(kind, client_data, Xval_pooled, yval_pooled, seed, cfg, w, n_numeric=
                 tl, _ = train_one_epoch(local, opt, X, y, w, gen_for(seed, r, c), cfg["batch_size"])
             losses.append(tl)
             client_states.append(trainable_state(local))
+        sent_states = client_states
+        if cfg.get("uplink", "fp32") == "int8":                # Phase 2D: quantized client updates (uplink only)
+            from . import compress
+            sent_states, qerr = [], []
+            for c in range(len(data)):
+                if not active[c]:
+                    sent_states.append(client_states[c])
+                    continue
+                st_hat, rel = compress.roundtrip_update(client_states[c], before)
+                sent_states.append(st_hat)
+                qerr.append(rel)
         wn = weights / weights.sum()
-        load_trainable(glob, weighted_average(client_states, weights))
+        load_trainable(glob, weighted_average(sent_states, weights))
         t_train = time.perf_counter() - t0
         rec = {"round": r, "train_loss_weighted": float(np.nansum(np.array(losses) * wn)), "seconds_train": t_train}
+        if cfg.get("uplink", "fp32") == "int8":
+            for k in before:
+                vals = [e[k] for e in qerr]
+                rec[f"qerr_rel_l2_mean__{k}"], rec[f"qerr_rel_l2_max__{k}"] = float(np.mean(vals)), float(np.max(vals))
+            allv = [v for e in qerr for v in e.values()]
+            rec["qerr_rel_l2_mean_all"], rec["qerr_rel_l2_max_all"] = float(np.mean(allv)), float(np.max(allv))
         rec["val_auc"] = safe_auc(yval_pooled, predict(glob, Xv))
         rec["val_loss"] = weighted_loss(glob, Xv, _t(yval_pooled, torch.long), w)
         act = [c for c in range(len(data)) if active[c]]

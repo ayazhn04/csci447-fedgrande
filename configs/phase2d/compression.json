@@ -1,0 +1,138 @@
+{
+  "protocol_version": "phase2d-compression-v1",
+  "outer_split": {
+    "scheme": "C2",
+    "file": "data/derived/phase2/splits_inner_v1.csv",
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "note": "Phase 2A grouped split (leakage groups = dyads_v1 connected components); inner fit/val also grouped"
+  },
+  "features": {
+    "drop_metadata": [
+      "wave"
+    ],
+    "never": [
+      "match",
+      "decision",
+      "decision_o"
+    ],
+    "raw_features": 119
+  },
+  "preprocessing": {
+    "name": "federated-safe label-free v1",
+    "numeric": "aggregated (count,sum,sumsq) -> global mean impute + z-score; sd=1 if var=0",
+    "categorical": "aggregated label-free counts -> training vocabulary one-hot; MISSING column iff missing seen in training; unseen/other missing -> all-zero UNK",
+    "fit_rows": "inner-fit rows only (validation and test never contribute)",
+    "fit_via": "sufficient statistics of the 21 natural clients (identical to pooled computation; partition-invariant)"
+  },
+  "partitions": {
+    "natural": {
+      "client": "wave",
+      "n_clients": 21
+    },
+    "iid": {
+      "n_clients": 21,
+      "target_sizes": "natural wave sizes",
+      "partition_seed": 7,
+      "method": "deal whole leakage groups by largest remaining positive/negative row quota"
+    }
+  },
+  "seeds": {
+    "model_seeds": [
+      42,
+      447,
+      2026
+    ],
+    "partition_seed": 7,
+    "note": "no 3-seed convention existed in Phase 2A (only seed 42); spec default adopted"
+  },
+  "methods": {
+    "fedavg_grande64": {
+      "kind": "grande",
+      "procedure": "fedavg",
+      "model_kwargs": {
+        "n_estimators": 64,
+        "depth": 5,
+        "selected_variables": 0.8
+      },
+      "uplink": "fp32",
+      "label": "C1 64 trees FP32"
+    },
+    "fedavg_grande_int8": {
+      "kind": "grande",
+      "procedure": "fedavg",
+      "model_kwargs": {
+        "n_estimators": 256,
+        "depth": 5,
+        "selected_variables": 0.8
+      },
+      "uplink": "int8",
+      "label": "C2 256 trees INT8 uplink"
+    },
+    "fedavg_grande64_int8": {
+      "kind": "grande",
+      "procedure": "fedavg",
+      "model_kwargs": {
+        "n_estimators": 64,
+        "depth": 5,
+        "selected_variables": 0.8
+      },
+      "uplink": "int8",
+      "label": "C3 64 trees INT8 uplink"
+    }
+  },
+  "model_kwargs": {
+    "grande": {
+      "n_estimators": 256,
+      "depth": 5,
+      "selected_variables": 0.8
+    },
+    "mlp": {}
+  },
+  "model_fixed": {
+    "grande": "GRANDE 1.0.0 GRANDE_Module (db79c860): dropout 0, data_subset_fraction 1, bootstrap false, missing_values false, no embeddings, no compile; Adam betas (0.9,0.95), lr split_values 0.01, split_index_array 0.01, estimator_weights 0.005, leaf_classes_array 0.01",
+    "mlp": "Linear(D,128)-ReLU-Linear(128,64)-ReLU-Linear(64,2); Adam lr 1e-3 default betas; PyTorch default init after torch.manual_seed(seed)"
+  },
+  "training": {
+    "batch_size": 256,
+    "batch_rule": "max(1, min(256, n//2)), shuffled, drop_last",
+    "class_weights": "global training-fold counts: w_k = (1/n_k) / sum_j (1/n_j)",
+    "loss": "class-weighted cross-entropy",
+    "max_epochs": 100,
+    "max_rounds": 100,
+    "local_epochs": 1,
+    "patience": 10,
+    "warmup": 10,
+    "min_delta_auc": 0.0001,
+    "selection": "pooled validation ROC-AUC (centralized/FedAvg); local-only: client validation ROC-AUC, or weighted validation loss if the client's validation has one class; if a client has no validation rows: train for the median best epoch of the other clients",
+    "fedavg": "full participation; weights = client training-row counts; trainable params only; fresh local Adam per round; clients with < 2 training rows get weight 0 for that fold (recorded)"
+  },
+  "threshold": "per run: maximize macro-F1 on that run's validation predictions over grid 0.05..0.95 step 0.01, ties -> closest to 0.5; applied to the same run's test predictions",
+  "metrics": {
+    "global": "pooled out-of-fold test predictions over the 5 folds per (method, partition, seed); ROC-AUC primary; macro-F1@0.5; macro-F1@val-threshold; accuracy; confusion matrix",
+    "seed_aggregation": "mean +- SD over the 3 seeds (repeated training on the same folds; no p-values)",
+    "per_client": "per natural wave from pooled OOF predictions per seed"
+  },
+  "torch": {
+    "threads": 6,
+    "float32_matmul_precision": "highest",
+    "compile": false
+  },
+  "baseline_C0": {
+    "method": "fedavg_grande (Phase 2B core, results/phase2b/runs)",
+    "label": "C0 256 trees FP32"
+  },
+  "quantization": {
+    "what": "client updates delta = theta_local - theta_global, per trainable tensor",
+    "scheme": "symmetric per-tensor INT8: s=max|delta|/127, q=clip(round_half_even(delta/s),-127,127) int8; zero tensor -> s=0,q=0",
+    "server": "delta_hat=s*q (FP32); theta_hat=theta_global+delta_hat; usual weighted FedAvg",
+    "downlink": "FP32 (not quantized)",
+    "not_quantized": "local/server model state, structural buffers",
+    "no": "error feedback, stochastic rounding, sparsification, entropy coding"
+  }
+}

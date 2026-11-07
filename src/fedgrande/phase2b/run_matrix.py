@@ -19,7 +19,7 @@ from fedgrande.phase2b.run_job import job_id  # noqa: E402
 
 def jobs(cfg, stage):
     out = []
-    parts = {"core": ["natural", "iid"], "dirichlet": ["dirichlet0.1"]}[stage]  # 'dirichlet' = amendment A1
+    parts = {"core": ["natural", "iid"], "dirichlet": ["dirichlet0.1"], "compression": ["natural", "iid"]}[stage]  # 'dirichlet' = 2B A1; 'compression' = Phase 2D
     for seed in cfg["seeds"]["model_seeds"]:
         for fold in cfg["outer_split"]["folds"]:
             for method, m in cfg["methods"].items():
@@ -37,7 +37,7 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     cfg = json.load(open(a.config))
-    out_root = ROOT / "results" / "phase2b" / "runs"
+    out_root = ROOT / "results" / ("phase2d" if a.stage == "compression" else "phase2b") / "runs"
     todo = jobs(cfg, a.stage)
     print(f"{len(todo)} jobs in stage {a.stage}", flush=True)
     if a.dry_run:
@@ -54,7 +54,8 @@ def main():
         os.makedirs(out_root / jid, exist_ok=True)
         with open(out_root / jid / "stdout.txt", "w") as so:
             rc = subprocess.run([sys.executable, "-I", str(ROOT / "src" / "fedgrande" / "phase2b" / "run_job.py"), "--method", method,
-                                 "--partition", part, "--fold", str(fold), "--seed", str(seed), "--config", a.config],
+                                 "--partition", part, "--fold", str(fold), "--seed", str(seed), "--config", a.config,
+                                 "--out-root", str(out_root)],
                                 stdout=so, stderr=subprocess.STDOUT, cwd=ROOT).returncode
         last = open(out_root / jid / "stdout.txt").read().strip().splitlines()[-1:] if rc == 0 else ["FAILED"]
         print(f"[{i}/{len(todo)}] {jid} rc={rc} {time.time()-t0:.0f}s free={free:.1f}GiB :: {last}", flush=True)
