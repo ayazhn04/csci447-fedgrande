@@ -45,6 +45,7 @@ def main():
     ap.add_argument("--max-rounds", type=int)
     ap.add_argument("--max-epochs", type=int)
     ap.add_argument("--save-state", help="optional path: torch.save the selected global/central model state_dict (Phase 2C)")
+    ap.add_argument("--snapshot-rounds", help="Phase 2E diagnostic: comma-separated rounds whose global states are saved")
     a = ap.parse_args()
     cfg = json.load(open(a.config))
     m = cfg["methods"][a.method]
@@ -55,8 +56,12 @@ def main():
         tcfg["max_rounds"] = a.max_rounds
     if a.max_epochs:
         tcfg["max_epochs"] = a.max_epochs
+    if a.snapshot_rounds:
+        tcfg["snapshot_rounds"] = [int(x) for x in a.snapshot_rounds.split(",")]
     tcfg["model_kwargs"] = m.get("model_kwargs", cfg["model_kwargs"][kind])   # Phase 2D: per-method override
     tcfg["uplink"] = m.get("uplink", "fp32")
+    if m.get("freeze"):
+        tcfg["freeze"] = m["freeze"]                                            # Phase 2E
     torch.set_num_threads(cfg["torch"]["threads"])
     torch.set_float32_matmul_precision(cfg["torch"]["float32_matmul_precision"])
 
@@ -106,8 +111,23 @@ def main():
                                        rounds_executed=info["steps_executed"], best_round=info["best_step"])
             comm_rec["v2"] = comm.accounting_v2(trainable_state(model), once, n_clients=int(sum(np.array(info["client_weights"]) > 0)),
                                                 rounds_executed=info["steps_executed"], best_round=info["best_step"], uplink=tcfg["uplink"])
+            if tcfg.get("freeze"):                                             # Phase 2E: per-round exact accounting
+                rdf = pd.DataFrame(info["rounds"])
+                once = comm.tensor_bytes(once) * int(sum(np.array(info["client_weights"]) > 0))
+                cum = once + (rdf.bytes_down + rdf.bytes_up).cumsum()
+                b_, e_, fr_ = info["best_step"], info["steps_executed"], tcfg["freeze"]["after_round"]
+                comm_rec["v3"] = {"bytes_once_at_init_buffers": once, "per_round_total_pre_freeze": int((rdf.bytes_down + rdf.bytes_up).iloc[0]),
+                                  "per_round_total_post_freeze": int((rdf.bytes_down + rdf.bytes_up).iloc[-1]) if e_ > fr_ + 1 else None,
+                                  "cum_total_to_freeze_round": int(cum.iloc[min(fr_, e_) - 1]), "cum_total_to_best": int(cum.iloc[b_ - 1]),
+                                  "cum_total_to_final": int(cum.iloc[e_ - 1]), "cum_down_to_best": int(once + rdf.bytes_down.iloc[:b_].sum()),
+                                  "cum_up_to_best": int(rdf.bytes_up.iloc[:b_].sum()), "definition": "once + sum over rounds of (bytes_down + bytes_up)"}
+            snaps = info.pop("snapshots", {})
+            if snaps and a.save_state:
+                for rr, sd in snaps.items():
+                    torch.save(sd, a.save_state.replace(".pt", f"_round{rr}.pt"))
             pd.DataFrame(info.pop("rounds")).to_csv(os.path.join(out, "rounds.csv"), index=False)
             info.pop("init_buffers")
+            info.pop("snapshots", None)
             final_models = [model]
     if a.save_state and proc in ("centralized", "fedavg"):
         os.makedirs(os.path.dirname(os.path.abspath(a.save_state)), exist_ok=True)

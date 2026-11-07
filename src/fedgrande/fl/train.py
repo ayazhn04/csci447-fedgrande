@@ -169,9 +169,13 @@ def fedavg(kind, client_data, Xval_pooled, yval_pooled, seed, cfg, w, n_numeric=
     Xv = _t(Xval_pooled)
     st = Stopper(cfg["patience"], cfg["warmup"])
     rounds = []
+    fz = cfg.get("freeze")                                    # Phase 2E structure-freezing schedule (None = ordinary FedAvg)
+    snapshots = {}
     for r in range(1, cfg["max_rounds"] + 1):
         t0 = time.perf_counter()
         before = trainable_state(glob)
+        frozen = list(fz["params"]) if (fz and r > fz["after_round"]) else []
+        act_keys = [k for k in before if k not in frozen]
         client_states, losses = [], []
         for c, (X, y) in enumerate(data):
             if not active[c]:
@@ -179,28 +183,57 @@ def fedavg(kind, client_data, Xval_pooled, yval_pooled, seed, cfg, w, n_numeric=
                 losses.append(np.nan)
                 continue
             local.load_state_dict(glob.state_dict())          # identical global state incl. buffers
-            opt = make_opt(local)                              # fresh optimizer state every round
+            if fz:
+                for n_, p_ in local.named_parameters():
+                    p_.requires_grad_(n_ not in frozen)        # frozen tensors: no gradients
+                from .models import grande_optimizer_subset
+                opt = grande_optimizer_subset(local, act_keys) if frozen else make_opt(local)
+            else:
+                opt = make_opt(local)                          # fresh optimizer state every round
             for _ in range(cfg["local_epochs"]):
                 tl, _ = train_one_epoch(local, opt, X, y, w, gen_for(seed, r, c), cfg["batch_size"])
             losses.append(tl)
-            client_states.append(trainable_state(local))
+            client_states.append({n_: p_.detach().clone() for n_, p_ in local.named_parameters()} if fz else trainable_state(local))
+            for k in frozen:
+                assert torch.equal(client_states[-1][k], before[k]), f"frozen tensor {k} changed on client {c}"
         sent_states = client_states
-        if cfg.get("uplink", "fp32") == "int8":                # Phase 2D: quantized client updates (uplink only)
+        uplink_now = (fz.get("uplink_after", "fp32") if frozen else "fp32") if fz else cfg.get("uplink", "fp32")
+        if uplink_now == "int8":                               # Phase 2D codec: quantized client updates (uplink only)
             from . import compress
             sent_states, qerr = [], []
             for c in range(len(data)):
                 if not active[c]:
                     sent_states.append(client_states[c])
                     continue
-                st_hat, rel = compress.roundtrip_update(client_states[c], before)
-                sent_states.append(st_hat)
+                sub_hat, rel = compress.roundtrip_update({k: client_states[c][k] for k in act_keys}, {k: before[k] for k in act_keys})
+                sent_states.append({**client_states[c], **sub_hat})
                 qerr.append(rel)
         wn = weights / weights.sum()
-        load_trainable(glob, weighted_average(sent_states, weights))
+        if frozen:                                             # aggregate active tensors only; frozen copied unchanged
+            agg = weighted_average([{k: st_[k] for k in act_keys} for st_ in sent_states], weights)
+            load_trainable(glob, {**agg, **{k: before[k] for k in frozen}})
+        else:
+            load_trainable(glob, weighted_average(sent_states, weights))
         t_train = time.perf_counter() - t0
         rec = {"round": r, "train_loss_weighted": float(np.nansum(np.array(losses) * wn)), "seconds_train": t_train}
-        if cfg.get("uplink", "fp32") == "int8":
+        if fz:
+            from . import compress
+            from .comm import tensor_bytes
+            after = trainable_state(glob)
+            n_act = int(active.sum())
+            down_keys = list(before) if (not frozen or r == fz["after_round"] + 1) else act_keys   # round after_round+1 re-broadcasts structure once
+            rec["active_groups"] = "|".join(act_keys)
+            rec["bytes_down"] = n_act * tensor_bytes({k: before[k] for k in down_keys})
+            rec["bytes_up"] = n_act * (compress.payload_bytes({k: before[k] for k in act_keys}) if uplink_now == "int8"
+                                       else tensor_bytes({k: before[k] for k in act_keys}))
             for k in before:
+                rec[f"move_rel__{k}"] = float(torch.linalg.vector_norm(after[k] - before[k]) / torch.linalg.vector_norm(before[k]))
+            for k in frozen:
+                assert torch.equal(after[k], before[k]), f"global frozen tensor {k} changed"
+        if r in (cfg.get("snapshot_rounds") or ()):
+            snapshots[r] = copy.deepcopy(glob.state_dict())
+        if uplink_now == "int8":
+            for k in act_keys:
                 vals = [e[k] for e in qerr]
                 rec[f"qerr_rel_l2_mean__{k}"], rec[f"qerr_rel_l2_max__{k}"] = float(np.mean(vals)), float(np.max(vals))
             allv = [v for e in qerr for v in e.values()]
@@ -226,6 +259,6 @@ def fedavg(kind, client_data, Xval_pooled, yval_pooled, seed, cfg, w, n_numeric=
         if st.update(r, rec["val_auc"], glob):
             break
     glob.load_state_dict(st.state)
-    return glob, {"best_step": st.best_step, "steps_executed": r, "best_val_auc": st.best, "rounds": rounds,
+    return glob, {"best_step": st.best_step, "steps_executed": r, "best_val_auc": st.best, "rounds": rounds, "snapshots": snapshots,
                   "client_weights": weights.tolist(), "inactive_clients": [int(c) for c in np.flatnonzero(~active)],
                   "init_buffers": init_buffers}

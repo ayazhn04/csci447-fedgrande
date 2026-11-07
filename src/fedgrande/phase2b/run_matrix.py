@@ -19,7 +19,7 @@ from fedgrande.phase2b.run_job import job_id  # noqa: E402
 
 def jobs(cfg, stage):
     out = []
-    parts = {"core": ["natural", "iid"], "dirichlet": ["dirichlet0.1"], "compression": ["natural", "iid"]}[stage]  # 'dirichlet' = 2B A1; 'compression' = Phase 2D
+    parts = {"core": ["natural", "iid"], "dirichlet": ["dirichlet0.1"], "compression": ["natural", "iid"], "structure": ["natural", "iid"]}[stage]  # 'dirichlet' = 2B A1; 'compression' = Phase 2D
     for seed in cfg["seeds"]["model_seeds"]:
         for fold in cfg["outer_split"]["folds"]:
             for method, m in cfg["methods"].items():
@@ -37,7 +37,7 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     cfg = json.load(open(a.config))
-    out_root = ROOT / "results" / ("phase2d" if a.stage == "compression" else "phase2b") / "runs"
+    out_root = ROOT / "results" / {"compression": "phase2d", "structure": "phase2e"}.get(a.stage, "phase2b") / "runs"
     todo = jobs(cfg, a.stage)
     print(f"{len(todo)} jobs in stage {a.stage}", flush=True)
     if a.dry_run:

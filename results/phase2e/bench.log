@@ -1,0 +1,8 @@
+[fedavg_grande__natural__f0__s42] 351s best 93/100 valAUC 0.8299368241228706 testAUC 0.8826 F1@.5 0.7081 RSS 2538MB
+[fedavg_grande_frzidx__natural__f0__s42] 356s best 93/100 valAUC 0.8268666698899256 testAUC 0.8811 F1@.5 0.7086 RSS 2579MB
+[fedavg_grande_frzidx__iid__f0__s42] 378s best 98/100 valAUC 0.8310085577527438 testAUC 0.8817 F1@.5 0.7083 RSS 2703MB
+[fedavg_grande_frzstruct__natural__f0__s42] 214s best 100/100 valAUC 0.8235990910409514 testAUC 0.8824 F1@.5 0.7102 RSS 2719MB
+[fedavg_grande_frzstruct__iid__f0__s42] 212s best 99/100 valAUC 0.8268948734065014 testAUC 0.8823 F1@.5 0.7070 RSS 2651MB
+[fedavg_grande_frzstruct_int8__natural__f0__s42] 220s best 99/100 valAUC 0.8235305967864106 testAUC 0.8824 F1@.5 0.7102 RSS 2581MB
+[fedavg_grande_frzstruct_int8__iid__f0__s42] 215s best 99/100 valAUC 0.8268989024802978 testAUC 0.8823 F1@.5 0.7070 RSS 2667MB
+done

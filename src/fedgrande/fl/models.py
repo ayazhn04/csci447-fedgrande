@@ -68,3 +68,8 @@ def load_trainable(model, state: dict):
 
 def n_trainable(model) -> int:
     return int(sum(p.numel() for p in model.parameters() if p.requires_grad))
+
+
+def grande_optimizer_subset(model, names):
+    """Phase 2E: the same GRANDE Adam (same per-group lr/betas) restricted to the ACTIVE parameter groups."""
+    return torch.optim.Adam([{"params": getattr(model, n), "lr": GRANDE_LR[n], "betas": GRANDE_BETAS} for n in GRANDE_LR if n in names])

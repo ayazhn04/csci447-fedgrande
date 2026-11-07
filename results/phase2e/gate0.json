@@ -1,0 +1,83 @@
+{
+  "model": "GRANDE 256 estimators, depth 5, 502 inputs, V=50",
+  "total_params": 809984,
+  "total_fp32_bytes": 3239936,
+  "tensors": [
+    {
+      "tensor": "split_values",
+      "shape": [
+        256,
+        31,
+        50
+      ],
+      "params": 396800,
+      "fp32_bytes": 1587200,
+      "pct_params": 48.988621997471554,
+      "pct_fp32_payload": 48.988621997471554
+    },
+    {
+      "tensor": "split_index_array",
+      "shape": [
+        256,
+        31,
+        50
+      ],
+      "params": 396800,
+      "fp32_bytes": 1587200,
+      "pct_params": 48.988621997471554,
+      "pct_fp32_payload": 48.988621997471554
+    },
+    {
+      "tensor": "estimator_weights",
+      "shape": [
+        256,
+        32
+      ],
+      "params": 8192,
+      "fp32_bytes": 32768,
+      "pct_params": 1.011378002528445,
+      "pct_fp32_payload": 1.011378002528445
+    },
+    {
+      "tensor": "leaf_classes_array",
+      "shape": [
+        256,
+        32
+      ],
+      "params": 8192,
+      "fp32_bytes": 32768,
+      "pct_params": 1.011378002528445,
+      "pct_fp32_payload": 1.011378002528445
+    }
+  ],
+  "F0_bytes_per_round": 136077312,
+  "post_freeze_per_round": {
+    "F0": {
+      "downlink_per_round": 68038656,
+      "uplink_per_round": 68038656,
+      "total_per_round": 136077312,
+      "reduction_vs_F0_per_round_pct": 0.0
+    },
+    "F1": {
+      "downlink_per_round": 34707456,
+      "uplink_per_round": 34707456,
+      "total_per_round": 69414912,
+      "reduction_vs_F0_per_round_pct": 48.98862199747156
+    },
+    "F2": {
+      "downlink_per_round": 1376256,
+      "uplink_per_round": 1376256,
+      "total_per_round": 2752512,
+      "reduction_vs_F0_per_round_pct": 97.97724399494311
+    },
+    "F3": {
+      "downlink_per_round": 1376256,
+      "uplink_per_round": 344232,
+      "total_per_round": 1720488,
+      "reduction_vs_F0_per_round_pct": 98.73565403761062
+    }
+  },
+  "gate0_threshold_pct": 10,
+  "gate0_pass": true,
+  "note": "per-round post-freeze steady state (rounds >= 22); round 21 additionally broadcasts the frozen round-20 structure once"
+}
