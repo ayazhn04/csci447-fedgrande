@@ -1,0 +1,1 @@
+[fedavg_grande__dirichlet0.1__f0__s447] 90s best 17/27 valAUC 0.8077084239874938 testAUC 0.8726 F1@.5 0.4552 RSS 2474MB

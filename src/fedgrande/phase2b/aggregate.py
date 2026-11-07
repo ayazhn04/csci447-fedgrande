@@ -173,11 +173,26 @@ def main(parts=("natural", "iid"), tag="core"):
                                                        auc_median=("within_client_auc_median", "mean"), auc_min=("within_client_auc_min", "mean")).reset_index()
     wcs.to_csv(OUT / f"within_client_auc_summary_{tag}.csv", index=False)
 
+    # per-fold test metrics (protocol §10: descriptive per-fold view): mean over the 5 folds per seed, then over seeds.
+    # Unlike pooled OOF, this is insensitive to fold-to-fold differences in probability calibration.
+    pf = runs.groupby(["method", "partition", "seed"])[["test_auc", "test_f1_05", "test_f1_valthr"]].mean().reset_index()
+    pfs = pf.groupby(["method", "partition"]).agg(fold_mean_auc=("test_auc", "mean"), fold_mean_auc_sd=("test_auc", "std"),
+                                                  fold_mean_f1_valthr=("test_f1_valthr", "mean"), fold_mean_f1_05=("test_f1_05", "mean")).reset_index()
+    pfs.to_csv(OUT / f"per_fold_summary_{tag}.csv", index=False)
+
     # structural consensus (FedAvg GRANDE rounds) and relation to the gap
+    FIXED = (1, 5, 10, 20)
+    fixed_rows = []
     cons_rows = []
     for _, r in runs[runs.method == "fedavg_grande"].iterrows():
         rd = pd.read_csv(RUNS / r.job_id / "rounds.csv")
         upto = rd[rd["round"] <= r.best_step]
+        for fr in FIXED:
+            row = rd[rd["round"] == fr]
+            if len(row):
+                fixed_rows.append({"partition": r.partition, "fold": r.fold, "seed": r.seed, "round": fr,
+                                   **{k: float(row[k].iloc[0]) for k in ("cons_consensus_mean", "cons_frac_nodes_unanimous", "cons_global_agreement",
+                                                                          "cons_thr_sd_numeric_nodes_mean", "cos_to_aggregate_mean", "update_norm_mean", "val_auc")}})
         cons_rows.append({"partition": r.partition, "fold": r.fold, "seed": r.seed, "best_round": r.best_step, "rounds": r.steps_executed,
                           **{f"{k}_mean_to_best": float(upto[k].mean()) for k in ("cons_consensus_mean", "cons_frac_nodes_unanimous",
                              "cons_global_agreement", "cons_thr_sd_numeric_nodes_mean", "cos_to_aggregate_mean", "update_norm_mean",
@@ -191,7 +206,18 @@ def main(parts=("natural", "iid"), tag="core"):
         cons_summary = cons.drop(columns=["fold", "seed"]).groupby("partition").agg(["mean", "std"])
         cons_summary.columns = ["_".join(c) for c in cons_summary.columns]
         cons_summary.reset_index().to_csv(OUT / f"consensus_summary_{tag}.csv", index=False)
-        rel = {}
+        fx = pd.DataFrame(fixed_rows).merge(fold_pairs[["partition", "fold", "seed", "gap_grande"]], on=["partition", "fold", "seed"], how="left")
+        fx.to_csv(OUT / f"consensus_fixed_rounds_by_run_{tag}.csv", index=False)
+        fxs = fx.drop(columns=["fold", "seed", "gap_grande"]).groupby(["partition", "round"]).agg(["mean", "std"])
+        fxs.columns = ["_".join(c) for c in fxs.columns]
+        fxs.reset_index().to_csv(OUT / f"consensus_fixed_rounds_summary_{tag}.csv", index=False)
+        rel_fixed = {}
+        for fr in FIXED:
+            ok = fx[fx["round"] == fr][["cons_consensus_mean", "cons_global_agreement", "gap_grande", "partition"]].dropna()
+            rel_fixed[f"round_{fr}"] = {k: {"all_runs": float(spearmanr(ok[k], ok.gap_grande).statistic),
+                                            "within_partition": {p: float(spearmanr(g[k], g.gap_grande).statistic) for p, g in ok.groupby("partition")}}
+                                        for k in ("cons_consensus_mean", "cons_global_agreement")}
+        rel = {"fixed_round_consensus_vs_fold_gap": rel_fixed}
         for x in ("cons_consensus_mean_mean_to_best", "cons_global_agreement_mean_to_best", "cos_to_aggregate_mean_mean_to_best"):
             ok = cons[[x, "gap_grande"]].dropna()
             rho = spearmanr(ok[x], ok.gap_grande)
@@ -231,7 +257,7 @@ def main(parts=("natural", "iid"), tag="core"):
                                               "gaps": gaps, "structure_vs_central": sv_s.to_dict("records") if len(sv_s) else [],
                                               "local_model_consensus": loc.to_dict("records"),
                                               "communication": comm.to_dict("records"), "runtime": rt_.to_dict("records"),
-                                              "within_client_auc_posthoc": wcs.to_dict("records"),
+                                              "within_client_auc_posthoc": wcs.to_dict("records"), "per_fold_summary": pfs.to_dict("records"),
                                               "total_compute_hours": float(runs.seconds.sum() / 3600)})
     print(summ.to_string(index=False))
     print(json.dumps({k: v for k, v in gaps.items() if "oof_auc" in k}, indent=1))

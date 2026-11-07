@@ -68,17 +68,33 @@ def main(parts=("natural", "iid")):
     fig.savefig(FIG / "fedavg_val_auc_rounds.png", dpi=150)
     plt.close(fig)
 
-    C = pd.read_csv(SUM / "consensus_by_run_core.csv") if not os.environ.get("CONS_FILE") else pd.read_csv(os.environ["CONS_FILE"])
+    tag = os.environ.get("TAG", "core")
+    C = pd.read_csv(SUM / f"consensus_fixed_rounds_by_run_{tag}.csv")
+    C = C[C["round"] == 20]
     fig, ax = plt.subplots(figsize=(5.5, 4))
     for p, g in C.groupby("partition"):
-        ax.scatter(g.cons_consensus_mean_mean_to_best, g.gap_grande, color=COLORS.get(p, "k"), label=p, s=22)
+        ax.scatter(g.cons_consensus_mean, g.gap_grande, color=COLORS.get(p, "k"), label=p, s=22)
     ax.axhline(0, color="grey", lw=0.8)
-    ax.set_xlabel("mean node consensus (rounds 1..best)")
-    ax.set_ylabel("central − FedAvg GRANDE test AUC (fold)")
+    ax.set_xlabel("mean node feature consensus at round 20")
+    ax.set_ylabel("central − FedAvg GRANDE test AUC (same fold, seed)")
     ax.legend(fontsize=8)
     ax.set_title("Structural consensus vs federation gap (fold × seed runs)", fontsize=10)
     fig.tight_layout()
     fig.savefig(FIG / "consensus_vs_gap.png", dpi=150)
+    plt.close(fig)
+
+    F = pd.read_csv(SUM / f"consensus_fixed_rounds_summary_{tag}.csv")
+    fig, axes = plt.subplots(1, 3, figsize=(14, 3.8))
+    for p, g in F.groupby("partition"):
+        for ax, col, t in zip(axes, ("cons_consensus_mean", "cons_frac_nodes_unanimous", "cos_to_aggregate_mean"),
+                              ("mean node consensus", "fraction of unanimous nodes", "cosine of client update to aggregate")):
+            ax.errorbar(g["round"], g[f"{col}_mean"], yerr=g[f"{col}_std"], color=COLORS.get(p, "k"), marker="o", capsize=3, label=p)
+            ax.set_title(t, fontsize=10)
+            ax.set_xlabel("communication round")
+    axes[0].legend(fontsize=8)
+    fig.suptitle("FedAvg GRANDE diagnostics at fixed rounds (all runs execute >= 20 rounds); mean ± SD over folds × seeds", fontsize=10)
+    fig.tight_layout()
+    fig.savefig(FIG / "consensus_fixed_rounds.png", dpi=150)
     plt.close(fig)
 
     W = pd.read_csv(SUM / "per_wave_mean_over_seeds_core.csv")

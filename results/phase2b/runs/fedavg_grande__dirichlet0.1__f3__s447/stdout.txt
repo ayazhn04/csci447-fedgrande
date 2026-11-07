@@ -1,0 +1,1 @@
+[fedavg_grande__dirichlet0.1__f3__s447] 178s best 40/50 valAUC 0.8299136199762878 testAUC 0.8153 F1@.5 0.4551 RSS 2416MB

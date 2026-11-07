@@ -66,6 +66,8 @@ def main(tag):
         w(md_table(pd.read_csv(R / "prepare" / "partition_dirichlet0.1.csv")))
     w("\n## Global pooled-OOF metrics (mean ± SD over 3 seeds)\n")
     w(md_table(oof.round(4)))
+    w("\n## Per-fold test metrics (A3; mean over 5 folds per seed, then mean ± SD over seeds)\n")
+    w(md_table(pd.read_csv(S / f"per_fold_summary_{tag}.csv").round(4)))
     w("\n## Gaps (per seed on pooled OOF, mean ± SD over seeds)\n")
     for k, v in gaps.items():
         w(f"- {k}: {fmt(v)}")
@@ -79,6 +81,9 @@ def main(tag):
     w(md_table(wave_detail.pivot_table(index=["wave", "n", "pos"], columns=["method", "partition"], values="auc_mean").round(3)))
     w("\n## Structural consensus (FedAvg GRANDE; mean and SD over fold × seed runs)\n")
     w(md_table(cons.set_index("partition").T.round(4).reset_index().rename(columns={"index": "metric"})))
+    fx = pd.read_csv(S / f"consensus_fixed_rounds_summary_{tag}.csv")
+    w("\nFixed-round diagnostics (A3):\n")
+    w(md_table(fx[[c for c in fx.columns if c in ("partition", "round") or c.endswith("_mean")]].round(4)))
     w(f"\nLocal-only final-model consensus: {loc.round(4).to_dict('records')}")
     w(f"\nFraction of nodes whose final selected feature equals the centralized model's (same fold/seed/init): {sv.round(4).to_dict('records')}")
     w(f"\nConsensus vs per-fold gap (Spearman, descriptive): {json.dumps(rel['relation'])}\n")

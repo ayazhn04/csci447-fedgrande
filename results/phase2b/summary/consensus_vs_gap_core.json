@@ -1,5 +1,71 @@
 {
   "relation": {
+    "fixed_round_consensus_vs_fold_gap": {
+      "round_1": {
+        "cons_consensus_mean": {
+          "all_runs": 0.1332591768631813,
+          "within_partition": {
+            "iid": -0.06071428571428571,
+            "natural": 0.2928571428571428
+          }
+        },
+        "cons_global_agreement": {
+          "all_runs": 0.12149533011070421,
+          "within_partition": {
+            "iid": -0.03932083786383928,
+            "natural": 0.2591600677389407
+          }
+        }
+      },
+      "round_5": {
+        "cons_consensus_mean": {
+          "all_runs": 0.2267215499622934,
+          "within_partition": {
+            "iid": 0.08936554059963472,
+            "natural": 0.47142857142857136
+          }
+        },
+        "cons_global_agreement": {
+          "all_runs": 0.2736678179132688,
+          "within_partition": {
+            "iid": 0.2071428571428571,
+            "natural": 0.475
+          }
+        }
+      },
+      "round_10": {
+        "cons_consensus_mean": {
+          "all_runs": 0.12481922426775918,
+          "within_partition": {
+            "iid": 0.3714285714285714,
+            "natural": 0.2642857142857143
+          }
+        },
+        "cons_global_agreement": {
+          "all_runs": 0.15797085424261856,
+          "within_partition": {
+            "iid": 0.36428571428571427,
+            "natural": 0.3178571428571428
+          }
+        }
+      },
+      "round_20": {
+        "cons_consensus_mean": {
+          "all_runs": 0.24449388209121245,
+          "within_partition": {
+            "iid": 0.46071428571428563,
+            "natural": 0.1928571428571428
+          }
+        },
+        "cons_global_agreement": {
+          "all_runs": 0.19112248421747796,
+          "within_partition": {
+            "iid": 0.28571428571428564,
+            "natural": 0.28571428571428564
+          }
+        }
+      }
+    },
     "cons_consensus_mean_mean_to_best": {
       "spearman_rho_vs_fold_gap_all_runs": -0.19911012235817574,
       "n_runs": 30,

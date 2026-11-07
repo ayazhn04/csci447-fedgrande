@@ -250,3 +250,20 @@ come from pre-freeze engineering. They are not part of any result.
   from pooled-OOF test rows, only for clients whose test rows contain both classes. It is computed for every method in
   each partition view, centralized methods included.
 - **Code.** `aggregate.py`, section "POST-HOC". No training runs, configs or primary metrics changed.
+
+### A3: Descriptive analyses added after B3 results were visible (no runs or primary metrics changed)
+
+- **Per-fold summary.** Mean test AUC/F1 over the 5 folds per seed, then mean ± SD over seeds (`per_fold_summary_*.csv`).
+  - §10 already declared per-fold differences, so this formalizes that view.
+  - It became necessary because, under Dirichlet, pooled-OOF AUC for FedAvg (GRANDE 0.644, MLP 0.601) is far below the
+    per-fold AUC (0.827 and 0.808).
+  - Reason: the federated models are badly miscalibrated under label skew. F1 at 0.5 collapses to 0.455, and the
+    validation-selected thresholds fall to 0.28–0.43. Their score scales differ across folds, so pooling scores from five
+    different models scrambles the ranking.
+  - Pooled OOF remains the frozen primary metric and is reported. The per-fold view is reported next to it with this
+    explanation.
+- **Fixed-round consensus.** Consensus at rounds 1, 5, 10 and 20; every run executes at least 20 rounds. Its Spearman
+  relation to the per-fold gap is also reported.
+  - Reason: the frozen "mean over rounds up to the best round" summary is confounded by the stopping round. Consensus
+    rises with rounds, and Dirichlet runs stop much earlier (best round about 24 against 79–92).
+  - The frozen summary is still produced. The scatter figure now uses round-20 consensus.

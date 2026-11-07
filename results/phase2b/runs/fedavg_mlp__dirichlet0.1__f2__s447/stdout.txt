@@ -1,0 +1,1 @@
+[fedavg_mlp__dirichlet0.1__f2__s447] 3s best 16/26 valAUC 0.7929861883350255 testAUC 0.7938 F1@.5 0.4553 RSS 523MB
