@@ -1,0 +1,80 @@
+config partition  params    auc  auc_sd   d_auc  d_auc_sd  retention  f1_05  f1_vt  best_round  gb_to_best  gb_up_to_best  gb_down_to_best  uplink_compression_per_round_x  total_compression_per_round_x  total_compression_to_best_x  seconds  sec_per_round  peak_rss_mb  cons_at_best  unanimous_at_best  cos_mean_to_best
+    C0       iid  809984 0.8446  0.0005  0.0000    0.0000   100.0000 0.6806 0.7020     91.7333     12.4850         6.2414           6.2436                          1.0000                         1.0000                       1.0000 339.7123         3.5546    2694.3438        0.9922             0.9665            0.5157
+    C0   natural  809984 0.8438  0.0009  0.0000    0.0000   100.0000 0.6828 0.7050     78.8000     10.7250         5.3614           5.3636                          1.0000                         1.0000                       1.0000 302.6306         3.4974    2550.2969        0.9930             0.9649            0.4858
+    C1       iid  202496 0.8385  0.0057 -0.0061    0.0062    99.2833 0.6772 0.7039     80.4667      2.7380         1.3687           1.3692                          4.0000                         4.0000                       4.5600  85.3950         0.9805    1409.0469        0.9920             0.9616            0.5283
+    C1   natural  202496 0.8341  0.0078 -0.0096    0.0086    98.8597 0.6750 0.7018     61.8000      2.1029         1.0512           1.0517                          4.0000                         4.0000                       5.1000  70.3581         1.0025    1444.9375        0.9908             0.9457            0.5000
+    C2       iid  809984 0.8454  0.0003  0.0008    0.0007   100.0998 0.6809 0.7012     96.2000      8.1838         1.6364           6.5475                          3.9999                         1.6000                       1.5256 317.8133         3.2015    2846.3281        0.9922             0.9675            0.5075
+    C2   natural  809984 0.8438  0.0012  0.0000    0.0005   100.0029 0.6832 0.7050     84.0000      7.1462         1.4288           5.7174                          3.9999                         1.6000                       1.5008 286.2306         3.1646    2818.0000        0.9928             0.9657            0.4771
+    C3       iid  202496 0.8357  0.0069 -0.0089    0.0072    98.9472 0.6762 0.7025     73.9333      1.5725         0.3144           1.2581                         15.9987                         6.3999                       7.9394  81.3617         1.0055    1360.5625        0.9918             0.9576            0.5376
+    C3   natural  202496 0.8352  0.0069 -0.0086    0.0078    98.9854 0.6737 0.7030     59.5333      1.2664         0.2532           1.0132                         15.9987                         6.3999                       8.4692  70.8672         1.0387    1384.3906        0.9912             0.9448            0.5046
+{
+ "C1-C0": {
+  "iid": {
+   "mean": -0.0030505786493967143,
+   "min": -0.007581618443447291,
+   "max": 0.001903533579886152,
+   "n_negative": 13,
+   "n": 15
+  },
+  "natural": {
+   "mean": -0.0036518899059148585,
+   "min": -0.01079186996923287,
+   "max": 0.00177795031055894,
+   "n_negative": 12,
+   "n": 15
+  }
+ },
+ "C2-C0": {
+  "iid": {
+   "mean": 0.0004974649579349825,
+   "min": -0.0008297179479177519,
+   "max": 0.004146336410065232,
+   "n_negative": 5,
+   "n": 15
+  },
+  "natural": {
+   "mean": 0.0002305355946724763,
+   "min": -0.0017895805492535999,
+   "max": 0.0019933983186340987,
+   "n_negative": 5,
+   "n": 15
+  }
+ },
+ "C3-C0": {
+  "iid": {
+   "mean": -0.004092609869111767,
+   "min": -0.014754327625322472,
+   "max": 0.00040401529042488615,
+   "n_negative": 13,
+   "n": 15
+  },
+  "natural": {
+   "mean": -0.003937689587174339,
+   "min": -0.011304658607079743,
+   "max": 0.0022461189334158638,
+   "n_negative": 13,
+   "n": 15
+  }
+ }
+}
+                                                     C2|iid  C2|natural   C3|iid  C3|natural
+qerr_rel_l2_mean__split_values__mean_to_best        0.00295     0.00284  0.00299     0.00289
+qerr_rel_l2_mean__split_values__max_to_best         0.00362     0.00355  0.00379     0.00371
+qerr_rel_l2_max__split_values__mean_to_best         0.00347     0.00338  0.00353     0.00345
+qerr_rel_l2_max__split_values__max_to_best          0.00407     0.00407  0.00418     0.00421
+qerr_rel_l2_mean__split_index_array__mean_to_best   0.00348     0.00332  0.00317     0.00304
+qerr_rel_l2_mean__split_index_array__max_to_best    0.00451     0.00421  0.00377     0.00357
+qerr_rel_l2_max__split_index_array__mean_to_best    0.00382     0.00366  0.00343     0.00334
+qerr_rel_l2_max__split_index_array__max_to_best     0.00504     0.00463  0.00409     0.00385
+qerr_rel_l2_mean__estimator_weights__mean_to_best   0.00310     0.00296  0.00316     0.00301
+qerr_rel_l2_mean__estimator_weights__max_to_best    0.00373     0.00370  0.00389     0.00384
+qerr_rel_l2_max__estimator_weights__mean_to_best    0.00354     0.00340  0.00359     0.00348
+qerr_rel_l2_max__estimator_weights__max_to_best     0.00413     0.00414  0.00426     0.00422
+qerr_rel_l2_mean__leaf_classes_array__mean_to_best  0.00309     0.00289  0.00307     0.00291
+qerr_rel_l2_mean__leaf_classes_array__max_to_best   0.00387     0.00372  0.00387     0.00375
+qerr_rel_l2_max__leaf_classes_array__mean_to_best   0.00357     0.00342  0.00357     0.00345
+qerr_rel_l2_max__leaf_classes_array__max_to_best    0.00418     0.00419  0.00420     0.00420
+qerr_rel_l2_mean_all__mean_to_best                  0.00315     0.00300  0.00310     0.00296
+qerr_rel_l2_mean_all__max_to_best                   0.00393     0.00379  0.00383     0.00372
+qerr_rel_l2_max_all__mean_to_best                   0.00384     0.00367  0.00366     0.00355
+qerr_rel_l2_max_all__max_to_best                    0.00504     0.00463  0.00429     0.00428

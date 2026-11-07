@@ -1,0 +1,1 @@
+[fedavg_grande64_int8__natural__f0__s42] 56s best 44/54 valAUC 0.8205289368080065 testAUC 0.8792 F1@.5 0.7017 RSS 1308MB

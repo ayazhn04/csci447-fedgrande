@@ -1,0 +1,1 @@
+[fedavg_grande64__natural__f2__s42] 90s best 77/87 valAUC 0.8332567809311995 testAUC 0.8301 F1@.5 0.6816 RSS 1295MB
