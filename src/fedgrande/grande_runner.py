@@ -78,6 +78,8 @@ def main():
     from GRANDE import GRANDEClassifier
 
     X, y, _ = load_xy()
+    if spec.get("drop_columns"):  # optional (Phase 2B stock reference drops the client-metadata column 'wave')
+        X = X.drop(columns=list(spec["drop_columns"]))
     inner = pd.read_csv(DERIVED / "splits_inner_v1.csv")
     sel = inner[(inner.scheme == spec["scheme"]) & (inner.outer_fold == spec["outer_fold"])].sort_values("row_index")
     idx = {r: sel.loc[sel.role == r, "row_index"].to_numpy() for r in ("fit", "val", "test")}

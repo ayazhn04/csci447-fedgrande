@@ -1,0 +1,14 @@
+{
+  "prep_check": {
+    "description": "N: stock GRANDE 1.0 preprocessing vs federated-safe preprocessing, both trained with the SAME Phase 2B centralized GRANDE loop (core.json training + model settings), C2 outer fold 0, seeds 42/447/2026, wave removed in both. Methodological sanity check only.",
+    "fold": 0, "seeds": [42, 447, 2026],
+    "stock_preprocessor": {"problem_type": "binary", "use_numeric_embeddings": false, "use_category_embeddings": false, "missing_values": false,
+                           "use_freq_enc": false, "use_robust_scale_smoothing": true, "loo_cardinality": 10, "embedding_threshold": 1}
+  },
+  "stock_reference": {
+    "description": "J: Stock GRANDE 1.0 reference (NOT the matched centralized comparator): GRANDEClassifier with its own preprocessing and training loop, 1024 estimators, depth 5, embeddings off, class weights on, compile off, seed 42, C2 folds 0-4, wave removed.",
+    "folds": [0, 1, 2, 3, 4], "seed": 42, "drop_columns": ["wave"],
+    "estimator_params": {"n_estimators": 1024, "depth": 5, "use_numeric_embeddings": false, "use_class_weights": true,
+                         "compile_model": false, "random_state": 42, "verbose": 1}
+  }
+}

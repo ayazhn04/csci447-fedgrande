@@ -1,0 +1,141 @@
+{
+  "job_id": "central_grande__none__f0__s42",
+  "method": "central_grande",
+  "kind": "grande",
+  "procedure": "centralized",
+  "partition": "none",
+  "fold": 0,
+  "seed": 42,
+  "split_id": "C2/outer0/splits_inner_v1",
+  "partition_file_sha256": "a4dced57c3b8524a6711a62ceebc3875bfc06b2c90c0776677780d232e57e771",
+  "prep_file_sha256": "77b2fcc8ad4c5cd115d7f2100f4ce3373efb5f1a707972fe2bba6066af450867",
+  "encoded_dim": 502,
+  "n_clients": 1,
+  "n_fit": 5361,
+  "n_val": 1340,
+  "n_test": 1677,
+  "class_weights": [
+    0.16452154517173767,
+    0.8354784846305847
+  ],
+  "val_threshold": 0.61,
+  "val_at_0.5": {
+    "n": 1340,
+    "pos": 222,
+    "roc_auc": 0.8182565391867718,
+    "macro_f1": 0.6474285763851743,
+    "accuracy": 0.7283582089552239,
+    "confusion_[[tn,fp],[fn,tp]]": [
+      [
+        809,
+        309
+      ],
+      [
+        55,
+        167
+      ]
+    ]
+  },
+  "test_at_0.5": {
+    "n": 1677,
+    "pos": 276,
+    "roc_auc": 0.8742875171978606,
+    "macro_f1": 0.6921401328335635,
+    "accuracy": 0.7602862254025045,
+    "confusion_[[tn,fp],[fn,tp]]": [
+      [
+        1032,
+        369
+      ],
+      [
+        33,
+        243
+      ]
+    ]
+  },
+  "test_at_val_threshold": {
+    "n": 1677,
+    "pos": 276,
+    "roc_auc": 0.8742875171978606,
+    "macro_f1": 0.7151294903926484,
+    "accuracy": 0.8545020870602266,
+    "confusion_[[tn,fp],[fn,tp]]": [
+      [
+        1303,
+        98
+      ],
+      [
+        146,
+        130
+      ]
+    ]
+  },
+  "best_step": 3,
+  "steps_executed": 3,
+  "best_val_auc": 0.8182565391867718,
+  "info": {
+    "best_step": 3,
+    "steps_executed": 3,
+    "best_val_auc": 0.8182565391867718,
+    "stop_rule": "val_auc"
+  },
+  "communication": null,
+  "trainable_parameters": 809984,
+  "seconds_total": 14.166472415963653,
+  "peak_rss_mb": 2631.375,
+  "resolved_training_config": {
+    "batch_size": 256,
+    "batch_rule": "max(1, min(256, n//2)), shuffled, drop_last",
+    "class_weights": "global training-fold counts: w_k = (1/n_k) / sum_j (1/n_j)",
+    "loss": "class-weighted cross-entropy",
+    "max_epochs": 3,
+    "max_rounds": 3,
+    "local_epochs": 1,
+    "patience": 10,
+    "warmup": 10,
+    "min_delta_auc": 0.0001,
+    "selection": "pooled validation ROC-AUC (centralized/FedAvg); local-only: client validation ROC-AUC, or weighted validation loss if the client's validation has one class; if a client has no validation rows: train for the median best epoch of the other clients",
+    "fedavg": "full participation; weights = client training-row counts; trainable params only; fresh local Adam per round; clients with < 2 training rows get weight 0 for that fold (recorded)",
+    "model_kwargs": {
+      "n_estimators": 256,
+      "depth": 5,
+      "selected_variables": 0.8
+    }
+  },
+  "config_file": "/Users/aya_uzbekbay/csci447-fedgrande/configs/phase2b/core.json",
+  "config_sha256": "c0d578fff58858dd5f7021aaad46ac908124fa929e101ed67eb3b2174eae9226",
+  "smoke_overrides": {
+    "max_rounds": 3,
+    "max_epochs": 3
+  },
+  "meta": {
+    "created_utc": "2026-11-07T06:35:35.537966+00:00",
+    "project_commit": "20aad5eee03fda7fdaa4fb88565bca8f3b6281c4",
+    "project_tracked_changes": [],
+    "conda_env": "fedgrande-dev",
+    "python": "3.12.14",
+    "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-dev/bin/python",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "GRANDE": "1.0.0",
+      "torch": "2.7.1",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "category-encoders": "2.9.0",
+      "openml": "0.15.1"
+    },
+    "grande": {
+      "impl": "dev",
+      "worktree": "/Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_dev_db79c860",
+      "expected_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "head_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "commit_matches": true,
+      "tracked_changes": []
+    },
+    "torch_threads": 6,
+    "torch_float32_matmul_precision": "highest"
+  }
+}
