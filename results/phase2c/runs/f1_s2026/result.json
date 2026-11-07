@@ -1,0 +1,163 @@
+{
+  "fold": 1,
+  "seed": 2026,
+  "checkpoint": "data/derived/phase2c/global_ckpt/fedavg_grande__dirichlet0.1__f1__s2026.pt",
+  "checkpoint_sha256": "0a45cd6cd35427847d114140ff21c78e665be31c19d17ea4be83ded98ca175e8",
+  "clients_run": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "methods": {
+    "P0": {
+      "test": {
+        "roc_auc": 0.8251856916430991,
+        "macro_f1_05": 0.4551073519843852,
+        "macro_f1_valthr": 0.6727351161459059,
+        "accuracy_05": 0.8352238805970149,
+        "log_loss": 0.5453598309888514,
+        "brier": 0.17771446199114874,
+        "ece10": 0.21086970923551873,
+        "threshold": 0.38,
+        "cm_valthr": [
+          [
+            1065,
+            334
+          ],
+          [
+            70,
+            206
+          ]
+        ]
+      },
+      "val_auc": 0.8182224777969459
+    },
+    "P1": {
+      "test": {
+        "roc_auc": 0.993043685448198,
+        "macro_f1_05": 0.9249346445910618,
+        "macro_f1_valthr": 0.9336886732696072,
+        "accuracy_05": 0.9570149253731344,
+        "log_loss": 0.08742169817533825,
+        "brier": 0.026027534573755583,
+        "ece10": 0.01955236824140521,
+        "threshold": 0.48,
+        "cm_valthr": [
+          [
+            1338,
+            61
+          ],
+          [
+            5,
+            271
+          ]
+        ]
+      },
+      "val_auc": 0.9848292441377547
+    },
+    "P2": {
+      "test": {
+        "roc_auc": 0.9877086117413059,
+        "macro_f1_05": 0.872127252850608,
+        "macro_f1_valthr": 0.9264834971910112,
+        "accuracy_05": 0.9402985074626866,
+        "log_loss": 0.3634940162642045,
+        "brier": 0.09919385560213123,
+        "ece10": 0.23556023449150487,
+        "threshold": 0.39,
+        "cm_valthr": [
+          [
+            1375,
+            24
+          ],
+          [
+            42,
+            234
+          ]
+        ]
+      },
+      "val_auc": 0.983599290780142
+    },
+    "P3": {
+      "test": {
+        "roc_auc": 0.9878510530295967,
+        "macro_f1_05": 0.872127252850608,
+        "macro_f1_valthr": 0.9264834971910112,
+        "accuracy_05": 0.9402985074626866,
+        "log_loss": 0.35835765720702156,
+        "brier": 0.09721640263517599,
+        "ece10": 0.23188835499001975,
+        "threshold": 0.39,
+        "cm_valthr": [
+          [
+            1375,
+            24
+          ],
+          [
+            42,
+            234
+          ]
+        ]
+      },
+      "val_auc": 0.9838189253082871
+    }
+  },
+  "structure_all_unchanged": true,
+  "only_intended_changed_all": true,
+  "personalization_seconds": {
+    "P1": 0.002781916002277285,
+    "P2": 17.286015788733494,
+    "P3": 18.34572392096743
+  },
+  "seconds_total": 37.503533375042025,
+  "additional_communication_bytes": 0,
+  "config_sha256": "66811b2ac3d943349d47bca3e4bb237cb7d81293d836663ee1e00e415152106b",
+  "meta": {
+    "created_utc": "2026-11-07T14:08:38.216744+00:00",
+    "project_commit": "53f718a35d107e253d261dfc6da983da64c138c3",
+    "project_tracked_changes": [],
+    "conda_env": "fedgrande-dev",
+    "python": "3.12.14",
+    "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-dev/bin/python",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "GRANDE": "1.0.0",
+      "torch": "2.7.1",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "category-encoders": "2.9.0",
+      "openml": "0.15.1"
+    },
+    "grande": {
+      "impl": "dev",
+      "worktree": "/Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_dev_db79c860",
+      "expected_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "head_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "commit_matches": true,
+      "tracked_changes": []
+    },
+    "torch_threads": 6,
+    "torch_float32_matmul_precision": "highest"
+  }
+}

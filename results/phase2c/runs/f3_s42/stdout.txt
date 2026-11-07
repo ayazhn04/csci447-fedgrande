@@ -1,0 +1,1 @@
+[f3_s42] 50s structure_ok=True intended_only=True val AUC P0=0.8323 P1=0.9940 P2=0.9953 P3=0.9951

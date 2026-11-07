@@ -1,0 +1,8 @@
+...................................../Users/aya_uzbekbay/csci447-fedgrande/tests/test_phase2c.py:118: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/aya_uzbekbay/csci447-fedgrande/results/phase2c/runs/f0_s42/result.json' mode='r' encoding='utf-8'>
+  r = json.load(open(RUNS / "f0_s42" / "result.json"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..........
+----------------------------------------------------------------------
+Ran 47 tests in 6.999s
+
+OK

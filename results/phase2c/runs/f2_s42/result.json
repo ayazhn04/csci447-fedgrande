@@ -1,0 +1,163 @@
+{
+  "fold": 2,
+  "seed": 42,
+  "checkpoint": "data/derived/phase2c/global_ckpt/fedavg_grande__dirichlet0.1__f2__s42.pt",
+  "checkpoint_sha256": "fd8bd6554ca53f5b6412e870ab60b0fb6de432e896f005ca25774c4f681506b5",
+  "clients_run": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "methods": {
+    "P0": {
+      "test": {
+        "roc_auc": 0.8150342977977203,
+        "macro_f1_05": 0.4552819183408944,
+        "macro_f1_valthr": 0.6963095084883298,
+        "accuracy_05": 0.835812016656752,
+        "log_loss": 0.5404926440703144,
+        "brier": 0.17546073349704802,
+        "ece10": 0.20393419747973818,
+        "threshold": 0.38,
+        "cm_valthr": [
+          [
+            1232,
+            173
+          ],
+          [
+            126,
+            150
+          ]
+        ]
+      },
+      "val_auc": 0.8105771245306128
+    },
+    "P1": {
+      "test": {
+        "roc_auc": 0.9933725308164424,
+        "macro_f1_05": 0.9166563375393539,
+        "macro_f1_valthr": 0.9279075246113617,
+        "accuracy_05": 0.9524092801903629,
+        "log_loss": 0.0885442436002921,
+        "brier": 0.026333483311095564,
+        "ece10": 0.019168941509952315,
+        "threshold": 0.42,
+        "cm_valthr": [
+          [
+            1334,
+            71
+          ],
+          [
+            2,
+            274
+          ]
+        ]
+      },
+      "val_auc": 0.9887467968863317
+    },
+    "P2": {
+      "test": {
+        "roc_auc": 0.9917788436742483,
+        "macro_f1_05": 0.8721984003892589,
+        "macro_f1_valthr": 0.9046798684691268,
+        "accuracy_05": 0.9405116002379535,
+        "log_loss": 0.337340679838714,
+        "brier": 0.08878051234833433,
+        "ece10": 0.21093034173391317,
+        "threshold": 0.37,
+        "cm_valthr": [
+          [
+            1320,
+            85
+          ],
+          [
+            12,
+            264
+          ]
+        ]
+      },
+      "val_auc": 0.9899071701397283
+    },
+    "P3": {
+      "test": {
+        "roc_auc": 0.9917427407292796,
+        "macro_f1_05": 0.8839489126682776,
+        "macro_f1_valthr": 0.9046798684691268,
+        "accuracy_05": 0.9446757882212968,
+        "log_loss": 0.3309157227996084,
+        "brier": 0.0862447690204426,
+        "ece10": 0.20771804992674645,
+        "threshold": 0.37,
+        "cm_valthr": [
+          [
+            1320,
+            85
+          ],
+          [
+            12,
+            264
+          ]
+        ]
+      },
+      "val_auc": 0.9894438266531289
+    }
+  },
+  "structure_all_unchanged": true,
+  "only_intended_changed_all": true,
+  "personalization_seconds": {
+    "P1": 0.0031286689336411655,
+    "P2": 22.239545333839487,
+    "P3": 24.28863666584948
+  },
+  "seconds_total": 48.61604462499963,
+  "additional_communication_bytes": 0,
+  "config_sha256": "66811b2ac3d943349d47bca3e4bb237cb7d81293d836663ee1e00e415152106b",
+  "meta": {
+    "created_utc": "2026-11-07T14:01:07.241411+00:00",
+    "project_commit": "53f718a35d107e253d261dfc6da983da64c138c3",
+    "project_tracked_changes": [],
+    "conda_env": "fedgrande-dev",
+    "python": "3.12.14",
+    "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-dev/bin/python",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "GRANDE": "1.0.0",
+      "torch": "2.7.1",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "category-encoders": "2.9.0",
+      "openml": "0.15.1"
+    },
+    "grande": {
+      "impl": "dev",
+      "worktree": "/Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_dev_db79c860",
+      "expected_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "head_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "commit_matches": true,
+      "tracked_changes": []
+    },
+    "torch_threads": 6,
+    "torch_float32_matmul_precision": "highest"
+  }
+}

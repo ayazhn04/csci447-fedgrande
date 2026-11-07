@@ -84,6 +84,27 @@ def main():
                                                                       auc_sd=("auc", "std"), log_loss=("log_loss", "mean"), brier=("brier", "mean")).reset_index()
     per_client_mixed.to_csv(OUT / "within_client_mixed_per_client.csv", index=False)
 
+    # AMENDMENT A1 (post hoc): within-client AUC PER FOLD (one model per cell), cells = (client, fold) whose test rows have
+    # both classes. Unlike the frozen cross-fold pooled within-client AUC, P1 == P0 here by construction (sanity check).
+    cell = []
+    for (s_, f_, c_), gc in test.groupby(["seed", "fold", "client"]):
+        if gc.y.nunique() == 2:
+            for m in M:
+                cell.append({"seed": s_, "fold": f_, "client": c_, "method": m, "n": len(gc), "pos": int(gc.y.sum()),
+                             "auc": binary_metrics(gc.y, gc[m])["roc_auc"]})
+    cell = pd.DataFrame(cell)
+    cell.to_csv(OUT / "within_client_per_fold_cells.csv", index=False)
+    cw = cell.pivot_table(index=["seed", "fold", "client"], columns="method", values="auc")
+    p1_equals_p0 = bool(np.allclose(cw["P1"], cw["P0"], atol=1e-12))
+    wpf_seed = cell.groupby(["method", "seed"]).auc.mean().reset_index()
+    wpf_client = cell.groupby(["client", "method"]).agg(cells=("auc", "size"), auc=("auc", "mean"), auc_sd=("auc", "std"),
+                                                        pos_per_cell=("pos", "mean")).reset_index()
+    wpf_client.to_csv(OUT / "within_client_per_fold_by_client.csv", index=False)
+    wpf_diff = {f"{a}-{b}": {"mean": float((cw[a] - cw[b]).mean()), "n_cells": int(len(cw)),
+                             "n_positive": int(((cw[a] - cw[b]) > 1e-12).sum()), "n_negative": int(((cw[a] - cw[b]) < -1e-12).sum()),
+                             "by_client_mean": {int(k): float(v) for k, v in (cw[a] - cw[b]).groupby(level="client").mean().items()}}
+                for a, b in (("P1", "P0"), ("P2", "P1"), ("P3", "P1"), ("P3", "P2"))}
+
     # main table (mean ± SD over seeds of per-seed fold means)
     main_rows = []
     for m in M:
@@ -91,6 +112,7 @@ def main():
         main_rows.append({"method": NAMES[m], "per-fold AUC": ms(sl.roc_auc_mean), "macro-F1@0.5": ms(sl.macro_f1_05_mean),
                           "macro-F1@val-thr": ms(sl.macro_f1_valthr_mean), "log loss": ms(sl.log_loss_mean), "Brier": ms(sl.brier_mean),
                           "ECE": ms(sl.ece10_mean), f"within-client AUC (mixed, n={len(mixed_clients)})": ms(wmix[wmix.method == m].auc),
+                          f"A1 within-client AUC per fold ({len(cw)} client-fold cells)": ms(wpf_seed[wpf_seed.method == m].auc),
                           "single-class clients log loss": ms(wsingle[wsingle.method == m].log_loss),
                           "pooled OOF AUC (secondary)": ms(pooled[pooled.method == m].pooled_oof_auc),
                           "personalization s per fold-seed": ms(sl.personalization_seconds_mean)})
@@ -128,6 +150,9 @@ def main():
     summary = {"n_runs": len(res), "n_clients": n_clients, "mixed_clients_in_pooled_test": mixed_clients,
                "n_mixed": len(mixed_clients), "n_single_class": n_clients - len(mixed_clients),
                "main_table": main_rows, "paired_fold_differences": diffs, "within_client_auc_differences": diffs_within,
+               "A1_within_client_per_fold": {"p1_equals_p0_check": p1_equals_p0, "n_cells": int(len(cw)),
+                                             "clients_with_cells": sorted(int(c) for c in cell.client.unique()),
+                                             "differences": wpf_diff, "by_client": wpf_client.to_dict("records")},
                "structure_verification": struct, "selection_rules": rules, "best_epochs": best_ep, "runtime": runtime, "communication": comm,
                "checkpoints_all_verified": regen["all_verified"],
                "project_commits": sorted({r["meta"]["project_commit"] for r in res}), "config_sha256": sorted({r["config_sha256"] for r in res})}
@@ -138,7 +163,11 @@ def main():
          f"- Dirichlet clients {n_clients}: mixed-class in pooled test {len(mixed_clients)} {mixed_clients}, single-class {n_clients - len(mixed_clients)}\n",
          "## Main table (mean ± SD over 3 seeds of per-seed means over 5 folds)\n", md_table(main),
          "\n## Per-seed fold means\n", md_table(seedlvl.round(4)),
-         "\n## Within-client, mixed clients (mean over seeds per client)\n", md_table(per_client_mixed.round(4)),
+         "\n## A1 (post hoc): within-client AUC per fold (client × fold cells with both classes)\n",
+         f"P1 == P0 check: {p1_equals_p0}; cells: {len(cw)}\n", md_table(wpf_client.round(4)),
+         "\n" + "\n".join(f"- {k}: mean {v['mean']:+.4f}, cells +{v['n_positive']}/-{v['n_negative']} of {v['n_cells']}, by client {v['by_client_mean']}" for k, v in wpf_diff.items()),
+         "\n## Frozen metric: within-client AUC on cross-fold pooled OOF (mixed clients; contaminated by fold-specific intercepts, see A1)\n",
+         md_table(per_client_mixed.round(4)),
          "\n## Single-class clients (mean over clients, per seed)\n", md_table(wsingle.round(4)),
          "\n## Paired fold differences (descriptive)\n"]
     for k, v in diffs.items():

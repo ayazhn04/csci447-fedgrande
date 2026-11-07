@@ -124,3 +124,17 @@ new neural models, DP, secure aggregation, and participant reconstruction.
 ## Amendments
 
 None at freeze time.
+
+### A1: Per-fold within-client AUC (post hoc, added after the final results; no runs changed)
+
+- **Problem found.** The frozen within-client metric pools each client's test rows across the 5 outer folds. Those rows
+  come from 5 different models (fold-specific global models, intercepts and personalized parameters). Combining scores
+  from different models makes within-client ranking depend on fold-specific score offsets. The evidence: the frozen
+  metric shows P1 ≠ P0 (mean −0.157), which is impossible within any single model.
+- **Consequence.** The frozen metric cannot support the protocol's own interpretation rule, "P1 cannot change
+  within-client ranking".
+- **Added analysis.** Within-client ROC-AUC computed **per fold**, i.e. per (client, fold) cell whose test rows contain
+  both classes. Values are averaged per seed, then given as mean ± SD over seeds, with per-client detail. Here P1 ≡ P0
+  by construction, and this is checked automatically.
+- **Both are reported.** The frozen metric is kept and labelled as contaminated.
+- **Code.** `aggregate.py`, section "AMENDMENT A1".
