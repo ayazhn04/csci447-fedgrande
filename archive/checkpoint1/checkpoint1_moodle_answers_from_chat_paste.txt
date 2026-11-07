@@ -1,0 +1,390 @@
+Skip to main content
+NU Moodle
+Home
+Dashboard
+My courses
+1
+BlocksSkip Quiz navigation
+Quiz navigation
+Show one page at a time
+Finish review
+Machine Learning: Theory and Practice-Lecture,Section-1-Fall 2026
+14 September - 20 September
+Final Project — Checkpoint 1: Paper, Data and Code Audit
+
+Final Project — Checkpoint 1: Paper, Data and Code Audit
+Attempt 1 summary
+Status	Finished
+Started	Wednesday, 23 September 2026, 3:15 PM
+Completed	Wednesday, 23 September 2026, 5:23 PM
+Duration	2 hours 8 mins
+Information
+Flag question
+Information text
+Checkpoint 1 — Paper, Data and Code Audit
+Answer every question about your own assigned project. Write your Project ID (e.g. CSCI447P017) at the top of your first answer.
+
+Answers must be specific. Numbers, file names, commit hashes and citations — not general statements.
+Where a question asks you to paste output, paste the real output. Fabricated output is an academic integrity violation.
+If the paper does not report something a question asks for, say so explicitly and state where you looked. That is a valid and often correct answer.
+You may consult the paper, the repository and the dataset while answering. That is the point.
+Generative AI may be used to help you understand the paper. It may not be used to produce answers you have not verified yourself. Every factual claim here is checkable, and it will be checked.
+This checkpoint must be passed before the dataset analysis milestone opens.
+
+Question 1
+Complete
+Not graded
+Flag question
+Question text
+State your paper's core claim in exactly two sentences.
+
+The claim, not the method and not the results. What does this paper assert that was not established before it?
+
+Answer text Question 1
+Hard, axis-aligned decision tree ensembles can be effectively learned through gradient-based optimization without sacrificing the inductive biases that make them well suited to tabular data. Therefore, the paper argues that end-to-end gradient descent is a viable learning paradigm for competitive decision-tree ensembles, rather than being limited to neural-network-like architectures.
+
+Question 2
+Complete
+Not graded
+Flag question
+Question text
+Name every dataset the paper evaluates on. For the largest one, give:
+
+sample size and feature count;
+the modality (tabular, image, video, graph, time series, text, multimodal, other);
+if tabular, how many features are numerical and how many are categorical.
+Answer text Question 2
+19 binary-classification datasets: dresses-sales; climate-simulation-crashes; cylinder-bands; wdbc; ilpd; tokyo1; qsar-biodeg; ozone-level-8hr; madelon; Bioresponse; wilt; churn; phoneme; SpeedDating; PhishingWebsites; Amazon employee access; nomao; adult; numerai28.6.
+
+The largest is numerai28.6:
+
+Sample size: 96,320
+
+Feature count: 21
+
+Modality: tabular
+
+Numerical features: 21
+
+Categorical features: 0
+
+Question 3
+Complete
+Not graded
+Flag question
+Question text
+What is the strongest baseline the paper compares against, and by how much does the proposed method beat it? Give the metric and the exact numbers.
+
+Then state whether results are a single run or a mean with standard deviation, and over how many seeds or folds.
+
+Answer text Question 3
+The strongest baseline is CatBoost. Using the paper’s aggregate Normalized Mean of test macro F1, GRANDE scores 0.776 versus 0.671 for CatBoost, an absolute improvement of 0.105; CatBoost is also the strongest baseline by MRR (0.570 vs. GRANDE’s 0.702).
+
+The per-dataset results are not single runs: the paper reports mean ± standard deviation of test macro F1 over 5-fold cross-validation. It reports variation across the 5 folds, not across multiple independent random seeds.
+
+Question 4
+Complete
+Not graded
+Flag question
+Question text
+List two limitations the authors acknowledge themselves, quoting or citing where each appears.
+
+Then identify one limitation they do not acknowledge, and explain in two or three sentences why it matters.
+
+Answer text Question 4
+Two limitations acknowledged by the authors are:
+
+First, GRANDE does not consistently outperform all alternatives on every tabular dataset. The authors themselves state that “there is no ‘one-size-fits-all’ solution for all tabular datasets,” and they present GRANDE as an extension to the existing set of techniques rather than a universal replacement. This is discussed just before Section 4.1, and the results also show that other methods outperform GRANDE on some datasets.
+
+Second, GRANDE has a higher runtime than highly optimized GBDT systems such as XGBoost. In Section 4.2, the authors state that “even though our method is more efficient than previous works on GBDTs such as NODE, GBDTs that leverage GPUs, especially XGBoost, significantly outperform gradient-based methods in terms of run time.”
+
+One limitation that the authors do not explicitly point out is that their empirical evaluation is limited to 19 tabular datasets for binary classification. This matters because the broader claims about gradient-based tree ensembles are therefore not empirically tested on regression or multiclass classification tasks, where their behavior and relative performance could be different.
+
+Question 5
+Complete
+Not graded
+Flag question
+Question text
+Your assigned project target asks you to extend the paper in a specific direction. Read that target carefully, then answer:
+
+In one sentence, what is the target asking you to do?
+In three or four sentences, why is that the right direction, rather than simply making the existing method faster or more accurate?
+Answer text Question 5
+The target asks us to take advantage of GRANDE’s differentiability by extending it to a setting where gradient-based training provides capabilities that conventional GBDTs do not naturally support; our selected direction is federated GRANDE with gradient aggregation under heterogeneous or non-IID data.
+
+This is the right direction because the main novelty of GRANDE is not just achieving another small improvement in accuracy, but making a tree ensemble differentiable and trainable through end-to-end gradient-based optimization. Traditional GBDTs are already very well optimized for tabular accuracy and runtime, so simply making GRANDE slightly faster or more accurate would provide relatively limited new insight. A federated extension instead makes direct use of what is different about GRANDE and lets us test whether its differentiable parameters can be trained across decentralized and heterogeneous clients while still preserving the useful inductive biases of decision trees.
+
+Question 6
+Complete
+Not graded
+Flag question
+Question text
+Name one property of your data's modality that constrains the method, and explain how.
+
+Examples of what a property means here: mixed feature types, high cardinality categoricals, spatial structure, temporal ordering, graph connectivity, manifold geometry, class rarity. Do not simply restate the modality name.
+
+Answer text Question 6
+Class imbalance is one of the properties of the datasets that affects the way the method is trained and evaluated. In fact, some of the datasets in the benchmark contain a relatively small minority class. For instance, wilt has 5.39% minority samples, Amazon employee access 5.79%, ozone-level-8hr 6.31%, and SpeedDating 16.47%. Accuracy alone can therefore be misleading, since a classifier could perform well by mostly predicting the majority class. For this reason, the authors use class weighting during training and evaluate performance mainly using macro F1.
+
+Question 7
+Complete
+Not graded
+Flag question
+Question text
+For the primary dataset, give:
+
+total number of samples;
+number of features;
+number of classes and what each class means.
+If the task is regression, give the target variable, its units and its observed range instead of classes. If the task is survival analysis, give the event rate and the censoring rate.
+
+Answer text Question 7
+The primary dataset we evaluated is SpeedDating (OpenML ID 40536), which consists of 8,378 samples and 120 predictor features. The predictive task is binary classification, rather than regression or survival analysis. The target variable, match, has 2 classes: class 1 indicates that a mutual match occurred between the participants, while class 0 indicates that there was no match.
+
+Question 8
+Complete
+Not graded
+Flag question
+Question text
+Is the dataset balanced? Give the class distribution as counts and as a ratio — not as the word "balanced" or "imbalanced".
+
+If the paper does not report the distribution, state that explicitly and say which section you checked.
+
+If your data is imbalanced, name the metric the paper uses to handle that, and say whether accuracy would be misleading here.
+
+Answer text Question 8
+From our direct check of the SpeedDating dataset on OpenML, class 0 has 6,998 samples and class 1 has 1,380 samples, giving a ratio of 6,998:1,380, or approximately 5.07:1. This corresponds to about 83.53% class 0 and 16.47% class 1.
+
+The paper itself does not report the exact class counts. In Appendix A, Table 5, it reports that SpeedDating has 8,378 samples and that the minority class makes up 16.47% of the data.
+
+Because of this class distribution, the paper uses class weights during training, and the primary evaluation metric is macro F1-score, which gives equal weight to the F1-score of each class. Accuracy alone could be misleading here, since a model could achieve relatively high accuracy by mainly predicting the majority class while performing poorly on the minority class.
+
+Question 9
+Complete
+Not graded
+Flag question
+Question text
+What evaluation protocol does the paper use?
+
+Fixed train/validation/test split, k-fold cross-validation, repeated cross-validation, nested CV, or a time-based split?
+If a fixed split, give the exact counts for train, validation and test. If the paper reports only percentages, convert them to counts.
+If cross-validation, how many folds, how many repeats, and is there a separate held-out test set?
+Is there a validation set at all, or are hyperparameters tuned on the test set?
+Answer text Question 9
+The paper uses a nested cross-validation approach rather than a fixed train/validation/test split. Final performance is reported as the mean ± standard deviation across 5 outer cross-validation folds, while hyperparameters are optimized with Optuna using 2-fold cross-validation within each outer fold; the authors describe this setup as 5×2 cross-validation.
+
+There is no single separate test set for the whole dataset. Instead, in each of the 5 outer folds, one fold serves as the held-out test data and is kept out of the hyperparameter optimization process.
+
+There is also no fixed validation set. Validation for hyperparameter selection is provided through the inner 2-fold cross-validation, so the outer test fold is not used for tuning. The final reported results therefore come from 5 outer test folds, with no additional repetition of the outer 5-fold procedure.
+
+Question 10
+Complete
+Not graded
+Flag question
+Question text
+Is the split random, stratified, grouped (by patient, site, subject or session), or temporal?
+
+In three or four sentences, explain why that choice matters for this specific dataset, and name one way a wrong choice would leak information between train and test.
+
+Answer text Question 10
+The paper uses a shuffled, stratified k-fold split for classification, rather than a grouped or temporal split. In the experiment code, this is implemented using StratifiedKFold(..., shuffle=True, random_state=random_seed). Stratification matters for SpeedDating because only 16.47% of the observations belong to the minority match class, so it helps keep the class proportions similar across folds.
+
+However, each row in SpeedDating represents an interaction between two participants, and the same participant appears in multiple rows because they interact with several different partners during the event. Therefore, a purely row-wise split can place interactions involving the same participant in both training and test folds. This creates a potential form of information leakage because participant-specific characteristics that appear repeatedly across their interactions can be present on both sides of the split; a grouped split by participant or event would be needed to prevent this type of overlap.
+
+Question 11
+Complete
+Not graded
+Flag question
+Question text
+Download and load the primary dataset, then report:
+
+Shape after loading: number of rows and columns.
+The first five rows, pasted as plain text.
+Class distribution as you computed it. Does it match what the paper reports? If it differs, by how much, and what explains the difference?
+Missing values: how many and in which columns. If none, state how you verified that.
+Do any samples appear in more than one split? Give the count, or state that the splits are generated at runtime.
+Attach your loading script or notebook.
+
+Answer text Question 11
+1. Shape after loading
+We loaded SpeedDating (OpenML ID 40536, version 1) directly using the OpenML API, with match as the target. The predictor matrix X has shape (8378, 120) and the target y has shape (8378,). After combining the predictors and target, the dataset has 8,378 rows and 121 columns.
+2. First five rows
+The first five rows of the loaded predictors with match added as the final column are:
+has_null,wave,gender,age,age_o,d_age,d_d_age,race,race_o,samerace,importance_same_race,importance_same_religion,d_importance_same_race,d_importance_same_religion,field,pref_o_attractive,pref_o_sincere,pref_o_intelligence,pref_o_funny,pref_o_ambitious,pref_o_shared_interests,d_pref_o_attractive,d_pref_o_sincere,d_pref_o_intelligence,d_pref_o_funny,d_pref_o_ambitious,d_pref_o_shared_interests,attractive_o,sinsere_o,intelligence_o,funny_o,ambitous_o,shared_interests_o,d_attractive_o,d_sinsere_o,d_intelligence_o,d_funny_o,d_ambitous_o,d_shared_interests_o,attractive_important,sincere_important,intellicence_important,funny_important,ambtition_important,shared_interests_important,d_attractive_important,d_sincere_important,d_intellicence_important,d_funny_important,d_ambtition_important,d_shared_interests_important,attractive,sincere,intelligence,funny,ambition,d_attractive,d_sincere,d_intelligence,d_funny,d_ambition,attractive_partner,sincere_partner,intelligence_partner,funny_partner,ambition_partner,shared_interests_partner,d_attractive_partner,d_sincere_partner,d_intelligence_partner,d_funny_partner,d_ambition_partner,d_shared_interests_partner,sports,tvsports,exercise,dining,museums,art,hiking,gaming,clubbing,reading,tv,theater,movies,concerts,music,shopping,yoga,d_sports,d_tvsports,d_exercise,d_dining,d_museums,d_art,d_hiking,d_gaming,d_clubbing,d_reading,d_tv,d_theater,d_movies,d_concerts,d_music,d_shopping,d_yoga,interests_correlate,d_interests_correlate,expected_happy_with_sd_people,expected_num_interested_in_me,expected_num_matches,d_expected_happy_with_sd_people,d_expected_num_interested_in_me,d_expected_num_matches,like,guess_prob_liked,d_like,d_guess_prob_liked,met,match
+0,1,female,21.0,27.0,6,[4-6],Asian/Pacific Islander/Asian-American,European/Caucasian-American,0,2.0,4.0,[2-5],[2-5],Law,35.0,20.0,20.0,20.0,0.0,5.0,[21-100],[16-20],[16-20],[16-20],[0-15],[0-15],6.0,8.0,8.0,8.0,8.0,6.0,[6-8],[6-8],[6-8],[6-8],[6-8],[6-8],15.0,20.0,20.0,15.0,15.0,15.0,[0-15],[16-20],[16-20],[0-15],[0-15],[0-15],6.0,8.0,8.0,8.0,7.0,[6-8],[6-8],[6-8],[6-8],[6-8],6.0,9.0,7.0,7.0,6.0,5.0,[6-8],[9-10],[6-8],[6-8],[6-8],[0-5],9.0,2.0,8.0,9.0,1.0,1.0,5.0,1.0,5.0,6.0,9.0,1.0,10.0,10.0,9.0,8.0,1.0,[9-10],[0-5],[6-8],[9-10],[0-5],[0-5],[0-5],[0-5],[0-5],[6-8],[9-10],[0-5],[9-10],[9-10],[9-10],[6-8],[0-5],0.14,[0-0.33],3.0,2.0,4.0,[0-4],[0-3],[3-5],7.0,6.0,[6-8],[5-6],0.0,0
+0,1,female,21.0,22.0,1,[0-1],Asian/Pacific Islander/Asian-American,European/Caucasian-American,0,2.0,4.0,[2-5],[2-5],Law,60.0,0.0,0.0,40.0,0.0,0.0,[21-100],[0-15],[0-15],[21-100],[0-15],[0-15],7.0,8.0,10.0,7.0,7.0,5.0,[6-8],[6-8],[9-10],[6-8],[6-8],[0-5],15.0,20.0,20.0,15.0,15.0,15.0,[0-15],[16-20],[16-20],[0-15],[0-15],[0-15],6.0,8.0,8.0,8.0,7.0,[6-8],[6-8],[6-8],[6-8],[6-8],7.0,8.0,7.0,8.0,5.0,6.0,[6-8],[6-8],[6-8],[6-8],[0-5],[6-8],9.0,2.0,8.0,9.0,1.0,1.0,5.0,1.0,5.0,6.0,9.0,1.0,10.0,10.0,9.0,8.0,1.0,[9-10],[0-5],[6-8],[9-10],[0-5],[0-5],[0-5],[0-5],[0-5],[6-8],[9-10],[0-5],[9-10],[9-10],[9-10],[6-8],[0-5],0.54,[0.33-1],3.0,2.0,4.0,[0-4],[0-3],[3-5],7.0,5.0,[6-8],[5-6],1.0,0
+1,1,female,21.0,22.0,1,[0-1],Asian/Pacific Islander/Asian-American,Asian/Pacific Islander/Asian-American,1,2.0,4.0,[2-5],[2-5],Law,19.0,18.0,19.0,18.0,14.0,12.0,[16-20],[16-20],[16-20],[16-20],[0-15],[0-15],10.0,10.0,10.0,10.0,10.0,10.0,[9-10],[9-10],[9-10],[9-10],[9-10],[9-10],15.0,20.0,20.0,15.0,15.0,15.0,[0-15],[16-20],[16-20],[0-15],[0-15],[0-15],6.0,8.0,8.0,8.0,7.0,[6-8],[6-8],[6-8],[6-8],[6-8],5.0,8.0,9.0,8.0,5.0,7.0,[0-5],[6-8],[9-10],[6-8],[0-5],[6-8],9.0,2.0,8.0,9.0,1.0,1.0,5.0,1.0,5.0,6.0,9.0,1.0,10.0,10.0,9.0,8.0,1.0,[9-10],[0-5],[6-8],[9-10],[0-5],[0-5],[0-5],[0-5],[0-5],[6-8],[9-10],[0-5],[9-10],[9-10],[9-10],[6-8],[0-5],0.16,[0-0.33],3.0,2.0,4.0,[0-4],[0-3],[3-5],7.0,,[6-8],[0-4],1.0,1
+0,1,female,21.0,23.0,2,[2-3],Asian/Pacific Islander/Asian-American,European/Caucasian-American,0,2.0,4.0,[2-5],[2-5],Law,30.0,5.0,15.0,40.0,5.0,5.0,[21-100],[0-15],[0-15],[21-100],[0-15],[0-15],7.0,8.0,9.0,8.0,9.0,8.0,[6-8],[6-8],[9-10],[6-8],[9-10],[6-8],15.0,20.0,20.0,15.0,15.0,15.0,[0-15],[16-20],[16-20],[0-15],[0-15],[0-15],6.0,8.0,8.0,8.0,7.0,[6-8],[6-8],[6-8],[6-8],[6-8],7.0,6.0,8.0,7.0,6.0,8.0,[6-8],[6-8],[6-8],[6-8],[6-8],[6-8],9.0,2.0,8.0,9.0,1.0,1.0,5.0,1.0,5.0,6.0,9.0,1.0,10.0,10.0,9.0,8.0,1.0,[9-10],[0-5],[6-8],[9-10],[0-5],[0-5],[0-5],[0-5],[0-5],[6-8],[9-10],[0-5],[9-10],[9-10],[9-10],[6-8],[0-5],0.61,[0.33-1],3.0,2.0,4.0,[0-4],[0-3],[3-5],7.0,6.0,[6-8],[5-6],0.0,1
+0,1,female,21.0,24.0,3,[2-3],Asian/Pacific Islander/Asian-American,Latino/Hispanic American,0,2.0,4.0,[2-5],[2-5],Law,30.0,10.0,20.0,10.0,10.0,20.0,[21-100],[0-15],[16-20],[0-15],[0-15],[16-20],8.0,7.0,9.0,6.0,9.0,7.0,[6-8],[6-8],[9-10],[6-8],[9-10],[6-8],15.0,20.0,20.0,15.0,15.0,15.0,[0-15],[16-20],[16-20],[0-15],[0-15],[0-15],6.0,8.0,8.0,8.0,7.0,[6-8],[6-8],[6-8],[6-8],[6-8],5.0,6.0,7.0,7.0,6.0,6.0,[0-5],[6-8],[6-8],[6-8],[6-8],[6-8],9.0,2.0,8.0,9.0,1.0,1.0,5.0,1.0,5.0,6.0,9.0,1.0,10.0,10.0,9.0,8.0,1.0,[9-10],[0-5],[6-8],[9-10],[0-5],[0-5],[0-5],[0-5],[0-5],[6-8],[9-10],[0-5],[9-10],[9-10],[9-10],[6-8],[0-5],0.21,[0-0.33],3.0,2.0,4.0,[0-4],[0-3],[3-5],6.0,6.0,[6-8],[5-6],0.0,1
+3. Class distribution
+From our direct check:
+class 0: 6,998 samples (83.528288%)
+class 1: 1,380 samples (16.471712%)
+ratio: 6,998:1,380 ≈ 5.07:1
+This matches the paper. The paper reports a minority-class percentage of 16.47%, while our computed value is 16.47171162568632%. The difference is only 0.00171162568632 percentage points, which is explained by the paper rounding the value to two decimal places.
+4. Missing values
+Using the loaded predictor matrix, we found 18,372 missing values across 60 predictor columns. The target match contains 0 missing values.
+age                                95
+age_o                             104
+race                               63
+race_o                             73
+importance_same_race               79
+importance_same_religion           79
+field                              63
+pref_o_attractive                  89
+pref_o_sincere                     89
+pref_o_intelligence                89
+pref_o_funny                       98
+pref_o_ambitious                  107
+pref_o_shared_interests           129
+attractive_o                      212
+sinsere_o                         287
+intelligence_o                    306
+funny_o                           360
+ambitous_o                        722
+shared_interests_o               1076
+attractive_important               79
+sincere_important                  79
+intellicence_important             79
+funny_important                    89
+ambtition_important                99
+shared_interests_important        121
+attractive                        105
+sincere                           105
+intelligence                      105
+funny                             105
+ambition                          105
+attractive_partner                202
+sincere_partner                   277
+intelligence_partner              296
+funny_partner                     350
+ambition_partner                  712
+shared_interests_partner         1067
+sports                             79
+tvsports                           79
+exercise                           79
+dining                             79
+museums                            79
+art                                79
+hiking                             79
+gaming                             79
+clubbing                           79
+reading                            79
+tv                                79
+theater                            79
+movies                             79
+concerts                           79
+music                              79
+shopping                           79
+yoga                               79
+interests_correlate               158
+expected_happy_with_sd_people     101
+expected_num_interested_in_me    6578
+expected_num_matches             1173
+like                              240
+guess_prob_liked                  309
+met                               375
+We verified this directly from the loaded dataset by counting missing values in each predictor column.
+5. Samples appearing in more than one split
+The splits are generated at runtime rather than provided as fixed split files. We reproduced the paper's 5-fold stratified outer split and checked the indices directly.
+fold 1: train=6702, test=1676, train/test overlap=0
+fold 2: train=6702, test=1676, train/test overlap=0
+fold 3: train=6702, test=1676, train/test overlap=0
+fold 4: train=6703, test=1675, train/test overlap=0
+fold 5: train=6703, test=1675, train/test overlap=0
+Therefore, there are 0 samples appearing in both the training and test portions of the same outer fold. Across the complete 5-fold procedure, all 8,378 samples are held out exactly once, with 0 held out more than once and 0 never held out. Samples are naturally reused as training observations in the other folds, as expected in cross-validation.
+Answer files Question 11
+Text file speeddating_checkpoint_loader.py
+Question 12
+Complete
+Not graded
+Flag question
+Question text
+For your primary dataset:
+
+Who collected it, and when?
+Under what licence is it released? Quote the licence name.
+Does access require registration, an application, or a data use agreement? If so, have you started that process, and what is the expected wait?
+Is there anything in the licence that would restrict what you can publish or release?
+Answer text Question 12
+The data for SpeedDating were collected by Ray Fisman and Sheena Iyengar at Columbia Business School. The experiments took place during 2002-2004; the original paper states that the events were conducted on weekday evenings during this period. The date 2016-11-16 in our terminal output is just the date this particular version was uploaded to OpenML, not the data collection date.
+
+For OpenML dataset 40536, our direct metadata check gives the licence as “Public.” OpenML defines its licence metadata field as the licence of the data. We did not find a separate licence document for this dataset specifying a standard licence such as CC BY or CC0, so we would report the licence exactly as provided by OpenML rather than interpreting “Public” as a more specific licence.
+
+No registration, application, or data use agreement is required to access the OpenML copy of the dataset. We checked this directly in our environment: OpenML API key configured: False, but the dataset was still downloaded successfully and produced X shape: (8378, 120) and y shape: (8378,). Therefore, there is no application process to start and the expected waiting time is none.
+
+We did not find any dataset-specific restriction in the OpenML metadata that would prevent us from publishing model results, analyses, or code produced using the dataset. OpenML's general terms require users to give proper credit and to have the necessary rights when redistributing content. Since this dataset is labelled only as “Public” without more detailed licence terms, we would cite the original publication and OpenML in our work, and we would not assume that the raw dataset itself can be redistributed under a different licence.
+
+Question 13
+Complete
+Not graded
+Flag question
+Question text
+Report:
+
+The repository URL you actually used.
+The commit hash you cloned (full or first ten characters).
+The date of the most recent commit in the repository.
+Whether the repository is archived, anonymised, or otherwise at risk of disappearing.
+The licence under which the code is released.
+Answer text Question 13
+We used the repository at https://github.com/s-marton/GRANDE. Our local copy references this repository through https://github.com/s-marton/GRANDE.git.
+The current commit in our local copy is 07f7278b30ab9ebbbdc544e5f9a91f1b5df7fecb (first 10 characters: 07f7278b30). According to our terminal, its commit message is image update and its date is 2025-12-16 18:32:51 +0100. We also checked the live repository on GitHub and confirmed that this is the most recent commit, so our local copy contains the latest version currently available.
+The repository is public, not archived, and not disabled. It is also not anonymised, since it is hosted under the public GitHub account s-marton, and the licence identifies Sascha Marton as the copyright holder. There is therefore no current indication in the GitHub metadata that the repository is archived or otherwise unavailable, although, like any normal GitHub repository, it could still be modified or removed by its owner in the future.
+The source code is released under the MIT License. We confirmed this using both the repository metadata on GitHub and the LICENSE file in our local copy, which starts with MIT License and Copyright (c) 2023 Sascha Marton.
+Question 14
+Complete
+Not graded
+Flag question
+Question text
+Attempt to run the code as-is, with no modifications.
+
+If it ran: paste the last ten lines of console output.
+If it did not: list every error in order, and what you changed to get past each one.
+Then give your environment: operating system, Python (or Julia, or R) version, and the versions of the three most important packages.
+
+A documented failure scores as highly as a success. Do not hide what broke.
+
+Answer text Question 14
+We attempted to run the repository's provided GRANDE_minimal_example_with_comparison_BINARY.ipynb as-is, without modifying any notebook cells or source code. After setting up the required environment, the notebook ran successfully and produced GRANDE_as_is_executed.ipynb.
+The last ten lines of notebook output were:
+
+
+Accuracy XGB: 0.952
+F1 Score XGB: 0.8902857142857143
+ROC AUC XGB: 0.9152775340703048
+
+
+Accuracy CatBoost: 0.957
+F1 Score CatBoost: 0.8999941857084715
+ROC AUC CatBoost: 0.9140701376181285
+Before the successful run, we encountered two environment-related problems. First, our shell was using Homebrew Python 3.14.7, where torch, sklearn, openml, and jupyter were not installed, so the notebook could not start and failed with No module named jupyter. We then created a separate Conda environment with Python 3.12, but our shell alias python -> python3 still redirected python to the Homebrew installation, causing error: externally-managed-environment when installing the dependencies. To get past this, we used the Conda interpreter explicitly at /opt/anaconda3/envs/grande_current_run/bin/python and installed the repository's provided requirements.txt. The installation then completed successfully. No changes were made to the GRANDE source code or the original notebook.
+The environment used for the successful run was:
+Operating system: macOS 15.5, arm64
+Python: 3.12.14
+PyTorch: 2.7.1
+scikit-learn: 1.7.2
+category-encoders: 2.9.0
+The operating system, Python, PyTorch, and scikit-learn versions were checked directly in the successful execution environment. The installed category-encoders version was 2.9.0.
+The notebook itself completed successfully: nbconvert finished execution and wrote GRANDE_as_is_executed.ipynb. The later zsh: read-only variable: status message came from our shell command for recording the exit code after notebook execution and was not an error in GRANDE.
+Answer files Question 14
+Text file Q14_GRANDE_execution_evidence.txt
+Question 15
+Complete
+Not graded
+Flag question
+Question text
+Name the file and the function or class that implements the paper's main contribution.
+
+Give the file path, the function name, the approximate line numbers, and map it to the equation or algorithm number in the paper.
+
+Answer text Question 15
+The main contribution of the paper is implemented in GRANDE/GRANDE.py, specifically in the GRANDE class and its call() method. In the repository version that reflects the paper era (fff4cbce449c85e3380c952aae3ca680157d39bf), the class starts at about line 16, and call() spans approximately lines 34-119.
+The code implements the main equations from Section 3 of the paper:
+Equation (5), weighted tree ensemble: the outputs of the individual trees are computed and aggregated in approximately lines 88-114.
+Equation (6), differentiable softsign split: implemented at approximately line 64 as node_result = (tf.nn.softsign(s1_sum-s2_sum) + 1) / 2. The hard split result is then obtained using the straight-through operator at line 67.
+Equation (7), instance-wise estimator weighting: implemented approximately in lines 79-105, where the weight of the selected leaf is obtained for each estimator, a softmax is applied over the estimator weights, and these weights are then used to aggregate the predictions.
+The path-selection logic underlying these computations is implemented in approximately lines 73-77, corresponding to the leaf/path selection formulation described in Equation (3) of the paper.
+The trainable tree parameters are defined in build_model(), approximately lines 356-418, and include the estimator weights, split thresholds, split-feature parameters, and leaf values. train_step(), approximately lines 464-497, calculates gradients for each of these parameter groups and updates them together, making it possible to train the whole tree ensemble using gradient descent.
+There is no separate numbered algorithm for GRANDE in the paper, so the closest direct correspondence is to Equations (5)-(7). These correspond to the paper's three main methodological contributions: extending the approach to a tree ensemble, introducing the softsign split function, and using instance-wise estimator weighting.
+Finish review

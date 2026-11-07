@@ -1,0 +1,10 @@
+# Generated from fedgrande-ref importlib.metadata on 2026-11-07T05:01:12Z: keep shared numerical stack identical to the reference env.
+torch==2.7.1
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.16.3
+scikit-learn==1.7.2
+category-encoders==2.9.0
+openml==0.15.1
+xgboost==3.0.5
+catboost==1.2.10

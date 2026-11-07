@@ -1,0 +1,22 @@
+{
+  "retrieved_utc": "2026-11-07T05:05:48.151792+00:00",
+  "dataset_id": 40536,
+  "name": "SpeedDating",
+  "version": 1,
+  "upload_date": "2016-11-16T23:01:11",
+  "licence": "Public",
+  "default_target_attribute": "match",
+  "ignore_attribute": [
+    "decision",
+    "decision_o"
+  ],
+  "file_id": "13153954",
+  "arff_url": "https://openml.org/data/v1/download/13153954/SpeedDating.arff",
+  "parquet_url": "https://data.openml.org/datasets/0004/40536/dataset_40536.pq",
+  "arff_file": "SpeedDating_openml40536_v1.arff",
+  "arff_bytes": 4996633,
+  "md5_expected_openml": "0c5590a0c81750687ee1b0ee68168a5d",
+  "md5_observed": "0c5590a0c81750687ee1b0ee68168a5d",
+  "md5_ok": true,
+  "sha256_observed": "121ad0ca93e82c21964709bdcea222119a362cfdd8f4c38d1f010bc830dda38a"
+}

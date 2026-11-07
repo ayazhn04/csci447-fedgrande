@@ -1,0 +1,393 @@
+{
+  "label": "fedgrande-ref",
+  "expected_file": "results/phase1/expected/checkpoint1_expected.json",
+  "expected_source_sha256": "b1216606e54b3a53fe1618c064fef95672e1cd5a1005cb7c75f899bf8ad982aa",
+  "checks": [
+    {
+      "check": "openml dataset id",
+      "expected": 40536,
+      "observed": 40536,
+      "source": "Moodle Q7/Q11",
+      "status": "MATCH"
+    },
+    {
+      "check": "dataset name",
+      "expected": "SpeedDating",
+      "observed": "SpeedDating",
+      "source": "Moodle Q11",
+      "status": "MATCH"
+    },
+    {
+      "check": "dataset version",
+      "expected": 1,
+      "observed": 1,
+      "source": "Moodle Q11",
+      "status": "MATCH"
+    },
+    {
+      "check": "default target",
+      "expected": "match",
+      "observed": "match",
+      "source": "Moodle Q7",
+      "status": "MATCH"
+    },
+    {
+      "check": "upload date (OpenML, not collection date)",
+      "expected": "2016-11-16",
+      "observed": "2016-11-16",
+      "source": "Moodle Q12",
+      "status": "MATCH"
+    },
+    {
+      "check": "licence",
+      "expected": "Public",
+      "observed": "Public",
+      "source": "Moodle Q12",
+      "status": "MATCH"
+    },
+    {
+      "check": "ignore attributes",
+      "expected": [
+        "decision",
+        "decision_o"
+      ],
+      "observed": [
+        "decision",
+        "decision_o"
+      ],
+      "source": "Phase-1 spec / audit 2026-11-06",
+      "status": "MATCH"
+    },
+    {
+      "check": "openml md5 (API via openml-python)",
+      "expected": "0c5590a0c81750687ee1b0ee68168a5d",
+      "observed": "0c5590a0c81750687ee1b0ee68168a5d",
+      "source": "Phase-1 spec / audit 2026-11-06",
+      "status": "MATCH"
+    },
+    {
+      "check": "downloaded ARFF md5 matches OpenML",
+      "expected": true,
+      "observed": true,
+      "source": "fetch_speeddating.py",
+      "status": "MATCH"
+    },
+    {
+      "check": "X shape",
+      "expected": [
+        8378,
+        120
+      ],
+      "observed": [
+        8378,
+        120
+      ],
+      "source": "Moodle Q11",
+      "status": "MATCH"
+    },
+    {
+      "check": "y shape",
+      "expected": [
+        8378
+      ],
+      "observed": [
+        8378
+      ],
+      "source": "Moodle Q11",
+      "status": "MATCH"
+    },
+    {
+      "check": "X+y shape",
+      "expected": [
+        8378,
+        121
+      ],
+      "observed": [
+        8378,
+        121
+      ],
+      "source": "Moodle Q11",
+      "status": "MATCH"
+    },
+    {
+      "check": "column order equals historical header",
+      "expected": true,
+      "observed": true,
+      "source": "Moodle Q11 header line",
+      "status": "MATCH"
+    },
+    {
+      "check": "'decision' absent from X",
+      "expected": true,
+      "observed": true,
+      "source": "Phase-1 spec / audit 2026-11-06",
+      "status": "MATCH"
+    },
+    {
+      "check": "'decision_o' absent from X",
+      "expected": true,
+      "observed": true,
+      "source": "Phase-1 spec / audit 2026-11-06",
+      "status": "MATCH"
+    },
+    {
+      "check": "'match' absent from X",
+      "expected": true,
+      "observed": true,
+      "source": "sanity",
+      "status": "MATCH"
+    },
+    {
+      "check": "class 0 count",
+      "expected": 6998,
+      "observed": 6998,
+      "source": "Moodle Q8/Q11",
+      "status": "MATCH"
+    },
+    {
+      "check": "class 1 count",
+      "expected": 1380,
+      "observed": 1380,
+      "source": "Moodle Q8/Q11",
+      "status": "MATCH"
+    },
+    {
+      "check": "minority % (as printed in Q11, 14 dp)",
+      "expected": "16.47171162568632",
+      "observed": "16.47171162568632",
+      "source": "Moodle Q11",
+      "status": "MATCH"
+    },
+    {
+      "check": "minority % rounded to paper (2 dp)",
+      "expected": "16.47",
+      "observed": "16.47",
+      "source": "paper Table 5 (as quoted in Moodle Q8)",
+      "status": "MATCH"
+    },
+    {
+      "check": "target missing",
+      "expected": 0,
+      "observed": 0,
+      "source": "Moodle Q11",
+      "status": "MATCH"
+    },
+    {
+      "check": "missing predictor cells",
+      "expected": 18372,
+      "observed": 18372,
+      "source": "Moodle Q11",
+      "status": "MATCH"
+    },
+    {
+      "check": "predictor columns with missing",
+      "expected": 60,
+      "observed": 60,
+      "source": "Moodle Q11",
+      "status": "MATCH"
+    },
+    {
+      "check": "per-column missing counts identical (60 cols)",
+      "expected": {},
+      "observed": {},
+      "source": "Moodle Q11 table",
+      "status": "MATCH"
+    },
+    {
+      "check": "rows with >=1 missing predictor",
+      "expected": 7330,
+      "observed": 7330,
+      "source": "audit 2026-11-06 (OpenML quality)",
+      "status": "MATCH"
+    },
+    {
+      "check": "nominal predictors (openml categorical_indicator)",
+      "expected": 61,
+      "observed": 61,
+      "source": "Phase-1 spec / audit 2026-11-06",
+      "status": "MATCH"
+    },
+    {
+      "check": "numeric predictors (openml categorical_indicator)",
+      "expected": 59,
+      "observed": 59,
+      "source": "Phase-1 spec / audit 2026-11-06",
+      "status": "MATCH"
+    },
+    {
+      "check": "pandas 'category' dtype columns",
+      "expected": 61,
+      "observed": 61,
+      "source": "cross-check of the above",
+      "status": "MATCH"
+    },
+    {
+      "check": "OpenML quality NumberOfNumericFeatures",
+      "expected": 59,
+      "observed": 59,
+      "source": "Phase-1 spec / audit 2026-11-06",
+      "status": "MATCH"
+    },
+    {
+      "check": "OpenML quality NumberOfSymbolicFeatures (incl. target)",
+      "expected": 62,
+      "observed": 62,
+      "source": "Phase-1 spec / audit 2026-11-06",
+      "status": "MATCH"
+    },
+    {
+      "check": "match == decision AND decision_o on all rows",
+      "expected": true,
+      "observed": true,
+      "source": "Phase-1 spec / audit 2026-11-06",
+      "status": "MATCH"
+    },
+    {
+      "check": "loaded data == checksummed ARFF (mismatched cells)",
+      "expected": 0,
+      "observed": 0,
+      "source": "Phase-1 spec / audit 2026-11-06",
+      "status": "MATCH"
+    },
+    {
+      "check": "fold (train, test) sizes",
+      "expected": [
+        [
+          6702,
+          1676
+        ],
+        [
+          6702,
+          1676
+        ],
+        [
+          6702,
+          1676
+        ],
+        [
+          6703,
+          1675
+        ],
+        [
+          6703,
+          1675
+        ]
+      ],
+      "observed": [
+        [
+          6702,
+          1676
+        ],
+        [
+          6702,
+          1676
+        ],
+        [
+          6702,
+          1676
+        ],
+        [
+          6703,
+          1675
+        ],
+        [
+          6703,
+          1675
+        ]
+      ],
+      "source": "Moodle Q11",
+      "status": "MATCH"
+    },
+    {
+      "check": "train/test overlap per fold",
+      "expected": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "observed": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "source": "Moodle Q11",
+      "status": "MATCH"
+    },
+    {
+      "check": "rows held out exactly once",
+      "expected": 8378,
+      "observed": 8378,
+      "source": "Moodle Q11",
+      "status": "MATCH"
+    }
+  ],
+  "n_diff": 0,
+  "fold_assignment_sha256_seed42": "ca9d1164c5100d5b310dbb644672d9dad2d0cdaceb38055b0e6f80ee3d1c1755",
+  "missing_by_column_observed": {
+    "age": 95,
+    "age_o": 104,
+    "race": 63,
+    "race_o": 73,
+    "importance_same_race": 79,
+    "importance_same_religion": 79,
+    "field": 63,
+    "pref_o_attractive": 89,
+    "pref_o_sincere": 89,
+    "pref_o_intelligence": 89,
+    "pref_o_funny": 98,
+    "pref_o_ambitious": 107,
+    "pref_o_shared_interests": 129,
+    "attractive_o": 212,
+    "sinsere_o": 287,
+    "intelligence_o": 306,
+    "funny_o": 360,
+    "ambitous_o": 722,
+    "shared_interests_o": 1076,
+    "attractive_important": 79,
+    "sincere_important": 79,
+    "intellicence_important": 79,
+    "funny_important": 89,
+    "ambtition_important": 99,
+    "shared_interests_important": 121,
+    "attractive": 105,
+    "sincere": 105,
+    "intelligence": 105,
+    "funny": 105,
+    "ambition": 105,
+    "attractive_partner": 202,
+    "sincere_partner": 277,
+    "intelligence_partner": 296,
+    "funny_partner": 350,
+    "ambition_partner": 712,
+    "shared_interests_partner": 1067,
+    "sports": 79,
+    "tvsports": 79,
+    "exercise": 79,
+    "dining": 79,
+    "museums": 79,
+    "art": 79,
+    "hiking": 79,
+    "gaming": 79,
+    "clubbing": 79,
+    "reading": 79,
+    "tv": 79,
+    "theater": 79,
+    "movies": 79,
+    "concerts": 79,
+    "music": 79,
+    "shopping": 79,
+    "yoga": 79,
+    "interests_correlate": 158,
+    "expected_happy_with_sd_people": 101,
+    "expected_num_interested_in_me": 6578,
+    "expected_num_matches": 1173,
+    "like": 240,
+    "guess_prob_liked": 309,
+    "met": 375
+  },
+  "arff_sha256": "121ad0ca93e82c21964709bdcea222119a362cfdd8f4c38d1f010bc830dda38a"
+}

@@ -1,0 +1,17 @@
+Obtaining file:///Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_ref_07f7278b
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: GRANDE
+  Building editable for GRANDE (pyproject.toml): started
+  Building editable for GRANDE (pyproject.toml): finished with status 'done'
+  Created wheel for GRANDE: filename=grande-0.2.0-0.editable-py3-none-any.whl size=6374 sha256=43f2d3ce0e9964c202457ed4cf3158d1d9539940470ffee6cd77e0229b75af94
+  Stored in directory: /private/var/folders/5r/w1y0dk7n68d1jkhsyddtz4w40000gn/T/pip-ephem-wheel-cache-heni0dtp/wheels/d7/e8/e9/33092ee56dad23d3060640e9f622be8537d8441e8c936c7150
+Successfully built GRANDE
+Installing collected packages: GRANDE
+Successfully installed GRANDE-0.2.0

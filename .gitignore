@@ -1,0 +1,6 @@
+data/raw/
+third_party/
+__pycache__/
+*.pyc
+.DS_Store
+*.egg-info/

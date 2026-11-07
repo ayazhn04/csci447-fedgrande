@@ -1,0 +1,2 @@
+WARNING:openml.datasets.functions:Could not download file from https://data.openml.org/datasets/0004/40536/dataset_40536.pq: HTTPSConnectionPool(host='data.openml.org', port=443): Max retries exceeded with url: /datasets/0004/40536/dataset_40536.pq (Caused by ResponseError('too many 503 error responses'))
+WARNING:openml.datasets.functions:Failed to download parquet, fallback on ARFF.

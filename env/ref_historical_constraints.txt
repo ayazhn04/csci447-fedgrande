@@ -1,0 +1,5 @@
+# Historical constraints from archive/checkpoint1/Q14_GRANDE_execution_evidence.txt (lines 13-15).
+# category-encoders intentionally NOT pinned (see ERRATA E3); resolved within requirements.txt range.
+torch==2.7.1
+scikit-learn==1.7.2
+openml==0.15.1

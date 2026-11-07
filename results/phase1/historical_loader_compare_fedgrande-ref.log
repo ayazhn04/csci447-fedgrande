@@ -1,0 +1,20 @@
+Historical loader output vs Checkpoint 1 [fedgrande-ref]
+MATCH   OpenML ID: 40536 -> 40536
+MATCH   Version: 1 -> 1
+MATCH   X shape: [8378, 120] -> [8378, 120]
+MATCH   y shape: [8378] -> [8378]
+MATCH   X+y shape: [8378, 121] -> [8378, 121]
+MATCH   first five rows (header + 5 lines, byte-equal text): ['has_null,wave,gender,age,age_o,d_age,d_d_age,race,race_o,samerace,importance_same_race,i... -> ['has_null,wave,gender,age,age_o,d_age,d_d_age,race,race_o,samerace,importance_same_race,i...
+MATCH   class 0 count: 6998 -> 6998
+MATCH   class 1 count: 1380 -> 1380
+MATCH   minority percentage: 16.47171162568632 -> 16.47171162568632
+MATCH   total missing predictor cells: 18372 -> 18372
+MATCH   predictor columns with missing: 60 -> 60
+MATCH   per-column missing table: {'age': 95, 'age_o': 104, 'race': 63, 'race_o': 73, 'importance_same_race': 79, 'importanc... -> {'age': 95, 'age_o': 104, 'race': 63, 'race_o': 73, 'importance_same_race': 79, 'importanc...
+MATCH   target missing: 0 -> 0
+MATCH   fold lines: [{'fold': 1, 'train': 6702, 'test': 1676, 'overlap': 0}, {'fold': 2, 'train': 6702, 'test'... -> [{'fold': 1, 'train': 6702, 'test': 1676, 'overlap': 0}, {'fold': 2, 'train': 6702, 'test'...
+MATCH   held out exactly once: 8378 -> 8378
+MATCH   held out more than once: 0 -> 0
+MATCH   never held out: 0 -> 0
+
+17 checks, 0 DIFF

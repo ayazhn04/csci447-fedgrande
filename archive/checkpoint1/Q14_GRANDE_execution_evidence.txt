@@ -1,0 +1,38 @@
+CSCI447P016 - Q14 execution evidence
+
+=== REPOSITORY ===
+07f7278b30ab9ebbbdc544e5f9a91f1b5df7fecb
+
+=== FIRST AS-IS ATTEMPT ===
+/opt/homebrew/opt/python@3.14/bin/python3.14: No module named jupyter
+
+=== SUCCESSFUL EXECUTION ENVIRONMENT ===
+OS: macOS-15.5-arm64-arm-64bit
+Machine: arm64
+Python: 3.12.14
+PyTorch: 2.7.1
+scikit-learn: 1.7.2
+OpenML: 0.15.1
+category-encoders: 2.8.1
+
+=== SUCCESSFUL AS-IS NOTEBOOK EXECUTION ===
+[NbConvertApp] Converting notebook GRANDE_minimal_example_with_comparison_BINARY.ipynb to notebook
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+[NbConvertApp] Writing 126517 bytes to GRANDE_as_is_executed.ipynb
+
+=== LAST 10 NOTEBOOK OUTPUT LINES ===
+
+
+Accuracy XGB: 0.952
+F1 Score XGB: 0.8902857142857143
+ROC AUC XGB: 0.9152775340703048
+
+
+Accuracy CatBoost: 0.957
+F1 Score CatBoost: 0.8999941857084715
+ROC AUC CatBoost: 0.9140701376181285
+
+=== GIT STATUS AFTER RUN ===
+?? GRANDE/__pycache__/
+?? GRANDE_as_is_executed.ipynb
+?? catboost_info/
