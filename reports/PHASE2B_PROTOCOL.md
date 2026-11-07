@@ -235,3 +235,18 @@ come from pre-freeze engineering. They are not part of any result.
   The centralized B2 runs are reused because they are partition-independent.
 - **Label.** "Controlled synthetic heterogeneity stress test". The local-only edge-case rules of §7 apply unchanged.
   Many clients have single-class validation sets and therefore use validation-loss selection.
+
+### A2: Post-hoc within-client AUC (added during B3, after observing a pooled-metric artifact; no runs changed)
+
+- **Observation.** During B3 execution, local-only GRANDE on the Dirichlet α = 0.1 partition reached pooled test ROC-AUC
+  of about 0.98.
+- **Cause.** That partition assigns clients *by label*, so client identity encodes the label prior. Each local model
+  learns its client's base rate. When test rows from different clients are pooled, the ranking is dominated by client
+  identity, not by features. This is a client-identity shortcut in the pooled metric; it is not information leakage
+  across train and test.
+- **Implication.** The frozen pooled metrics remain the primary metrics and are reported unchanged. But pooled AUC is
+  **not interpretable for local-only under Dirichlet**. It is also distorted, more mildly, whenever client priors differ.
+- **Added analysis, secondary and labelled post hoc.** Within-client ROC-AUC on each partition's *own* clients, computed
+  from pooled-OOF test rows, only for clients whose test rows contain both classes. It is computed for every method in
+  each partition view, centralized methods included.
+- **Code.** `aggregate.py`, section "POST-HOC". No training runs, configs or primary metrics changed.

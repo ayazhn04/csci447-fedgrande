@@ -1,0 +1,1 @@
+[local_grande__dirichlet0.1__f2__s42] 241s best None/None valAUC None testAUC 0.9934 F1@.5 0.9252 RSS 1664MB

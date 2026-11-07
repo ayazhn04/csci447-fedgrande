@@ -1,0 +1,63 @@
+{
+  "label": "Stock GRANDE 1.0 reference",
+  "per_fold": [
+    {
+      "fold": 0,
+      "test_auc": 0.875510763533294,
+      "test_f1_05": 0.7023154077379774,
+      "test_f1_valthr": 0.7463716566307239,
+      "fit_seconds": 374.6553787080338,
+      "epochs": 33
+    },
+    {
+      "fold": 1,
+      "test_auc": 0.8416674436191482,
+      "test_f1_05": 0.6836184731012658,
+      "test_f1_valthr": 0.709502472411943,
+      "fit_seconds": 336.84069541696226,
+      "epochs": 29
+    },
+    {
+      "fold": 2,
+      "test_auc": 0.8367166950332663,
+      "test_f1_05": 0.6778416600581549,
+      "test_f1_valthr": 0.7137737508513571,
+      "fit_seconds": 209.00180404196726,
+      "epochs": 18
+    },
+    {
+      "fold": 3,
+      "test_auc": 0.8320134575569358,
+      "test_f1_05": 0.6820290812434631,
+      "test_f1_valthr": 0.686731925764587,
+      "fit_seconds": 364.72605958301574,
+      "epochs": 30
+    },
+    {
+      "fold": 4,
+      "test_auc": 0.8257618319339972,
+      "test_f1_05": 0.6815258522165101,
+      "test_f1_valthr": 0.6902375649591685,
+      "fit_seconds": 350.49880787497386,
+      "epochs": 29
+    }
+  ],
+  "oof_test": {
+    "n": 8378,
+    "pos": 1380,
+    "roc_auc": 0.8411420861446955,
+    "macro_f1": 0.6855083097418551,
+    "accuracy": 0.7714251611363094,
+    "confusion_[[tn,fp],[fn,tp]]": [
+      [
+        5421,
+        1577
+      ],
+      [
+        338,
+        1042
+      ]
+    ]
+  },
+  "note": "own preprocessing (LOO target encoding of field, first-numeric-column imputation) and own training loop; not comparable as the matched comparator"
+}

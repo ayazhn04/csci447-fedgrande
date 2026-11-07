@@ -1,0 +1,87 @@
+{
+  "run_id": "stock_ref_e1024_d5_f4",
+  "label": "Stock GRANDE 1.0 reference (not the matched centralized comparator)",
+  "scheme": "C2",
+  "outer_fold": 4,
+  "seed": 42,
+  "split_id": "C2/outer4/splits_inner_v1",
+  "n_fit": 5364,
+  "n_val": 1345,
+  "n_test": 1669,
+  "test_pos": 276,
+  "test_at_0.5": {
+    "threshold": 0.5,
+    "roc_auc": 0.8257618319339972,
+    "macro_f1": 0.6815258522165101,
+    "accuracy": 0.7735170760934691,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        1094,
+        299
+      ],
+      [
+        79,
+        197
+      ]
+    ]
+  },
+  "test_at_val_threshold": {
+    "threshold": 0.63,
+    "roc_auc": 0.8257618319339972,
+    "macro_f1": 0.6902375649591685,
+    "accuracy": 0.8070701018573997,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        1186,
+        207
+      ],
+      [
+        115,
+        161
+      ]
+    ]
+  },
+  "val_at_0.5": {
+    "threshold": 0.5,
+    "roc_auc": 0.8698466944237202,
+    "macro_f1": 0.711714525423625,
+    "accuracy": 0.79182156133829,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        887,
+        236
+      ],
+      [
+        44,
+        178
+      ]
+    ]
+  },
+  "val_selected_threshold": 0.63,
+  "best_epoch": 26,
+  "epochs_completed": 29,
+  "best_val_score": 0.12374129525790871,
+  "fit_seconds": 350.49880787497386,
+  "predict_test_seconds": 0.9869910829584114,
+  "seconds_per_epoch_mean": 12.03,
+  "peak_rss_mb_process": 2475.78125,
+  "peak_rss_mb_before_fit": 420.1875,
+  "trainable_parameters": 3239936,
+  "network_input_features_after_preprocessing": 240,
+  "selected_variables_per_estimator": 50,
+  "n_estimators": 1024,
+  "depth": 5,
+  "effective_batch_size": 256,
+  "compiled": false,
+  "torch_threads": 6,
+  "preprocessing": {
+    "num_columns": 58,
+    "binary_cat": 3,
+    "one_hot_cat": 57,
+    "loo_target_encoded_cat": [
+      "field"
+    ],
+    "numeric_imputation_value_(GRANDE: mean of first numeric column)": 26.353407589201435,
+    "first_numeric_column": "age"
+  }
+}

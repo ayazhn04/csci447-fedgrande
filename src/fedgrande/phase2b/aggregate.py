@@ -149,6 +149,30 @@ def main(parts=("natural", "iid"), tag="core"):
     pc.groupby(["method", "partition", "wave"]).agg(n=("n", "first"), pos=("pos", "first"), auc_mean=("auc", "mean"), auc_sd=("auc", "std"),
                                                     f1_valthr_mean=("f1_valthr", "mean")).reset_index().to_csv(OUT / f"per_wave_mean_over_seeds_{tag}.csv", index=False)
 
+    # POST-HOC (added after observing the Dirichlet client-identity shortcut, see PHASE2B_PROTOCOL amendment A2):
+    # within-client AUC on each partition's OWN clients, using only clients whose pooled-OOF test rows contain both
+    # classes. Within a client the label prior is constant, so the client-identity shortcut cannot inflate it.
+    pmap = pd.read_csv(ROOT / "data" / "derived" / "phase2b" / "partitions_v1.csv")
+    cmap = {"natural": pmap.client_natural.to_numpy(), "iid": pmap.client_iid.to_numpy()}
+    dfile = ROOT / "data" / "derived" / "phase2b" / "partitions_dirichlet_v1.csv"
+    if dfile.exists():
+        cmap["dirichlet0.1"] = pd.read_csv(dfile)["client_dirichlet0.1"].to_numpy()
+    wc = []
+    for view in parts:
+        sub = test[test.partition.isin(["none", view])]
+        for (m, part, s), g in sub.groupby(["method", "partition", "seed"]):
+            cl = cmap[view][g.row_index.to_numpy()]
+            aucs = [binary_metrics(gg.y, gg.p1)["roc_auc"] for _, gg in g.groupby(cl) if gg.y.nunique() == 2]
+            wc.append({"view_partition": view, "method": m, "seed": s, "n_clients_both_classes": len(aucs),
+                       "within_client_auc_mean": float(np.mean(aucs)), "within_client_auc_median": float(np.median(aucs)),
+                       "within_client_auc_min": float(np.min(aucs))})
+    wc = pd.DataFrame(wc)
+    wc.to_csv(OUT / f"within_client_auc_by_seed_{tag}.csv", index=False)
+    wcs = wc.groupby(["view_partition", "method"]).agg(n_clients=("n_clients_both_classes", "first"),
+                                                       auc_mean=("within_client_auc_mean", "mean"), auc_mean_sd=("within_client_auc_mean", "std"),
+                                                       auc_median=("within_client_auc_median", "mean"), auc_min=("within_client_auc_min", "mean")).reset_index()
+    wcs.to_csv(OUT / f"within_client_auc_summary_{tag}.csv", index=False)
+
     # structural consensus (FedAvg GRANDE rounds) and relation to the gap
     cons_rows = []
     for _, r in runs[runs.method == "fedavg_grande"].iterrows():
@@ -207,6 +231,7 @@ def main(parts=("natural", "iid"), tag="core"):
                                               "gaps": gaps, "structure_vs_central": sv_s.to_dict("records") if len(sv_s) else [],
                                               "local_model_consensus": loc.to_dict("records"),
                                               "communication": comm.to_dict("records"), "runtime": rt_.to_dict("records"),
+                                              "within_client_auc_posthoc": wcs.to_dict("records"),
                                               "total_compute_hours": float(runs.seconds.sum() / 3600)})
     print(summ.to_string(index=False))
     print(json.dumps({k: v for k, v in gaps.items() if "oof_auc" in k}, indent=1))

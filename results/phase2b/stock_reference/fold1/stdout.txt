@@ -1,0 +1,31 @@
+Epoch 001 | TrainLoss: 0.6769 | ValLoss: 0.1817 | Time: 11.60s
+Epoch 002 | TrainLoss: 0.6311 | ValLoss: 0.1696 | Time: 11.40s
+Epoch 003 | TrainLoss: 0.5848 | ValLoss: 0.1593 | Time: 11.42s
+Epoch 004 | TrainLoss: 0.5453 | ValLoss: 0.1517 | Time: 11.44s
+Epoch 005 | TrainLoss: 0.5157 | ValLoss: 0.1463 | Time: 11.53s
+Epoch 006 | TrainLoss: 0.4956 | ValLoss: 0.1431 | Time: 11.54s
+Epoch 007 | TrainLoss: 0.4777 | ValLoss: 0.1408 | Time: 11.66s
+Epoch 008 | TrainLoss: 0.4692 | ValLoss: 0.1406 | Time: 11.58s
+Epoch 009 | TrainLoss: 0.4620 | ValLoss: 0.1393 | Time: 11.57s
+Epoch 010 | TrainLoss: 0.4528 | ValLoss: 0.1391 | Time: 11.66s
+Epoch 011 | TrainLoss: 0.4520 | ValLoss: 0.1388 | Time: 11.57s
+Epoch 012 | TrainLoss: 0.4420 | ValLoss: 0.1396 | Time: 11.49s
+Epoch 013 | TrainLoss: 0.4442 | ValLoss: 0.1385 | Time: 11.53s
+Epoch 014 | TrainLoss: 0.4370 | ValLoss: 0.1401 | Time: 11.48s
+Epoch 015 | TrainLoss: 0.4367 | ValLoss: 0.1393 | Time: 11.65s
+Epoch 016 | TrainLoss: 0.4302 | ValLoss: 0.1390 | Time: 11.60s
+Epoch 017 | TrainLoss: 0.4306 | ValLoss: 0.1386 | Time: 11.53s
+Epoch 018 | TrainLoss: 0.4222 | ValLoss: 0.1388 | Time: 11.64s
+Epoch 019 | TrainLoss: 0.4242 | ValLoss: 0.1382 | Time: 11.79s
+Epoch 020 | TrainLoss: 0.4186 | ValLoss: 0.1395 | Time: 11.76s
+Epoch 021 | TrainLoss: 0.4150 | ValLoss: 0.1389 | Time: 11.65s
+Epoch 022 | TrainLoss: 0.4124 | ValLoss: 0.1383 | Time: 11.66s
+Epoch 023 | TrainLoss: 0.4149 | ValLoss: 0.1393 | Time: 11.54s
+Epoch 024 | TrainLoss: 0.4069 | ValLoss: 0.1399 | Time: 11.45s
+Epoch 025 | TrainLoss: 0.4052 | ValLoss: 0.1394 | Time: 11.46s
+Epoch 026 | TrainLoss: 0.4036 | ValLoss: 0.1397 | Time: 11.49s
+Epoch 027 | TrainLoss: 0.4007 | ValLoss: 0.1411 | Time: 11.50s
+Epoch 028 | TrainLoss: 0.3982 | ValLoss: 0.1406 | Time: 11.53s
+Epoch 029 | TrainLoss: 0.3985 | ValLoss: 0.1405 | Time: 11.49s
+Restoring best model from epoch with val score: 0.13820195374665437
+[stock_ref_e1024_d5_f1] fit 336.8s epochs 29 best 19 | test AUC 0.8417 F1@0.5 0.6836 | params 3239936 | V 50 | RSS 2412 MB

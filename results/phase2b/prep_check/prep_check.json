@@ -1,0 +1,160 @@
+{
+  "config": {
+    "description": "N: stock GRANDE 1.0 preprocessing vs federated-safe preprocessing, both trained with the SAME Phase 2B centralized GRANDE loop (core.json training + model settings), C2 outer fold 0, seeds 42/447/2026, wave removed in both. Methodological sanity check only.",
+    "fold": 0,
+    "seeds": [
+      42,
+      447,
+      2026
+    ],
+    "stock_preprocessor": {
+      "problem_type": "binary",
+      "use_numeric_embeddings": false,
+      "use_category_embeddings": false,
+      "missing_values": false,
+      "use_freq_enc": false,
+      "use_robust_scale_smoothing": true,
+      "loo_cardinality": 10,
+      "embedding_threshold": 1
+    }
+  },
+  "runs": [
+    {
+      "preprocessing": "stock_grande_1.0_preprocessing",
+      "seed": 42,
+      "encoded_dim": 240,
+      "best_epoch": 38,
+      "epochs": 48,
+      "val_auc": 0.8445784782994086,
+      "test_auc": 0.8736771871023803,
+      "test_f1_05": 0.7102783601211273,
+      "test_f1_valthr": 0.7410392598925113,
+      "val_threshold": 0.79
+    },
+    {
+      "preprocessing": "stock_grande_1.0_preprocessing",
+      "seed": 447,
+      "encoded_dim": 240,
+      "best_epoch": 43,
+      "epochs": 53,
+      "val_auc": 0.8474189753259522,
+      "test_auc": 0.8747892292255015,
+      "test_f1_05": 0.7105329647650377,
+      "test_f1_valthr": 0.7463547624494776,
+      "val_threshold": 0.74
+    },
+    {
+      "preprocessing": "stock_grande_1.0_preprocessing",
+      "seed": 2026,
+      "encoded_dim": 240,
+      "best_epoch": 42,
+      "epochs": 52,
+      "val_auc": 0.8488291511547327,
+      "test_auc": 0.8736125334905709,
+      "test_f1_05": 0.7252692145409301,
+      "test_f1_valthr": 0.7417555081734186,
+      "val_threshold": 0.71
+    },
+    {
+      "preprocessing": "federated_safe_preprocessing",
+      "seed": 42,
+      "encoded_dim": 502,
+      "best_epoch": 51,
+      "epochs": 61,
+      "val_auc": 0.870529742622766,
+      "test_auc": 0.885963959490633,
+      "test_f1_05": 0.7215149972356243,
+      "test_f1_valthr": 0.7586141990345011,
+      "val_threshold": 0.62
+    },
+    {
+      "preprocessing": "federated_safe_preprocessing",
+      "seed": 447,
+      "encoded_dim": 502,
+      "best_epoch": 55,
+      "epochs": 65,
+      "val_auc": 0.8725321922996341,
+      "test_auc": 0.8820950873599602,
+      "test_f1_05": 0.7185947731668043,
+      "test_f1_valthr": 0.7132025994755444,
+      "val_threshold": 0.79
+    },
+    {
+      "preprocessing": "federated_safe_preprocessing",
+      "seed": 2026,
+      "encoded_dim": 502,
+      "best_epoch": 50,
+      "epochs": 60,
+      "val_auc": 0.868922142177956,
+      "test_auc": 0.8851751854265586,
+      "test_f1_05": 0.7121124181510516,
+      "test_f1_valthr": 0.751246024184683,
+      "val_threshold": 0.7
+    }
+  ],
+  "summary": [
+    {
+      "preprocessing": "federated_safe_preprocessing",
+      "val_auc_mean": 0.870661359033452,
+      "val_auc_std": 0.0018086203664473837,
+      "test_auc_mean": 0.8844114107590505,
+      "test_auc_std": 0.002044396414083953,
+      "test_f1_05_mean": 0.7174073961844935,
+      "test_f1_05_std": 0.004812434044639179,
+      "test_f1_valthr_mean": 0.7410209408982428,
+      "test_f1_valthr_std": 0.024371450301259007,
+      "best_epoch_mean": 52.0,
+      "best_epoch_std": 2.6457513110645907
+    },
+    {
+      "preprocessing": "stock_grande_1.0_preprocessing",
+      "val_auc_mean": 0.8469422015933645,
+      "val_auc_std": 0.0021650727065878096,
+      "test_auc_mean": 0.8740263166061508,
+      "test_auc_std": 0.0006614920792823759,
+      "test_f1_05_mean": 0.7153601798090317,
+      "test_f1_05_std": 0.008582419989120236,
+      "test_f1_valthr_mean": 0.7430498435051359,
+      "test_f1_valthr_std": 0.0028844617906080227,
+      "best_epoch_mean": 41.0,
+      "best_epoch_std": 2.6457513110645907
+    }
+  ],
+  "stock_loo_columns": [
+    "field"
+  ],
+  "stock_numeric_impute_value": 26.3561850802644,
+  "stock_first_numeric_column": "age",
+  "meta": {
+    "created_utc": "2026-11-07T11:13:30.933969+00:00",
+    "project_commit": "f286965a575a66e1ce1573d4faf54f7524c30fc2",
+    "project_tracked_changes": [
+      "M results/phase2b/aux_prep_check.log"
+    ],
+    "conda_env": "fedgrande-dev",
+    "python": "3.12.14",
+    "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-dev/bin/python",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "GRANDE": "1.0.0",
+      "torch": "2.7.1",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "category-encoders": "2.9.0",
+      "openml": "0.15.1"
+    },
+    "grande": {
+      "impl": "dev",
+      "worktree": "/Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_dev_db79c860",
+      "expected_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "head_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "commit_matches": true,
+      "tracked_changes": []
+    },
+    "torch_threads": 6,
+    "torch_float32_matmul_precision": "highest"
+  }
+}

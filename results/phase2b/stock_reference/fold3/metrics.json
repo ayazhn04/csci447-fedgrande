@@ -1,0 +1,87 @@
+{
+  "run_id": "stock_ref_e1024_d5_f3",
+  "label": "Stock GRANDE 1.0 reference (not the matched centralized comparator)",
+  "scheme": "C2",
+  "outer_fold": 3,
+  "seed": 42,
+  "split_id": "C2/outer3/splits_inner_v1",
+  "n_fit": 5363,
+  "n_val": 1339,
+  "n_test": 1676,
+  "test_pos": 276,
+  "test_at_0.5": {
+    "threshold": 0.5,
+    "roc_auc": 0.8320134575569358,
+    "macro_f1": 0.6820290812434631,
+    "accuracy": 0.7696897374701671,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        1085,
+        315
+      ],
+      [
+        71,
+        205
+      ]
+    ]
+  },
+  "test_at_val_threshold": {
+    "threshold": 0.61,
+    "roc_auc": 0.8320134575569358,
+    "macro_f1": 0.686731925764587,
+    "accuracy": 0.798926014319809,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        1171,
+        229
+      ],
+      [
+        108,
+        168
+      ]
+    ]
+  },
+  "val_at_0.5": {
+    "threshold": 0.5,
+    "roc_auc": 0.8401001717922041,
+    "macro_f1": 0.6992941931344241,
+    "accuracy": 0.7908887229275579,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        899,
+        218
+      ],
+      [
+        62,
+        160
+      ]
+    ]
+  },
+  "val_selected_threshold": 0.61,
+  "best_epoch": 20,
+  "epochs_completed": 30,
+  "best_val_score": 0.1380341097523331,
+  "fit_seconds": 364.72605958301574,
+  "predict_test_seconds": 1.160028250014875,
+  "seconds_per_epoch_mean": 12.104999999999999,
+  "peak_rss_mb_process": 2384.890625,
+  "peak_rss_mb_before_fit": 420.78125,
+  "trainable_parameters": 3239936,
+  "network_input_features_after_preprocessing": 240,
+  "selected_variables_per_estimator": 50,
+  "n_estimators": 1024,
+  "depth": 5,
+  "effective_batch_size": 256,
+  "compiled": false,
+  "torch_threads": 6,
+  "preprocessing": {
+    "num_columns": 58,
+    "binary_cat": 3,
+    "one_hot_cat": 57,
+    "loo_target_encoded_cat": [
+      "field"
+    ],
+    "numeric_imputation_value_(GRANDE: mean of first numeric column)": 26.31835347432024,
+    "first_numeric_column": "age"
+  }
+}

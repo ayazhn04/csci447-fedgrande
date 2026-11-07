@@ -1,0 +1,18 @@
+{
+  "run_id": "stock_ref_e1024_d5_f0",
+  "label": "Stock GRANDE 1.0 reference (not the matched centralized comparator)",
+  "scheme": "C2",
+  "outer_fold": 0,
+  "drop_columns": [
+    "wave"
+  ],
+  "estimator_params": {
+    "n_estimators": 1024,
+    "depth": 5,
+    "use_numeric_embeddings": false,
+    "use_class_weights": true,
+    "compile_model": false,
+    "random_state": 42,
+    "verbose": 1
+  }
+}

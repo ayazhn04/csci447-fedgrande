@@ -1,0 +1,19 @@
+Epoch 001 | TrainLoss: 0.6768 | ValLoss: 0.1821 | Time: 11.51s
+Epoch 002 | TrainLoss: 0.6315 | ValLoss: 0.1705 | Time: 11.44s
+Epoch 003 | TrainLoss: 0.5829 | ValLoss: 0.1607 | Time: 11.52s
+Epoch 004 | TrainLoss: 0.5430 | ValLoss: 0.1536 | Time: 11.43s
+Epoch 005 | TrainLoss: 0.5130 | ValLoss: 0.1491 | Time: 11.45s
+Epoch 006 | TrainLoss: 0.4912 | ValLoss: 0.1461 | Time: 11.43s
+Epoch 007 | TrainLoss: 0.4741 | ValLoss: 0.1446 | Time: 11.42s
+Epoch 008 | TrainLoss: 0.4645 | ValLoss: 0.1433 | Time: 11.42s
+Epoch 009 | TrainLoss: 0.4579 | ValLoss: 0.1426 | Time: 11.62s
+Epoch 010 | TrainLoss: 0.4496 | ValLoss: 0.1436 | Time: 11.42s
+Epoch 011 | TrainLoss: 0.4463 | ValLoss: 0.1437 | Time: 11.46s
+Epoch 012 | TrainLoss: 0.4409 | ValLoss: 0.1428 | Time: 11.61s
+Epoch 013 | TrainLoss: 0.4379 | ValLoss: 0.1435 | Time: 11.48s
+Epoch 014 | TrainLoss: 0.4328 | ValLoss: 0.1435 | Time: 11.53s
+Epoch 015 | TrainLoss: 0.4302 | ValLoss: 0.1436 | Time: 11.55s
+Epoch 016 | TrainLoss: 0.4272 | ValLoss: 0.1433 | Time: 11.71s
+Epoch 017 | TrainLoss: 0.4241 | ValLoss: 0.1443 | Time: 11.77s
+Epoch 018 | TrainLoss: 0.4239 | ValLoss: 0.1439 | Time: 11.66s
+Restoring best model from epoch with val score: 0.14257850433463481

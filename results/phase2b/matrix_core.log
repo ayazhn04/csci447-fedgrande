@@ -120,3 +120,5 @@
 [119/120] fedavg_mlp__natural__f4__s2026 rc=0 12s free=24.3GiB :: ['[fedavg_mlp__natural__f4__s2026] 9s best 85/95 valAUC 0.8775480734519024 testAUC 0.8343 F1@.5 0.6860 RSS 545MB']
 [120/120] fedavg_mlp__iid__f4__s2026 rc=0 11s free=24.3GiB :: ['[fedavg_mlp__iid__f4__s2026] 8s best 74/84 valAUC 0.8828588160734198 testAUC 0.8344 F1@.5 0.6805 RSS 568MB']
 core exit=0
+prep_check exit=0
+stock_reference exit=0

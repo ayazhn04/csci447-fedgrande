@@ -1,0 +1,32 @@
+Epoch 001 | TrainLoss: 0.6775 | ValLoss: 0.1819 | Time: 11.68s
+Epoch 002 | TrainLoss: 0.6331 | ValLoss: 0.1699 | Time: 11.44s
+Epoch 003 | TrainLoss: 0.5865 | ValLoss: 0.1598 | Time: 11.60s
+Epoch 004 | TrainLoss: 0.5456 | ValLoss: 0.1520 | Time: 11.54s
+Epoch 005 | TrainLoss: 0.5172 | ValLoss: 0.1467 | Time: 11.63s
+Epoch 006 | TrainLoss: 0.4972 | ValLoss: 0.1436 | Time: 11.65s
+Epoch 007 | TrainLoss: 0.4787 | ValLoss: 0.1416 | Time: 11.53s
+Epoch 008 | TrainLoss: 0.4699 | ValLoss: 0.1407 | Time: 11.58s
+Epoch 009 | TrainLoss: 0.4622 | ValLoss: 0.1402 | Time: 11.62s
+Epoch 010 | TrainLoss: 0.4573 | ValLoss: 0.1393 | Time: 11.85s
+Epoch 011 | TrainLoss: 0.4493 | ValLoss: 0.1391 | Time: 11.56s
+Epoch 012 | TrainLoss: 0.4461 | ValLoss: 0.1393 | Time: 11.67s
+Epoch 013 | TrainLoss: 0.4411 | ValLoss: 0.1390 | Time: 11.76s
+Epoch 014 | TrainLoss: 0.4355 | ValLoss: 0.1390 | Time: 11.74s
+Epoch 015 | TrainLoss: 0.4338 | ValLoss: 0.1390 | Time: 11.67s
+Epoch 016 | TrainLoss: 0.4291 | ValLoss: 0.1385 | Time: 11.82s
+Epoch 017 | TrainLoss: 0.4246 | ValLoss: 0.1385 | Time: 11.72s
+Epoch 018 | TrainLoss: 0.4234 | ValLoss: 0.1395 | Time: 11.74s
+Epoch 019 | TrainLoss: 0.4173 | ValLoss: 0.1385 | Time: 13.46s
+Epoch 020 | TrainLoss: 0.4191 | ValLoss: 0.1380 | Time: 12.77s
+Epoch 021 | TrainLoss: 0.4124 | ValLoss: 0.1389 | Time: 12.79s
+Epoch 022 | TrainLoss: 0.4116 | ValLoss: 0.1391 | Time: 12.81s
+Epoch 023 | TrainLoss: 0.4057 | ValLoss: 0.1381 | Time: 12.41s
+Epoch 024 | TrainLoss: 0.4020 | ValLoss: 0.1410 | Time: 12.60s
+Epoch 025 | TrainLoss: 0.3965 | ValLoss: 0.1411 | Time: 12.70s
+Epoch 026 | TrainLoss: 0.3986 | ValLoss: 0.1400 | Time: 12.75s
+Epoch 027 | TrainLoss: 0.3946 | ValLoss: 0.1433 | Time: 12.83s
+Epoch 028 | TrainLoss: 0.3901 | ValLoss: 0.1397 | Time: 12.73s
+Epoch 029 | TrainLoss: 0.3868 | ValLoss: 0.1424 | Time: 12.86s
+Epoch 030 | TrainLoss: 0.3847 | ValLoss: 0.1421 | Time: 12.64s
+Restoring best model from epoch with val score: 0.1380341097523331
+[stock_ref_e1024_d5_f3] fit 364.7s epochs 30 best 20 | test AUC 0.8320 F1@0.5 0.6820 | params 3239936 | V 50 | RSS 2385 MB

@@ -1,0 +1,87 @@
+{
+  "run_id": "stock_ref_e1024_d5_f2",
+  "label": "Stock GRANDE 1.0 reference (not the matched centralized comparator)",
+  "scheme": "C2",
+  "outer_fold": 2,
+  "seed": 42,
+  "split_id": "C2/outer2/splits_inner_v1",
+  "n_fit": 5357,
+  "n_val": 1340,
+  "n_test": 1681,
+  "test_pos": 276,
+  "test_at_0.5": {
+    "threshold": 0.5,
+    "roc_auc": 0.8367166950332663,
+    "macro_f1": 0.6778416600581549,
+    "accuracy": 0.7584770969660916,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        1058,
+        347
+      ],
+      [
+        59,
+        217
+      ]
+    ]
+  },
+  "test_at_val_threshold": {
+    "threshold": 0.73,
+    "roc_auc": 0.8367166950332663,
+    "macro_f1": 0.7137737508513571,
+    "accuracy": 0.8488994646044021,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        1291,
+        114
+      ],
+      [
+        140,
+        136
+      ]
+    ]
+  },
+  "val_at_0.5": {
+    "threshold": 0.5,
+    "roc_auc": 0.8226482296249739,
+    "macro_f1": 0.6669308216193771,
+    "accuracy": 0.746268656716418,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        827,
+        291
+      ],
+      [
+        49,
+        173
+      ]
+    ]
+  },
+  "val_selected_threshold": 0.73,
+  "best_epoch": 9,
+  "epochs_completed": 18,
+  "best_val_score": 0.14257850433463481,
+  "fit_seconds": 209.00180404196726,
+  "predict_test_seconds": 1.0260051249642856,
+  "seconds_per_epoch_mean": 11.523888888888889,
+  "peak_rss_mb_process": 2598.390625,
+  "peak_rss_mb_before_fit": 414.984375,
+  "trainable_parameters": 3239936,
+  "network_input_features_after_preprocessing": 240,
+  "selected_variables_per_estimator": 50,
+  "n_estimators": 1024,
+  "depth": 5,
+  "effective_batch_size": 256,
+  "compiled": false,
+  "torch_threads": 6,
+  "preprocessing": {
+    "num_columns": 58,
+    "binary_cat": 3,
+    "one_hot_cat": 57,
+    "loo_target_encoded_cat": [
+      "field"
+    ],
+    "numeric_imputation_value_(GRANDE: mean of first numeric column)": 26.3430725730443,
+    "first_numeric_column": "age"
+  }
+}

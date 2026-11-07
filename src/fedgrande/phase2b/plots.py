@@ -89,7 +89,7 @@ def main(parts=("natural", "iid")):
     piv[cols].plot(kind="bar", ax=ax, width=0.8)
     sizes = nat.drop_duplicates("wave").set_index("wave")
     ax.set_xticklabels([f"{w}\n(n={int(sizes.loc[w, 'n'])}, +{int(sizes.loc[w, 'pos'])})" for w in piv.index], fontsize=7)
-    ax.set_ylim(0.4, 1.0)
+    ax.set_ylim(max(0.0, float(piv[cols].min().min()) - 0.05), 1.0)
     ax.set_ylabel("pooled-OOF ROC-AUC (mean over 3 seeds)")
     ax.set_title("Per-wave ROC-AUC, natural partition (small waves are unstable)", fontsize=10)
     ax.legend(fontsize=8, ncol=5)
