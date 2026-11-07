@@ -1,0 +1,32 @@
+Epoch 001 | TrainLoss: 0.6774 | ValLoss: 0.1815 | Time: 3.14s
+Epoch 002 | TrainLoss: 0.6329 | ValLoss: 0.1692 | Time: 2.98s
+Epoch 003 | TrainLoss: 0.5857 | ValLoss: 0.1589 | Time: 2.99s
+Epoch 004 | TrainLoss: 0.5501 | ValLoss: 0.1514 | Time: 3.00s
+Epoch 005 | TrainLoss: 0.5226 | ValLoss: 0.1465 | Time: 3.25s
+Epoch 006 | TrainLoss: 0.5048 | ValLoss: 0.1434 | Time: 3.13s
+Epoch 007 | TrainLoss: 0.4899 | ValLoss: 0.1418 | Time: 3.16s
+Epoch 008 | TrainLoss: 0.4817 | ValLoss: 0.1406 | Time: 3.11s
+Epoch 009 | TrainLoss: 0.4738 | ValLoss: 0.1405 | Time: 3.12s
+Epoch 010 | TrainLoss: 0.4725 | ValLoss: 0.1391 | Time: 3.13s
+Epoch 011 | TrainLoss: 0.4648 | ValLoss: 0.1395 | Time: 3.14s
+Epoch 012 | TrainLoss: 0.4622 | ValLoss: 0.1394 | Time: 3.16s
+Epoch 013 | TrainLoss: 0.4644 | ValLoss: 0.1384 | Time: 3.23s
+Epoch 014 | TrainLoss: 0.4560 | ValLoss: 0.1387 | Time: 3.18s
+Epoch 015 | TrainLoss: 0.4551 | ValLoss: 0.1386 | Time: 3.30s
+Epoch 016 | TrainLoss: 0.4518 | ValLoss: 0.1385 | Time: 3.03s
+Epoch 017 | TrainLoss: 0.4483 | ValLoss: 0.1380 | Time: 3.04s
+Epoch 018 | TrainLoss: 0.4444 | ValLoss: 0.1374 | Time: 2.98s
+Epoch 019 | TrainLoss: 0.4386 | ValLoss: 0.1377 | Time: 2.96s
+Epoch 020 | TrainLoss: 0.4376 | ValLoss: 0.1370 | Time: 2.95s
+Epoch 021 | TrainLoss: 0.4360 | ValLoss: 0.1378 | Time: 2.95s
+Epoch 022 | TrainLoss: 0.4317 | ValLoss: 0.1388 | Time: 3.02s
+Epoch 023 | TrainLoss: 0.4317 | ValLoss: 0.1374 | Time: 3.01s
+Epoch 024 | TrainLoss: 0.4290 | ValLoss: 0.1371 | Time: 3.00s
+Epoch 025 | TrainLoss: 0.4232 | ValLoss: 0.1381 | Time: 3.06s
+Epoch 026 | TrainLoss: 0.4211 | ValLoss: 0.1374 | Time: 3.03s
+Epoch 027 | TrainLoss: 0.4205 | ValLoss: 0.1378 | Time: 3.02s
+Epoch 028 | TrainLoss: 0.4156 | ValLoss: 0.1376 | Time: 3.03s
+Epoch 029 | TrainLoss: 0.4146 | ValLoss: 0.1375 | Time: 2.99s
+Epoch 030 | TrainLoss: 0.4137 | ValLoss: 0.1367 | Time: 3.05s
+Restoring best model from epoch with val score: 0.1367440437203023
+[F_e256_d5] fit 94.2s epochs 30 best 30 | test AUC 0.8738 F1@0.5 0.7086 | params 809984 | V 50 | RSS 1287 MB

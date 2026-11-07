@@ -1,0 +1,406 @@
+{
+  "algorithm_version": "dyads-v1",
+  "mirror_pairs_self_partner": [
+    [
+      "age",
+      "age_o"
+    ],
+    [
+      "race",
+      "race_o"
+    ],
+    [
+      "attractive_important",
+      "pref_o_attractive"
+    ],
+    [
+      "sincere_important",
+      "pref_o_sincere"
+    ],
+    [
+      "intellicence_important",
+      "pref_o_intelligence"
+    ],
+    [
+      "funny_important",
+      "pref_o_funny"
+    ],
+    [
+      "ambtition_important",
+      "pref_o_ambitious"
+    ],
+    [
+      "shared_interests_important",
+      "pref_o_shared_interests"
+    ],
+    [
+      "attractive_partner",
+      "attractive_o"
+    ],
+    [
+      "sincere_partner",
+      "sinsere_o"
+    ],
+    [
+      "intelligence_partner",
+      "intelligence_o"
+    ],
+    [
+      "funny_partner",
+      "funny_o"
+    ],
+    [
+      "ambition_partner",
+      "ambitous_o"
+    ],
+    [
+      "shared_interests_partner",
+      "shared_interests_o"
+    ]
+  ],
+  "symmetric_columns": [
+    "samerace",
+    "d_age",
+    "interests_correlate"
+  ],
+  "hard_constraints": "same wave, opposite gender",
+  "label_columns_used_to_define_pairs": [],
+  "n_rows": 8378,
+  "n_groups": 4189,
+  "status_rows": {
+    "pair_mutual": 8346,
+    "ambiguous_group": 18,
+    "singleton": 10,
+    "pair_one_way": 4
+  },
+  "status_groups": {
+    "pair_mutual": 4173,
+    "singleton": 10,
+    "ambiguous_group": 4,
+    "pair_one_way": 2
+  },
+  "rows_with_exact_candidate_count": {
+    "0": 12,
+    "1": 8356,
+    "2": 10
+  },
+  "paired_rows_total": 8350,
+  "dyads_size2": 4175,
+  "validation_pairs": {
+    "pairs_same_wave": true,
+    "pairs_opposite_gender": true,
+    "pairs_same_match": true,
+    "pairs_with_different_match": 0,
+    "decision_equals_mirror_decision_o (validation only)": true,
+    "decision_mismatches_rows (validation only)": 0
+  },
+  "validation_groups": {
+    "groups_single_wave": true,
+    "ambiguous_groups_with_mixed_match": 1
+  },
+  "one_way_pairs": [
+    {
+      "row": 6216,
+      "proposed_mirror": 5827,
+      "differing_partner_side_columns": [
+        "attractive_o"
+      ],
+      "values_row": {
+        "attractive_o": "10.5"
+      },
+      "values_mirror_self_side": {
+        "attractive_partner": "10.0"
+      }
+    },
+    {
+      "row": 6608,
+      "proposed_mirror": 6670,
+      "differing_partner_side_columns": [
+        "funny_o"
+      ],
+      "values_row": {
+        "funny_o": "11.0"
+      },
+      "values_mirror_self_side": {
+        "funny_partner": "10.0"
+      }
+    }
+  ],
+  "ambiguous_groups": [
+    {
+      "dyad_id": 425,
+      "rows": [
+        829,
+        839,
+        845,
+        920,
+        921,
+        981
+      ],
+      "wave": 3,
+      "genders": {
+        "female": 3,
+        "male": 3
+      },
+      "exact_candidate_lists": {
+        "829": [
+          920,
+          921
+        ],
+        "839": [
+          920,
+          921
+        ],
+        "845": [
+          981
+        ],
+        "920": [
+          829
+        ],
+        "921": [
+          839,
+          845
+        ],
+        "981": [
+          839,
+          845
+        ]
+      },
+      "match_values": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "dyad_id": 836,
+      "rows": [
+        1666,
+        1696,
+        1747,
+        1750
+      ],
+      "wave": 5,
+      "genders": {
+        "female": 2,
+        "male": 2
+      },
+      "exact_candidate_lists": {
+        "1666": [
+          1747,
+          1750
+        ],
+        "1696": [
+          1747,
+          1750
+        ],
+        "1747": [
+          1666
+        ],
+        "1750": [
+          1696
+        ]
+      },
+      "match_values": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "dyad_id": 2030,
+      "rows": [
+        3813,
+        3897,
+        4274,
+        4278
+      ],
+      "wave": 11,
+      "genders": {
+        "female": 2,
+        "male": 2
+      },
+      "exact_candidate_lists": {
+        "3813": [
+          4274,
+          4278
+        ],
+        "3897": [
+          4274,
+          4278
+        ],
+        "4274": [
+          3813
+        ],
+        "4278": [
+          3897
+        ]
+      },
+      "match_values": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "dyad_id": 2891,
+      "rows": [
+        5762,
+        6047,
+        6410,
+        6425
+      ],
+      "wave": 15,
+      "genders": {
+        "female": 2,
+        "male": 2
+      },
+      "exact_candidate_lists": {
+        "5762": [
+          6410,
+          6425
+        ],
+        "6047": [
+          6410,
+          6425
+        ],
+        "6410": [
+          5762
+        ],
+        "6425": [
+          6047
+        ]
+      },
+      "match_values": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    }
+  ],
+  "singletons": [
+    {
+      "row": 1755,
+      "wave": 5,
+      "gender": "male",
+      "partner_side_missing": 14,
+      "partner_side_columns": 14,
+      "best_mismatch": 10,
+      "n_rows_at_best_mismatch": 2
+    },
+    {
+      "row": 1765,
+      "wave": 5,
+      "gender": "male",
+      "partner_side_missing": 14,
+      "partner_side_columns": 14,
+      "best_mismatch": 10,
+      "n_rows_at_best_mismatch": 2
+    },
+    {
+      "row": 1775,
+      "wave": 5,
+      "gender": "male",
+      "partner_side_missing": 14,
+      "partner_side_columns": 14,
+      "best_mismatch": 10,
+      "n_rows_at_best_mismatch": 2
+    },
+    {
+      "row": 1785,
+      "wave": 5,
+      "gender": "male",
+      "partner_side_missing": 14,
+      "partner_side_columns": 14,
+      "best_mismatch": 10,
+      "n_rows_at_best_mismatch": 2
+    },
+    {
+      "row": 1795,
+      "wave": 5,
+      "gender": "male",
+      "partner_side_missing": 14,
+      "partner_side_columns": 14,
+      "best_mismatch": 10,
+      "n_rows_at_best_mismatch": 2
+    },
+    {
+      "row": 1805,
+      "wave": 5,
+      "gender": "male",
+      "partner_side_missing": 14,
+      "partner_side_columns": 14,
+      "best_mismatch": 10,
+      "n_rows_at_best_mismatch": 2
+    },
+    {
+      "row": 1815,
+      "wave": 5,
+      "gender": "male",
+      "partner_side_missing": 14,
+      "partner_side_columns": 14,
+      "best_mismatch": 10,
+      "n_rows_at_best_mismatch": 2
+    },
+    {
+      "row": 1825,
+      "wave": 5,
+      "gender": "male",
+      "partner_side_missing": 14,
+      "partner_side_columns": 14,
+      "best_mismatch": 10,
+      "n_rows_at_best_mismatch": 2
+    },
+    {
+      "row": 1835,
+      "wave": 5,
+      "gender": "male",
+      "partner_side_missing": 14,
+      "partner_side_columns": 14,
+      "best_mismatch": 10,
+      "n_rows_at_best_mismatch": 2
+    },
+    {
+      "row": 1845,
+      "wave": 5,
+      "gender": "male",
+      "partner_side_missing": 14,
+      "partner_side_columns": 14,
+      "best_mismatch": 10,
+      "n_rows_at_best_mismatch": 2
+    }
+  ],
+  "outputs": {
+    "dyads_csv": "data/derived/phase2/dyads_v1.csv",
+    "dyads_csv_sha256": "db2d81ad4341dc3e6b3d683780e59194ef67c7932184be431b443958e739450f"
+  },
+  "input_arff_sha256": "121ad0ca93e82c21964709bdcea222119a362cfdd8f4c38d1f010bc830dda38a",
+  "meta": {
+    "created_utc": "2026-11-07T05:22:35.725715+00:00",
+    "project_commit": "1f4a0384a201af9a375fd961034f13e7cca447b7",
+    "project_tracked_changes": [],
+    "conda_env": "fedgrande-dev",
+    "python": "3.12.14",
+    "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-dev/bin/python",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "GRANDE": "1.0.0",
+      "torch": "2.7.1",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "category-encoders": "2.9.0",
+      "openml": "0.15.1"
+    },
+    "torch_threads": 6,
+    "torch_float32_matmul_precision": "highest"
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "impl": "ref",
+  "fit_seconds": 24.889942749985494,
+  "curve": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6768,
+      "val_loss": 0.1816
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.6319,
+      "val_loss": 0.1697
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.5832,
+      "val_loss": 0.1598
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.5487,
+      "val_loss": 0.1532
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.524,
+      "val_loss": 0.1474
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.5064,
+      "val_loss": 0.1448
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.4927,
+      "val_loss": 0.1424
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.4839,
+      "val_loss": 0.1418
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.4742,
+      "val_loss": 0.1426
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.4698,
+      "val_loss": 0.1415
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.468,
+      "val_loss": 0.1395
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.4655,
+      "val_loss": 0.1421
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.4584,
+      "val_loss": 0.1379
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.4602,
+      "val_loss": 0.1403
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.4548,
+      "val_loss": 0.1415
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.4483,
+      "val_loss": 0.1405
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.4464,
+      "val_loss": 0.1394
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.4482,
+      "val_loss": 0.1387
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.4383,
+      "val_loss": 0.1416
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.4364,
+      "val_loss": 0.1415
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.4342,
+      "val_loss": 0.1404
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.4332,
+      "val_loss": 0.1423
+    },
+    {
+      "epoch": 23,
+      "train_loss": 0.4345,
+      "val_loss": 0.1394
+    },
+    {
+      "epoch": 24,
+      "train_loss": 0.4251,
+      "val_loss": 0.1411
+    },
+    {
+      "epoch": 25,
+      "train_loss": 0.4212,
+      "val_loss": 0.1383
+    },
+    {
+      "epoch": 26,
+      "train_loss": 0.4238,
+      "val_loss": 0.1396
+    },
+    {
+      "epoch": 27,
+      "train_loss": 0.4177,
+      "val_loss": 0.1385
+    },
+    {
+      "epoch": 28,
+      "train_loss": 0.4192,
+      "val_loss": 0.1398
+    },
+    {
+      "epoch": 29,
+      "train_loss": 0.4081,
+      "val_loss": 0.1405
+    },
+    {
+      "epoch": 30,
+      "train_loss": 0.4137,
+      "val_loss": 0.139
+    }
+  ],
+  "harness_controls": [
+    "torch.compile replaced by identity in this process (07f7278b compiles unconditionally)",
+    "instance.preprocess replaced by identity on the shared prepared matrix"
+  ],
+  "config": {
+    "description": "E0b limited training sanity comparison: 07f7278b vs db79c860 training loops on one identical prepared float32 matrix (C2 outer fold 0, grouped inner validation). One split, one seed. Diagnostic only.",
+    "scheme": "C2",
+    "outer_fold": 0,
+    "seed": 42,
+    "float32_matmul_precision": "high",
+    "preprocessing": {
+      "implementation": "GRANDE 1.0.0 GRANDEPreprocessor fitted on the fit rows only",
+      "problem_type": "binary",
+      "use_numeric_embeddings": false,
+      "use_category_embeddings": false,
+      "missing_values": false,
+      "use_freq_enc": false,
+      "use_robust_scale_smoothing": true,
+      "loo_cardinality": 10,
+      "embedding_threshold": 1
+    },
+    "matched_hyperparameters": {
+      "depth": 5,
+      "n_estimators": 64,
+      "selected_variables": 0.8,
+      "data_subset_fraction": 1.0,
+      "bootstrap": false,
+      "dropout": 0.0,
+      "learning_rate_weights": 0.005,
+      "learning_rate_index": 0.01,
+      "learning_rate_values": 0.01,
+      "learning_rate_leaf": 0.01,
+      "learning_rate_embedding": 0.001,
+      "optimizer": "adam",
+      "cosine_decay_restarts": false,
+      "reduce_on_plateau_scheduler": false,
+      "epochs": 30,
+      "batch_size": 256,
+      "early_stopping_epochs": 30,
+      "es_metric": false,
+      "swa": false,
+      "use_class_weights": true,
+      "focal_loss": false,
+      "label_smoothing": 0.0,
+      "use_numeric_embeddings": false,
+      "use_category_embeddings": false,
+      "embedding_dim_num": 4,
+      "embedding_dim_cat": 8,
+      "num_emb_n_bins": 8,
+      "missing_values": false,
+      "verbose": 1
+    },
+    "ref_only_hyperparameters": {
+      "problem_type": "binary",
+      "use_multi_estimator_lr": false,
+      "estimator_lr_factors": null,
+      "temperature": 0.0,
+      "attach_preprocessed_data": false
+    },
+    "compile": false
+  },
+  "torch_threads": 6,
+  "meta": {
+    "created_utc": "2026-11-07T05:29:10.063439+00:00",
+    "project_commit": "1f4a0384a201af9a375fd961034f13e7cca447b7",
+    "project_tracked_changes": [],
+    "conda_env": "fedgrande-ref",
+    "python": "3.12.14",
+    "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-ref/bin/python",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "GRANDE": "0.2.0",
+      "torch": "2.7.1",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "category-encoders": "2.9.0",
+      "openml": "0.15.1"
+    },
+    "grande": {
+      "impl": "ref",
+      "worktree": "/Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_ref_07f7278b",
+      "expected_commit": "07f7278b30ab9ebbbdc544e5f9a91f1b5df7fecb",
+      "head_commit": "07f7278b30ab9ebbbdc544e5f9a91f1b5df7fecb",
+      "commit_matches": true,
+      "tracked_changes": []
+    },
+    "torch_threads": 6,
+    "torch_float32_matmul_precision": "high"
+  }
+}

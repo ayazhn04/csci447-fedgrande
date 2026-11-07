@@ -1,0 +1,87 @@
+{
+  "run_id": "E_main",
+  "label": "GRANDE 1.0.0 baseline (not a paper reproduction): 1.0.0 defaults except embeddings off, class weights on, compile off",
+  "scheme": "C2",
+  "outer_fold": 0,
+  "seed": 42,
+  "split_id": "C2/outer0/splits_inner_v1",
+  "n_fit": 5361,
+  "n_val": 1340,
+  "n_test": 1677,
+  "test_pos": 276,
+  "test_at_0.5": {
+    "threshold": 0.5,
+    "roc_auc": 0.8766434948121942,
+    "macro_f1": 0.7065285868728272,
+    "accuracy": 0.7853309481216458,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        1093,
+        308
+      ],
+      [
+        52,
+        224
+      ]
+    ]
+  },
+  "test_at_val_threshold": {
+    "threshold": 0.76,
+    "roc_auc": 0.8766434948121942,
+    "macro_f1": 0.7374147734531468,
+    "accuracy": 0.8574836016696482,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        1286,
+        115
+      ],
+      [
+        124,
+        152
+      ]
+    ]
+  },
+  "val_at_0.5": {
+    "threshold": 0.5,
+    "roc_auc": 0.8437404309497333,
+    "macro_f1": 0.6824335565118855,
+    "accuracy": 0.7746268656716417,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        880,
+        238
+      ],
+      [
+        64,
+        158
+      ]
+    ]
+  },
+  "val_selected_threshold": 0.76,
+  "best_epoch": 34,
+  "epochs_completed": 34,
+  "best_val_score": 0.1361561725388712,
+  "fit_seconds": 441.11428037501173,
+  "predict_test_seconds": 1.128082750015892,
+  "seconds_per_epoch_mean": 12.915588235294118,
+  "peak_rss_mb_process": 2447.625,
+  "peak_rss_mb_before_fit": 417.78125,
+  "trainable_parameters": 3239936,
+  "network_input_features_after_preprocessing": 241,
+  "selected_variables_per_estimator": 50,
+  "n_estimators": 1024,
+  "depth": 5,
+  "effective_batch_size": 256,
+  "compiled": false,
+  "torch_threads": 6,
+  "preprocessing": {
+    "num_columns": 59,
+    "binary_cat": 3,
+    "one_hot_cat": 57,
+    "loo_target_encoded_cat": [
+      "field"
+    ],
+    "numeric_imputation_value_(GRANDE: mean of first numeric column)": 11.459242678604738,
+    "first_numeric_column": "wave"
+  }
+}

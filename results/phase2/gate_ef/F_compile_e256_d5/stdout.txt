@@ -1,0 +1,35 @@
+Epoch 001 | TrainLoss: 0.6776 | ValLoss: 0.1818 | Time: 23.40s
+Epoch 002 | TrainLoss: 0.6321 | ValLoss: 0.1694 | Time: 1.07s
+Epoch 003 | TrainLoss: 0.5860 | ValLoss: 0.1593 | Time: 1.05s
+Epoch 004 | TrainLoss: 0.5501 | ValLoss: 0.1522 | Time: 1.04s
+Epoch 005 | TrainLoss: 0.5237 | ValLoss: 0.1474 | Time: 1.05s
+Epoch 006 | TrainLoss: 0.5049 | ValLoss: 0.1444 | Time: 1.05s
+Epoch 007 | TrainLoss: 0.4899 | ValLoss: 0.1426 | Time: 1.06s
+Epoch 008 | TrainLoss: 0.4819 | ValLoss: 0.1416 | Time: 1.06s
+Epoch 009 | TrainLoss: 0.4753 | ValLoss: 0.1411 | Time: 1.05s
+Epoch 010 | TrainLoss: 0.4717 | ValLoss: 0.1398 | Time: 1.05s
+Epoch 011 | TrainLoss: 0.4645 | ValLoss: 0.1392 | Time: 1.05s
+Epoch 012 | TrainLoss: 0.4621 | ValLoss: 0.1396 | Time: 1.05s
+Epoch 013 | TrainLoss: 0.4647 | ValLoss: 0.1395 | Time: 1.05s
+Epoch 014 | TrainLoss: 0.4575 | ValLoss: 0.1387 | Time: 1.04s
+Epoch 015 | TrainLoss: 0.4527 | ValLoss: 0.1383 | Time: 1.06s
+Epoch 016 | TrainLoss: 0.4506 | ValLoss: 0.1385 | Time: 1.06s
+Epoch 017 | TrainLoss: 0.4492 | ValLoss: 0.1374 | Time: 1.01s
+Epoch 018 | TrainLoss: 0.4462 | ValLoss: 0.1364 | Time: 0.98s
+Epoch 019 | TrainLoss: 0.4383 | ValLoss: 0.1366 | Time: 1.00s
+Epoch 020 | TrainLoss: 0.4391 | ValLoss: 0.1370 | Time: 0.99s
+Epoch 021 | TrainLoss: 0.4387 | ValLoss: 0.1366 | Time: 1.06s
+Epoch 022 | TrainLoss: 0.4320 | ValLoss: 0.1369 | Time: 1.04s
+Epoch 023 | TrainLoss: 0.4309 | ValLoss: 0.1360 | Time: 1.07s
+Epoch 024 | TrainLoss: 0.4284 | ValLoss: 0.1361 | Time: 1.03s
+Epoch 025 | TrainLoss: 0.4231 | ValLoss: 0.1361 | Time: 1.06s
+Epoch 026 | TrainLoss: 0.4226 | ValLoss: 0.1361 | Time: 1.04s
+Epoch 027 | TrainLoss: 0.4232 | ValLoss: 0.1365 | Time: 1.03s
+Epoch 028 | TrainLoss: 0.4169 | ValLoss: 0.1352 | Time: 1.04s
+Epoch 029 | TrainLoss: 0.4148 | ValLoss: 0.1351 | Time: 1.05s
+Epoch 030 | TrainLoss: 0.4155 | ValLoss: 0.1357 | Time: 1.06s
+Epoch 031 | TrainLoss: 0.4134 | ValLoss: 0.1355 | Time: 1.04s
+Epoch 032 | TrainLoss: 0.4042 | ValLoss: 0.1363 | Time: 1.06s
+Epoch 033 | TrainLoss: 0.4054 | ValLoss: 0.1360 | Time: 1.06s
+Restoring best model from epoch with val score: 0.1351193250115238
+[F_compile_e256_d5] fit 60.4s epochs 33 best 29 | test AUC 0.8754 F1@0.5 0.7122 | params 809984 | V 50 | RSS 1119 MB

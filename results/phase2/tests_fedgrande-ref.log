@@ -1,0 +1,21 @@
+test_modeling_view (test_data.TestData.test_modeling_view) ... ok
+test_deterministic_and_matches_saved_file (test_dyads.TestDyadsRealData.test_deterministic_and_matches_saved_file) ... ok
+test_every_exact_candidate_is_in_same_group (test_dyads.TestDyadsRealData.test_every_exact_candidate_is_in_same_group) ... ok
+test_every_row_has_a_group (test_dyads.TestDyadsRealData.test_every_row_has_a_group) ... ok
+test_groups_never_cross_waves (test_dyads.TestDyadsRealData.test_groups_never_cross_waves) ... ok
+test_label_columns_not_used (test_dyads.TestDyadsRealData.test_label_columns_not_used) ... ok
+test_pairs_are_symmetric_and_consistent (test_dyads.TestDyadsRealData.test_pairs_are_symmetric_and_consistent) ... ok
+test_status_counts_consistent (test_dyads.TestDyadsRealData.test_status_counts_consistent) ... ok
+test_pair_ambiguity_and_singleton (test_dyads.TestDyadsToy.test_pair_ambiguity_and_singleton) ... ok
+test_deterministic_and_saved (test_splits.TestSplits.test_deterministic_and_saved) ... ok
+test_grouped_split_has_no_dyad_leakage (test_splits.TestSplits.test_grouped_split_has_no_dyad_leakage) ... ok
+test_inner_validation_is_grouped_and_disjoint (test_splits.TestSplits.test_inner_validation_is_grouped_and_disjoint) ... ok
+test_rowwise_reproduces_checkpoint1_split (test_splits.TestSplits.test_rowwise_reproduces_checkpoint1_split) ... ok
+test_rowwise_split_does_leak (test_splits.TestSplits.test_rowwise_split_does_leak) ... ok
+test_selected_variables_rule (test_e0_mapping.TestMapping.test_selected_variables_rule) ... ok
+test_state_keys_and_shapes (test_e0_mapping.TestMapping.test_state_keys_and_shapes) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 4.888s
+
+OK

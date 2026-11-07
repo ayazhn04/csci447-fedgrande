@@ -1,0 +1,657 @@
+{
+  "measured_runs": [
+    {
+      "run_id": "F_e64_d5",
+      "status": "ok",
+      "scheme": "C2",
+      "n_estimators": 64,
+      "depth": 5,
+      "V_effective": 50,
+      "input_features": 241,
+      "batch_size": 256,
+      "compiled": false,
+      "epochs_completed": 31,
+      "best_epoch": 21,
+      "fit_seconds": 31.6,
+      "sec_per_epoch_median": 0.92,
+      "first_epoch_seconds": 0.93,
+      "predict_test_seconds": 0.25,
+      "peak_rss_mb": 885,
+      "trainable_parameters": 202496,
+      "test_auc": 0.8794,
+      "test_macro_f1_0.5": 0.7082,
+      "test_accuracy_0.5": 0.7865,
+      "val_auc": 0.8371,
+      "val_threshold": 0.65,
+      "test_macro_f1_valthr": 0.7374
+    },
+    {
+      "run_id": "F_e256_d5",
+      "status": "ok",
+      "scheme": "C2",
+      "n_estimators": 256,
+      "depth": 5,
+      "V_effective": 50,
+      "input_features": 241,
+      "batch_size": 256,
+      "compiled": false,
+      "epochs_completed": 30,
+      "best_epoch": 30,
+      "fit_seconds": 94.2,
+      "sec_per_epoch_median": 3.03,
+      "first_epoch_seconds": 3.14,
+      "predict_test_seconds": 0.43,
+      "peak_rss_mb": 1287,
+      "trainable_parameters": 809984,
+      "test_auc": 0.8738,
+      "test_macro_f1_0.5": 0.7086,
+      "test_accuracy_0.5": 0.7901,
+      "val_auc": 0.8415,
+      "val_threshold": 0.67,
+      "test_macro_f1_valthr": 0.7527
+    },
+    {
+      "run_id": "F_e256_d4",
+      "status": "ok",
+      "scheme": "C2",
+      "n_estimators": 256,
+      "depth": 4,
+      "V_effective": 50,
+      "input_features": 241,
+      "batch_size": 256,
+      "compiled": false,
+      "epochs_completed": 33,
+      "best_epoch": 30,
+      "fit_seconds": 50.9,
+      "sec_per_epoch_median": 1.475,
+      "first_epoch_seconds": 1.53,
+      "predict_test_seconds": 0.31,
+      "peak_rss_mb": 944,
+      "trainable_parameters": 392192,
+      "test_auc": 0.8747,
+      "test_macro_f1_0.5": 0.7069,
+      "test_accuracy_0.5": 0.7889,
+      "val_auc": 0.8423,
+      "val_threshold": 0.62,
+      "test_macro_f1_valthr": 0.7415
+    },
+    {
+      "run_id": "F_e256_d6",
+      "status": "ok",
+      "scheme": "C2",
+      "n_estimators": 256,
+      "depth": 6,
+      "V_effective": 50,
+      "input_features": 241,
+      "batch_size": 256,
+      "compiled": false,
+      "epochs_completed": 33,
+      "best_epoch": 23,
+      "fit_seconds": 210.1,
+      "sec_per_epoch_median": 6.32,
+      "first_epoch_seconds": 6.74,
+      "predict_test_seconds": 0.62,
+      "peak_rss_mb": 1587,
+      "trainable_parameters": 1645568,
+      "test_auc": 0.8788,
+      "test_macro_f1_0.5": 0.7079,
+      "test_accuracy_0.5": 0.7889,
+      "val_auc": 0.8449,
+      "val_threshold": 0.62,
+      "test_macro_f1_valthr": 0.7395
+    },
+    {
+      "run_id": "F_e512_d5",
+      "status": "ok",
+      "scheme": "C2",
+      "n_estimators": 512,
+      "depth": 5,
+      "V_effective": 50,
+      "input_features": 241,
+      "batch_size": 256,
+      "compiled": false,
+      "epochs_completed": 39,
+      "best_epoch": 37,
+      "fit_seconds": 216.5,
+      "sec_per_epoch_median": 5.5,
+      "first_epoch_seconds": 5.82,
+      "predict_test_seconds": 0.52,
+      "peak_rss_mb": 1531,
+      "trainable_parameters": 1619968,
+      "test_auc": 0.8763,
+      "test_macro_f1_0.5": 0.7181,
+      "test_accuracy_0.5": 0.7979,
+      "val_auc": 0.8506,
+      "val_threshold": 0.67,
+      "test_macro_f1_valthr": 0.752
+    },
+    {
+      "run_id": "E_main",
+      "status": "ok",
+      "scheme": "C2",
+      "n_estimators": 1024,
+      "depth": 5,
+      "V_effective": 50,
+      "input_features": 241,
+      "batch_size": 256,
+      "compiled": false,
+      "epochs_completed": 34,
+      "best_epoch": 34,
+      "fit_seconds": 441.1,
+      "sec_per_epoch_median": 12.94,
+      "first_epoch_seconds": 13.33,
+      "predict_test_seconds": 1.13,
+      "peak_rss_mb": 2448,
+      "trainable_parameters": 3239936,
+      "test_auc": 0.8766,
+      "test_macro_f1_0.5": 0.7065,
+      "test_accuracy_0.5": 0.7853,
+      "val_auc": 0.8437,
+      "val_threshold": 0.76,
+      "test_macro_f1_valthr": 0.7374
+    },
+    {
+      "run_id": "F_compile_e256_d5",
+      "status": "ok",
+      "scheme": "C2",
+      "n_estimators": 256,
+      "depth": 5,
+      "V_effective": 50,
+      "input_features": 241,
+      "batch_size": 256,
+      "compiled": true,
+      "epochs_completed": 33,
+      "best_epoch": 29,
+      "fit_seconds": 60.4,
+      "sec_per_epoch_median": 1.05,
+      "first_epoch_seconds": 23.4,
+      "predict_test_seconds": 6.06,
+      "peak_rss_mb": 1119,
+      "trainable_parameters": 809984,
+      "test_auc": 0.8754,
+      "test_macro_f1_0.5": 0.7122,
+      "test_accuracy_0.5": 0.7913,
+      "val_auc": 0.8456,
+      "val_threshold": 0.64,
+      "test_macro_f1_valthr": 0.7335
+    },
+    {
+      "run_id": "C1_leak_e256_d5",
+      "status": "ok",
+      "scheme": "C1",
+      "n_estimators": 256,
+      "depth": 5,
+      "V_effective": 50,
+      "input_features": 241,
+      "batch_size": 256,
+      "compiled": false,
+      "epochs_completed": 30,
+      "best_epoch": 20,
+      "fit_seconds": 84.7,
+      "sec_per_epoch_median": 2.68,
+      "first_epoch_seconds": 2.79,
+      "predict_test_seconds": 0.38,
+      "peak_rss_mb": 1317,
+      "trainable_parameters": 809984,
+      "test_auc": 0.8294,
+      "test_macro_f1_0.5": 0.6723,
+      "test_accuracy_0.5": 0.7566,
+      "val_auc": 0.8559,
+      "val_threshold": 0.7,
+      "test_macro_f1_valthr": 0.6778
+    }
+  ],
+  "leakage_contrast_C1": {
+    "n_test": 1676,
+    "n_mirror_in_train": 1332,
+    "n_mirror_not_in_train": 344,
+    "pos_mirror_in_train": 227,
+    "pos_mirror_not_in_train": 49,
+    "auc_mirror_in_train": 0.8404887675164948,
+    "auc_mirror_not_in_train": 0.7809754410238672,
+    "auc_all_C1_test": 0.829404761904762,
+    "auc_C2_same_config": 0.8738,
+    "caveat": "single model, single fold; subsets differ in size/composition, the contrast is descriptive, not causal"
+  },
+  "projections": [
+    {
+      "config": "E64_d5",
+      "protocol": "5folds_x_1seed",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 0.39,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 31.6,
+        "local_only_all_clients_s": 31.6,
+        "fedavg_R100_E1_s": 92.0,
+        "fedavg_R200_E1_s": 184.0
+      }
+    },
+    {
+      "config": "E64_d5",
+      "protocol": "5folds_x_1seed",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 0.56,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 31.6,
+        "local_only_all_clients_s": 31.6,
+        "fedavg_R100_E1_s": 92.0,
+        "fedavg_R200_E1_s": 184.0
+      }
+    },
+    {
+      "config": "E64_d5",
+      "protocol": "5folds_x_3seeds",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 1.16,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 31.6,
+        "local_only_all_clients_s": 31.6,
+        "fedavg_R100_E1_s": 92.0,
+        "fedavg_R200_E1_s": 184.0
+      }
+    },
+    {
+      "config": "E64_d5",
+      "protocol": "5folds_x_3seeds",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 1.68,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 31.6,
+        "local_only_all_clients_s": 31.6,
+        "fedavg_R100_E1_s": 92.0,
+        "fedavg_R200_E1_s": 184.0
+      }
+    },
+    {
+      "config": "E64_d5",
+      "protocol": "3folds_x_3seeds",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 0.7,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 31.6,
+        "local_only_all_clients_s": 31.6,
+        "fedavg_R100_E1_s": 92.0,
+        "fedavg_R200_E1_s": 184.0
+      }
+    },
+    {
+      "config": "E64_d5",
+      "protocol": "3folds_x_3seeds",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 1.01,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 31.6,
+        "local_only_all_clients_s": 31.6,
+        "fedavg_R100_E1_s": 92.0,
+        "fedavg_R200_E1_s": 184.0
+      }
+    },
+    {
+      "config": "E256_d5",
+      "protocol": "5folds_x_1seed",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 1.23,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 94.2,
+        "local_only_all_clients_s": 94.2,
+        "fedavg_R100_E1_s": 303.0,
+        "fedavg_R200_E1_s": 606.0
+      }
+    },
+    {
+      "config": "E256_d5",
+      "protocol": "5folds_x_1seed",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 1.79,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 94.2,
+        "local_only_all_clients_s": 94.2,
+        "fedavg_R100_E1_s": 303.0,
+        "fedavg_R200_E1_s": 606.0
+      }
+    },
+    {
+      "config": "E256_d5",
+      "protocol": "5folds_x_3seeds",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 3.7,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 94.2,
+        "local_only_all_clients_s": 94.2,
+        "fedavg_R100_E1_s": 303.0,
+        "fedavg_R200_E1_s": 606.0
+      }
+    },
+    {
+      "config": "E256_d5",
+      "protocol": "5folds_x_3seeds",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 5.36,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 94.2,
+        "local_only_all_clients_s": 94.2,
+        "fedavg_R100_E1_s": 303.0,
+        "fedavg_R200_E1_s": 606.0
+      }
+    },
+    {
+      "config": "E256_d5",
+      "protocol": "3folds_x_3seeds",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 2.22,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 94.2,
+        "local_only_all_clients_s": 94.2,
+        "fedavg_R100_E1_s": 303.0,
+        "fedavg_R200_E1_s": 606.0
+      }
+    },
+    {
+      "config": "E256_d5",
+      "protocol": "3folds_x_3seeds",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 3.21,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 94.2,
+        "local_only_all_clients_s": 94.2,
+        "fedavg_R100_E1_s": 303.0,
+        "fedavg_R200_E1_s": 606.0
+      }
+    },
+    {
+      "config": "E256_d4",
+      "protocol": "5folds_x_1seed",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 0.62,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 50.9,
+        "local_only_all_clients_s": 50.9,
+        "fedavg_R100_E1_s": 147.5,
+        "fedavg_R200_E1_s": 295.0
+      }
+    },
+    {
+      "config": "E256_d4",
+      "protocol": "5folds_x_1seed",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 0.9,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 50.9,
+        "local_only_all_clients_s": 50.9,
+        "fedavg_R100_E1_s": 147.5,
+        "fedavg_R200_E1_s": 295.0
+      }
+    },
+    {
+      "config": "E256_d4",
+      "protocol": "5folds_x_3seeds",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 1.87,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 50.9,
+        "local_only_all_clients_s": 50.9,
+        "fedavg_R100_E1_s": 147.5,
+        "fedavg_R200_E1_s": 295.0
+      }
+    },
+    {
+      "config": "E256_d4",
+      "protocol": "5folds_x_3seeds",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 2.69,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 50.9,
+        "local_only_all_clients_s": 50.9,
+        "fedavg_R100_E1_s": 147.5,
+        "fedavg_R200_E1_s": 295.0
+      }
+    },
+    {
+      "config": "E256_d4",
+      "protocol": "3folds_x_3seeds",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 1.12,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 50.9,
+        "local_only_all_clients_s": 50.9,
+        "fedavg_R100_E1_s": 147.5,
+        "fedavg_R200_E1_s": 295.0
+      }
+    },
+    {
+      "config": "E256_d4",
+      "protocol": "3folds_x_3seeds",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 1.62,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 50.9,
+        "local_only_all_clients_s": 50.9,
+        "fedavg_R100_E1_s": 147.5,
+        "fedavg_R200_E1_s": 295.0
+      }
+    },
+    {
+      "config": "E256_d6",
+      "protocol": "5folds_x_1seed",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 2.63,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 210.1,
+        "local_only_all_clients_s": 210.1,
+        "fedavg_R100_E1_s": 632.0,
+        "fedavg_R200_E1_s": 1264.0
+      }
+    },
+    {
+      "config": "E256_d6",
+      "protocol": "5folds_x_1seed",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 3.8,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 210.1,
+        "local_only_all_clients_s": 210.1,
+        "fedavg_R100_E1_s": 632.0,
+        "fedavg_R200_E1_s": 1264.0
+      }
+    },
+    {
+      "config": "E256_d6",
+      "protocol": "5folds_x_3seeds",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 7.89,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 210.1,
+        "local_only_all_clients_s": 210.1,
+        "fedavg_R100_E1_s": 632.0,
+        "fedavg_R200_E1_s": 1264.0
+      }
+    },
+    {
+      "config": "E256_d6",
+      "protocol": "5folds_x_3seeds",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 11.4,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 210.1,
+        "local_only_all_clients_s": 210.1,
+        "fedavg_R100_E1_s": 632.0,
+        "fedavg_R200_E1_s": 1264.0
+      }
+    },
+    {
+      "config": "E256_d6",
+      "protocol": "3folds_x_3seeds",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 4.74,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 210.1,
+        "local_only_all_clients_s": 210.1,
+        "fedavg_R100_E1_s": 632.0,
+        "fedavg_R200_E1_s": 1264.0
+      }
+    },
+    {
+      "config": "E256_d6",
+      "protocol": "3folds_x_3seeds",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 6.84,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 210.1,
+        "local_only_all_clients_s": 210.1,
+        "fedavg_R100_E1_s": 632.0,
+        "fedavg_R200_E1_s": 1264.0
+      }
+    },
+    {
+      "config": "E512_d5",
+      "protocol": "5folds_x_1seed",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 2.43,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 216.5,
+        "local_only_all_clients_s": 216.5,
+        "fedavg_R100_E1_s": 550.0,
+        "fedavg_R200_E1_s": 1100.0
+      }
+    },
+    {
+      "config": "E512_d5",
+      "protocol": "5folds_x_1seed",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 3.49,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 216.5,
+        "local_only_all_clients_s": 216.5,
+        "fedavg_R100_E1_s": 550.0,
+        "fedavg_R200_E1_s": 1100.0
+      }
+    },
+    {
+      "config": "E512_d5",
+      "protocol": "5folds_x_3seeds",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 7.29,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 216.5,
+        "local_only_all_clients_s": 216.5,
+        "fedavg_R100_E1_s": 550.0,
+        "fedavg_R200_E1_s": 1100.0
+      }
+    },
+    {
+      "config": "E512_d5",
+      "protocol": "5folds_x_3seeds",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 10.48,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 216.5,
+        "local_only_all_clients_s": 216.5,
+        "fedavg_R100_E1_s": 550.0,
+        "fedavg_R200_E1_s": 1100.0
+      }
+    },
+    {
+      "config": "E512_d5",
+      "protocol": "3folds_x_3seeds",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 4.37,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 216.5,
+        "local_only_all_clients_s": 216.5,
+        "fedavg_R100_E1_s": 550.0,
+        "fedavg_R200_E1_s": 1100.0
+      }
+    },
+    {
+      "config": "E512_d5",
+      "protocol": "3folds_x_3seeds",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 6.29,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 216.5,
+        "local_only_all_clients_s": 216.5,
+        "fedavg_R100_E1_s": 550.0,
+        "fedavg_R200_E1_s": 1100.0
+      }
+    },
+    {
+      "config": "E1024_d5",
+      "protocol": "5folds_x_1seed",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 5.43,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 441.1,
+        "local_only_all_clients_s": 441.1,
+        "fedavg_R100_E1_s": 1294.0,
+        "fedavg_R200_E1_s": 2588.0
+      }
+    },
+    {
+      "config": "E1024_d5",
+      "protocol": "5folds_x_1seed",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 7.84,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 441.1,
+        "local_only_all_clients_s": 441.1,
+        "fedavg_R100_E1_s": 1294.0,
+        "fedavg_R200_E1_s": 2588.0
+      }
+    },
+    {
+      "config": "E1024_d5",
+      "protocol": "5folds_x_3seeds",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 16.3,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 441.1,
+        "local_only_all_clients_s": 441.1,
+        "fedavg_R100_E1_s": 1294.0,
+        "fedavg_R200_E1_s": 2588.0
+      }
+    },
+    {
+      "config": "E1024_d5",
+      "protocol": "5folds_x_3seeds",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 23.53,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 441.1,
+        "local_only_all_clients_s": 441.1,
+        "fedavg_R100_E1_s": 1294.0,
+        "fedavg_R200_E1_s": 2588.0
+      }
+    },
+    {
+      "config": "E1024_d5",
+      "protocol": "3folds_x_3seeds",
+      "partitions": "nat+iid",
+      "grande_hours_projected": 9.78,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 441.1,
+        "local_only_all_clients_s": 441.1,
+        "fedavg_R100_E1_s": 1294.0,
+        "fedavg_R200_E1_s": 2588.0
+      }
+    },
+    {
+      "config": "E1024_d5",
+      "protocol": "3folds_x_3seeds",
+      "partitions": "nat+iid+dirichlet",
+      "grande_hours_projected": 14.12,
+      "per_unit_seconds_measured_basis": {
+        "centralized_fit_s": 441.1,
+        "local_only_all_clients_s": 441.1,
+        "fedavg_R100_E1_s": 1294.0,
+        "fedavg_R200_E1_s": 2588.0
+      }
+    }
+  ],
+  "projection_assumptions": {
+    "A1": "seconds/epoch measured on C2 outer fold 0 (\u22485.36k fit + 1.34k val rows), 6 torch CPU threads, no other load; median over epochs 2..N",
+    "A2": "local-only over 21 clients costs about one centralized fit (same total samples per epoch; per-client early stopping assumed to take a similar number of epochs). Small-client batch overhead is ignored.",
+    "A3": "FedAvg-GRANDE: R rounds x 1 local epoch over all clients ~= R centralized epochs (client compute is sequential on one machine); aggregation and per-round validation overhead not included",
+    "A4": "FedAvg-MLP and logistic-regression baselines are not included (expected to be small relative to GRANDE; to be measured in Phase 2B)",
+    "A5": "projection = n_folds*n_seeds * [centralized + n_partitions * (local_only + fedavg)]"
+  }
+}

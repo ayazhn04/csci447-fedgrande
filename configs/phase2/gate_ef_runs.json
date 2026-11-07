@@ -1,0 +1,21 @@
+{
+  "description": "Gate E (first GRANDE 1.0.0 SpeedDating baseline) and Gate F (runtime benchmarks). All runs: GRANDEClassifier from db79c860, seed 42, dyad-grouped C2 outer fold 0 with grouped inner validation unless stated. Declared before any run: the Gate E primary baseline is E_main.",
+  "common_estimator_params": {"use_numeric_embeddings": false, "use_class_weights": true, "compile_model": false, "random_state": 42, "verbose": 1},
+  "common_rationale": {
+    "use_numeric_embeddings=false": "no embeddings (federation-compatible model input; also matches E0a/E0b); 1.0.0 default is true",
+    "use_class_weights=true": "16.5% positives and macro-F1 at a fixed 0.5 threshold; 1.0.0 default is false",
+    "compile_model=false": "deterministic engineering baseline; compile speed-up measured separately (F_compile)"
+  },
+  "runs": [
+    {"run_id": "F_e64_d5",   "scheme": "C2", "outer_fold": 0, "overrides": {"n_estimators": 64,   "depth": 5}},
+    {"run_id": "F_e256_d5",  "scheme": "C2", "outer_fold": 0, "overrides": {"n_estimators": 256,  "depth": 5}},
+    {"run_id": "F_e256_d4",  "scheme": "C2", "outer_fold": 0, "overrides": {"n_estimators": 256,  "depth": 4}},
+    {"run_id": "F_e256_d6",  "scheme": "C2", "outer_fold": 0, "overrides": {"n_estimators": 256,  "depth": 6}},
+    {"run_id": "F_e512_d5",  "scheme": "C2", "outer_fold": 0, "overrides": {"n_estimators": 512,  "depth": 5}},
+    {"run_id": "E_main",     "scheme": "C2", "outer_fold": 0, "overrides": {"n_estimators": 1024, "depth": 5},
+     "label": "GRANDE 1.0.0 baseline (not a paper reproduction): 1.0.0 defaults except embeddings off, class weights on, compile off"},
+    {"run_id": "F_compile_e256_d5", "scheme": "C2", "outer_fold": 0, "overrides": {"n_estimators": 256, "depth": 5, "compile_model": true}},
+    {"run_id": "C1_leak_e256_d5", "scheme": "C1", "outer_fold": 0, "overrides": {"n_estimators": 256, "depth": 5},
+     "label": "leakage diagnostic: historical row-wise split (C1) incl. row-wise inner validation; not a valid estimate"}
+  ]
+}

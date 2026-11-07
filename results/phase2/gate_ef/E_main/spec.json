@@ -1,0 +1,15 @@
+{
+  "run_id": "E_main",
+  "label": "GRANDE 1.0.0 baseline (not a paper reproduction): 1.0.0 defaults except embeddings off, class weights on, compile off",
+  "scheme": "C2",
+  "outer_fold": 0,
+  "estimator_params": {
+    "use_numeric_embeddings": false,
+    "use_class_weights": true,
+    "compile_model": false,
+    "random_state": 42,
+    "verbose": 1,
+    "n_estimators": 1024,
+    "depth": 5
+  }
+}

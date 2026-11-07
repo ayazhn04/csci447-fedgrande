@@ -1,0 +1,20 @@
+{
+  "description": "E0b limited training sanity comparison: 07f7278b vs db79c860 training loops on one identical prepared float32 matrix (C2 outer fold 0, grouped inner validation). One split, one seed. Diagnostic only.",
+  "scheme": "C2", "outer_fold": 0, "seed": 42,
+  "float32_matmul_precision": "high",
+  "preprocessing": {"implementation": "GRANDE 1.0.0 GRANDEPreprocessor fitted on the fit rows only", "problem_type": "binary",
+                    "use_numeric_embeddings": false, "use_category_embeddings": false, "missing_values": false,
+                    "use_freq_enc": false, "use_robust_scale_smoothing": true, "loo_cardinality": 10, "embedding_threshold": 1},
+  "matched_hyperparameters": {
+    "depth": 5, "n_estimators": 64, "selected_variables": 0.8, "data_subset_fraction": 1.0, "bootstrap": false,
+    "dropout": 0.0, "learning_rate_weights": 0.005, "learning_rate_index": 0.01, "learning_rate_values": 0.01,
+    "learning_rate_leaf": 0.01, "learning_rate_embedding": 0.001, "optimizer": "adam", "cosine_decay_restarts": false,
+    "reduce_on_plateau_scheduler": false, "epochs": 30, "batch_size": 256, "early_stopping_epochs": 30, "es_metric": false,
+    "swa": false, "use_class_weights": true, "focal_loss": false, "label_smoothing": 0.0, "use_numeric_embeddings": false,
+    "use_category_embeddings": false, "embedding_dim_num": 4, "embedding_dim_cat": 8, "num_emb_n_bins": 8, "missing_values": false,
+    "verbose": 1
+  },
+  "ref_only_hyperparameters": {"problem_type": "binary", "use_multi_estimator_lr": false, "estimator_lr_factors": null,
+                               "temperature": 0.0, "attach_preprocessed_data": false},
+  "compile": false
+}

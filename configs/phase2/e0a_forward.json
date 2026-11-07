@@ -1,0 +1,13 @@
+{
+  "description": "E0a forward-equivalence cases: GRANDE_Module of 07f7278b (ref) vs db79c860 (dev); eval mode, no dropout, no compile, float32.",
+  "float32_matmul_precision": "highest",
+  "input_seed": 0,
+  "canonical_state_seed": 1,
+  "module_seed": 42,
+  "cases": [
+    {"name": "small_d4_e16_f40", "depth": 4, "n_estimators": 16, "n_features": 40, "n_rows": 512, "selected_variables": 0.8, "missing_values": false, "nan_fraction": 0.0},
+    {"name": "speeddating_shape_d5_e64_f120", "depth": 5, "n_estimators": 64, "n_features": 120, "n_rows": 512, "selected_variables": 0.8, "missing_values": false, "nan_fraction": 0.0},
+    {"name": "missing_routing_d3_e8_f20", "depth": 3, "n_estimators": 8, "n_features": 20, "n_rows": 256, "selected_variables": 0.8, "missing_values": true, "nan_fraction": 0.1}
+  ],
+  "fixed": {"objective": "binary", "number_of_classes": 1, "dropout": 0.0, "data_subset_fraction": 1.0, "bootstrap": false, "batch_size": 256, "device": "cpu"}
+}

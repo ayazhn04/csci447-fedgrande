@@ -1,0 +1,19 @@
+{
+  "gates": {
+    "A_E0a_forward_equivalence": true,
+    "A_E0b_training_sanity": true,
+    "B_dyads_trustworthy": true,
+    "C_grouped_split_leak_free": true,
+    "D_wave_audit_done": true,
+    "E_baseline_trained": true,
+    "F_benchmarks_complete": true,
+    "tests_pass": true,
+    "third_party_unmodified": true
+  },
+  "phase2a_pass": true,
+  "tests": {
+    "fedgrande-dev": "OK",
+    "fedgrande-ref": "OK"
+  },
+  "free_disk_gib": 24.5
+}

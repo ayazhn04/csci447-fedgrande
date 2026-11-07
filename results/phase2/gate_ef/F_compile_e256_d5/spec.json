@@ -1,0 +1,15 @@
+{
+  "run_id": "F_compile_e256_d5",
+  "label": "runtime benchmark (GRANDE 1.0.0)",
+  "scheme": "C2",
+  "outer_fold": 0,
+  "estimator_params": {
+    "use_numeric_embeddings": false,
+    "use_class_weights": true,
+    "compile_model": true,
+    "random_state": 42,
+    "verbose": 1,
+    "n_estimators": 256,
+    "depth": 5
+  }
+}

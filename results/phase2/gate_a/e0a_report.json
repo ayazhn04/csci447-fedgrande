@@ -1,0 +1,902 @@
+{
+  "tolerance_max_abs": 1e-06,
+  "state_mapping_ref_to_dev": {
+    "split_values": "split_values",
+    "split_index_array": "split_index_array",
+    "estimator_weights": "estimator_weights",
+    "leaf_classes_array": "leaf_classes_array",
+    "features_by_estimator": "features_by_estimator",
+    "path_identifier_list": "path_identifier_list",
+    "internal_node_index_list": "internal_node_index_list"
+  },
+  "cases": [
+    {
+      "case": {
+        "name": "small_d4_e16_f40",
+        "depth": 4,
+        "n_estimators": 16,
+        "n_features": 40,
+        "n_rows": 512,
+        "selected_variables": 0.8,
+        "missing_values": false,
+        "nan_fraction": 0.0
+      },
+      "state_keys_ref": [
+        "estimator_weights",
+        "features_by_estimator",
+        "internal_node_index_list",
+        "leaf_classes_array",
+        "path_identifier_list",
+        "split_index_array",
+        "split_values"
+      ],
+      "state_keys_dev": [
+        "estimator_weights",
+        "features_by_estimator",
+        "internal_node_index_list",
+        "leaf_classes_array",
+        "path_identifier_list",
+        "split_index_array",
+        "split_values"
+      ],
+      "state_keys_identical": true,
+      "selected_variables_ref": 32,
+      "selected_variables_dev": 32,
+      "trainable_params_ref": 15872,
+      "trainable_params_dev": 15872,
+      "own_init_state": {
+        "split_values": {
+          "shape": [
+            16,
+            15,
+            32
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "split_index_array": {
+          "shape": [
+            16,
+            15,
+            32
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "estimator_weights": {
+          "shape": [
+            16,
+            16
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "leaf_classes_array": {
+          "shape": [
+            16,
+            16
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "features_by_estimator": {
+          "shape": [
+            16,
+            32
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "path_identifier_list": {
+          "shape": [
+            16,
+            4
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "internal_node_index_list": {
+          "shape": [
+            16,
+            4
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        }
+      },
+      "comparisons": {
+        "own_init/eval_logits": {
+          "shape": [
+            512,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/train_logits": {
+          "shape": [
+            512,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/loss": {
+          "shape": [],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/grad/split_values": {
+          "shape": [
+            16,
+            15,
+            32
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/grad/split_index_array": {
+          "shape": [
+            16,
+            15,
+            32
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/grad/estimator_weights": {
+          "shape": [
+            16,
+            16
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/grad/leaf_classes_array": {
+          "shape": [
+            16,
+            16
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/ref_eval_vs_ref_train": {
+          "shape": [
+            512,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/eval_logits": {
+          "shape": [
+            512,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/train_logits": {
+          "shape": [
+            512,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/loss": {
+          "shape": [],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/grad/split_values": {
+          "shape": [
+            16,
+            15,
+            32
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/grad/split_index_array": {
+          "shape": [
+            16,
+            15,
+            32
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/grad/estimator_weights": {
+          "shape": [
+            16,
+            16
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/grad/leaf_classes_array": {
+          "shape": [
+            16,
+            16
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/ref_eval_vs_ref_train": {
+          "shape": [
+            512,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        }
+      },
+      "pass_forward": true,
+      "pass_all_compared_tensors": true,
+      "canonical_logit_scale": {
+        "ref_abs_max": 1.000491976737976,
+        "ref_abs_mean": 0.28188562393188477
+      }
+    },
+    {
+      "case": {
+        "name": "speeddating_shape_d5_e64_f120",
+        "depth": 5,
+        "n_estimators": 64,
+        "n_features": 120,
+        "n_rows": 512,
+        "selected_variables": 0.8,
+        "missing_values": false,
+        "nan_fraction": 0.0
+      },
+      "state_keys_ref": [
+        "estimator_weights",
+        "features_by_estimator",
+        "internal_node_index_list",
+        "leaf_classes_array",
+        "path_identifier_list",
+        "split_index_array",
+        "split_values"
+      ],
+      "state_keys_dev": [
+        "estimator_weights",
+        "features_by_estimator",
+        "internal_node_index_list",
+        "leaf_classes_array",
+        "path_identifier_list",
+        "split_index_array",
+        "split_values"
+      ],
+      "state_keys_identical": true,
+      "selected_variables_ref": 50,
+      "selected_variables_dev": 50,
+      "trainable_params_ref": 202496,
+      "trainable_params_dev": 202496,
+      "own_init_state": {
+        "split_values": {
+          "shape": [
+            64,
+            31,
+            50
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "split_index_array": {
+          "shape": [
+            64,
+            31,
+            50
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "estimator_weights": {
+          "shape": [
+            64,
+            32
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "leaf_classes_array": {
+          "shape": [
+            64,
+            32
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "features_by_estimator": {
+          "shape": [
+            64,
+            50
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "path_identifier_list": {
+          "shape": [
+            32,
+            5
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "internal_node_index_list": {
+          "shape": [
+            32,
+            5
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        }
+      },
+      "comparisons": {
+        "own_init/eval_logits": {
+          "shape": [
+            512,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/train_logits": {
+          "shape": [
+            512,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/loss": {
+          "shape": [],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/grad/split_values": {
+          "shape": [
+            64,
+            31,
+            50
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/grad/split_index_array": {
+          "shape": [
+            64,
+            31,
+            50
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/grad/estimator_weights": {
+          "shape": [
+            64,
+            32
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/grad/leaf_classes_array": {
+          "shape": [
+            64,
+            32
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/ref_eval_vs_ref_train": {
+          "shape": [
+            512,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/eval_logits": {
+          "shape": [
+            512,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/train_logits": {
+          "shape": [
+            512,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/loss": {
+          "shape": [],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/grad/split_values": {
+          "shape": [
+            64,
+            31,
+            50
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/grad/split_index_array": {
+          "shape": [
+            64,
+            31,
+            50
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/grad/estimator_weights": {
+          "shape": [
+            64,
+            32
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/grad/leaf_classes_array": {
+          "shape": [
+            64,
+            32
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/ref_eval_vs_ref_train": {
+          "shape": [
+            512,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        }
+      },
+      "pass_forward": true,
+      "pass_all_compared_tensors": true,
+      "canonical_logit_scale": {
+        "ref_abs_max": 0.7199758291244507,
+        "ref_abs_mean": 0.15977764129638672
+      }
+    },
+    {
+      "case": {
+        "name": "missing_routing_d3_e8_f20",
+        "depth": 3,
+        "n_estimators": 8,
+        "n_features": 20,
+        "n_rows": 256,
+        "selected_variables": 0.8,
+        "missing_values": true,
+        "nan_fraction": 0.1
+      },
+      "state_keys_ref": [
+        "estimator_weights",
+        "features_by_estimator",
+        "internal_node_index_list",
+        "leaf_classes_array",
+        "path_identifier_list",
+        "split_index_array",
+        "split_values"
+      ],
+      "state_keys_dev": [
+        "estimator_weights",
+        "features_by_estimator",
+        "internal_node_index_list",
+        "leaf_classes_array",
+        "path_identifier_list",
+        "split_index_array",
+        "split_values"
+      ],
+      "state_keys_identical": true,
+      "selected_variables_ref": 16,
+      "selected_variables_dev": 16,
+      "trainable_params_ref": 1920,
+      "trainable_params_dev": 1920,
+      "own_init_state": {
+        "split_values": {
+          "shape": [
+            8,
+            7,
+            16
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "split_index_array": {
+          "shape": [
+            8,
+            7,
+            16
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "estimator_weights": {
+          "shape": [
+            8,
+            8
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "leaf_classes_array": {
+          "shape": [
+            8,
+            8
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "features_by_estimator": {
+          "shape": [
+            8,
+            16
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "path_identifier_list": {
+          "shape": [
+            8,
+            3
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "internal_node_index_list": {
+          "shape": [
+            8,
+            3
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        }
+      },
+      "comparisons": {
+        "own_init/eval_logits": {
+          "shape": [
+            256,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/train_logits": {
+          "shape": [
+            256,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/loss": {
+          "shape": [],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/grad/split_values": {
+          "shape": [
+            8,
+            7,
+            16
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/grad/split_index_array": {
+          "shape": [
+            8,
+            7,
+            16
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/grad/estimator_weights": {
+          "shape": [
+            8,
+            8
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/grad/leaf_classes_array": {
+          "shape": [
+            8,
+            8
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "own_init/ref_eval_vs_ref_train": {
+          "shape": [
+            256,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/eval_logits": {
+          "shape": [
+            256,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/train_logits": {
+          "shape": [
+            256,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/loss": {
+          "shape": [],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/grad/split_values": {
+          "shape": [
+            8,
+            7,
+            16
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/grad/split_index_array": {
+          "shape": [
+            8,
+            7,
+            16
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/grad/estimator_weights": {
+          "shape": [
+            8,
+            8
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/grad/leaf_classes_array": {
+          "shape": [
+            8,
+            8
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        },
+        "canonical/ref_eval_vs_ref_train": {
+          "shape": [
+            256,
+            2
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "nan_mismatch": 0,
+          "bitwise_equal": true
+        }
+      },
+      "pass_forward": true,
+      "pass_all_compared_tensors": true,
+      "canonical_logit_scale": {
+        "ref_abs_max": 0.9367310404777527,
+        "ref_abs_mean": 0.21795430779457092
+      }
+    }
+  ],
+  "E0a_pass": true,
+  "meta_ref": {
+    "created_utc": "2026-11-07T05:25:59.384786+00:00",
+    "project_commit": "1f4a0384a201af9a375fd961034f13e7cca447b7",
+    "project_tracked_changes": [],
+    "conda_env": "fedgrande-ref",
+    "python": "3.12.14",
+    "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-ref/bin/python",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "GRANDE": "0.2.0",
+      "torch": "2.7.1",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "category-encoders": "2.9.0",
+      "openml": "0.15.1"
+    },
+    "grande": {
+      "impl": "ref",
+      "worktree": "/Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_ref_07f7278b",
+      "expected_commit": "07f7278b30ab9ebbbdc544e5f9a91f1b5df7fecb",
+      "head_commit": "07f7278b30ab9ebbbdc544e5f9a91f1b5df7fecb",
+      "commit_matches": true,
+      "tracked_changes": []
+    },
+    "torch_threads": 6,
+    "torch_float32_matmul_precision": "highest",
+    "torch_threads_used": 6
+  },
+  "meta_dev": {
+    "created_utc": "2026-11-07T05:25:54.497732+00:00",
+    "project_commit": "1f4a0384a201af9a375fd961034f13e7cca447b7",
+    "project_tracked_changes": [],
+    "conda_env": "fedgrande-dev",
+    "python": "3.12.14",
+    "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-dev/bin/python",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "GRANDE": "1.0.0",
+      "torch": "2.7.1",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "category-encoders": "2.9.0",
+      "openml": "0.15.1"
+    },
+    "grande": {
+      "impl": "dev",
+      "worktree": "/Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_dev_db79c860",
+      "expected_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "head_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "commit_matches": true,
+      "tracked_changes": []
+    },
+    "torch_threads": 6,
+    "torch_float32_matmul_precision": "highest",
+    "torch_threads_used": 6
+  }
+}

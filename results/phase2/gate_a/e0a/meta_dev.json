@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-11-07T05:25:54.497732+00:00",
+  "project_commit": "1f4a0384a201af9a375fd961034f13e7cca447b7",
+  "project_tracked_changes": [],
+  "conda_env": "fedgrande-dev",
+  "python": "3.12.14",
+  "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-dev/bin/python",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "packages": {
+    "GRANDE": "1.0.0",
+    "torch": "2.7.1",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "category-encoders": "2.9.0",
+    "openml": "0.15.1"
+  },
+  "grande": {
+    "impl": "dev",
+    "worktree": "/Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_dev_db79c860",
+    "expected_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+    "head_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+    "commit_matches": true,
+    "tracked_changes": []
+  },
+  "torch_threads": 6,
+  "torch_float32_matmul_precision": "highest",
+  "torch_threads_used": 6
+}

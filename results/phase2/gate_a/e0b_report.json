@@ -1,0 +1,168 @@
+{
+  "epochs_ref": 30,
+  "epochs_dev": 30,
+  "train_loss_curve": {
+    "shape": [
+      30
+    ],
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "nan_mismatch": 0,
+    "bitwise_equal": true
+  },
+  "val_loss_curve": {
+    "shape": [
+      30
+    ],
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "nan_mismatch": 0,
+    "bitwise_equal": true
+  },
+  "best_epoch_ref": 13,
+  "best_epoch_dev": 13,
+  "loss_decreased_ref": true,
+  "loss_decreased_dev": true,
+  "final_state": {
+    "estimator_weights": {
+      "shape": [
+        64,
+        32
+      ],
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "nan_mismatch": 0,
+      "bitwise_equal": true
+    },
+    "features_by_estimator": {
+      "shape": [
+        64,
+        50
+      ],
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "nan_mismatch": 0,
+      "bitwise_equal": true
+    },
+    "internal_node_index_list": {
+      "shape": [
+        32,
+        5
+      ],
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "nan_mismatch": 0,
+      "bitwise_equal": true
+    },
+    "leaf_classes_array": {
+      "shape": [
+        64,
+        32
+      ],
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "nan_mismatch": 0,
+      "bitwise_equal": true
+    },
+    "path_identifier_list": {
+      "shape": [
+        32,
+        5
+      ],
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "nan_mismatch": 0,
+      "bitwise_equal": true
+    },
+    "split_index_array": {
+      "shape": [
+        64,
+        31,
+        50
+      ],
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "nan_mismatch": 0,
+      "bitwise_equal": true
+    },
+    "split_values": {
+      "shape": [
+        64,
+        31,
+        50
+      ],
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "nan_mismatch": 0,
+      "bitwise_equal": true
+    }
+  },
+  "p_val": {
+    "shape": [
+      1340
+    ],
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "nan_mismatch": 0,
+    "bitwise_equal": true
+  },
+  "p_test": {
+    "shape": [
+      1677
+    ],
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "nan_mismatch": 0,
+    "bitwise_equal": true
+  },
+  "ref_predict_proba_vs_direct_module": {
+    "shape": [
+      1677
+    ],
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "nan_mismatch": 0,
+    "bitwise_equal": true
+  },
+  "test_pred_agreement_at_0.5": 1.0,
+  "metrics": {
+    "ref": {
+      "val_auc": 0.836339022385534,
+      "test_auc": 0.8789994724265277,
+      "test_macro_f1_at_0.5": 0.708615126114601
+    },
+    "dev": {
+      "val_auc": 0.836339022385534,
+      "test_auc": 0.8789994724265277,
+      "test_macro_f1_at_0.5": 0.708615126114601
+    }
+  },
+  "fit_seconds": {
+    "ref": 24.889942749985494,
+    "dev": 23.614480083982926
+  },
+  "harness_controls_ref": [
+    "torch.compile replaced by identity in this process (07f7278b compiles unconditionally)",
+    "instance.preprocess replaced by identity on the shared prepared matrix"
+  ],
+  "commits": {
+    "ref": {
+      "impl": "ref",
+      "worktree": "/Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_ref_07f7278b",
+      "expected_commit": "07f7278b30ab9ebbbdc544e5f9a91f1b5df7fecb",
+      "head_commit": "07f7278b30ab9ebbbdc544e5f9a91f1b5df7fecb",
+      "commit_matches": true,
+      "tracked_changes": []
+    },
+    "dev": {
+      "impl": "dev",
+      "worktree": "/Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_dev_db79c860",
+      "expected_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "head_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "commit_matches": true,
+      "tracked_changes": []
+    }
+  },
+  "note": "Single split, single seed, 64 estimators, 30 epochs: a diagnostic of training-loop equivalence, not a performance or statistical result.",
+  "identical_training": true
+}

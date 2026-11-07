@@ -1,0 +1,87 @@
+{
+  "run_id": "F_e64_d5",
+  "label": "runtime benchmark (GRANDE 1.0.0)",
+  "scheme": "C2",
+  "outer_fold": 0,
+  "seed": 42,
+  "split_id": "C2/outer0/splits_inner_v1",
+  "n_fit": 5361,
+  "n_val": 1340,
+  "n_test": 1677,
+  "test_pos": 276,
+  "test_at_0.5": {
+    "threshold": 0.5,
+    "roc_auc": 0.8794210139755247,
+    "macro_f1": 0.7081589836124225,
+    "accuracy": 0.7865235539654144,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        1094,
+        307
+      ],
+      [
+        51,
+        225
+      ]
+    ]
+  },
+  "test_at_val_threshold": {
+    "threshold": 0.65,
+    "roc_auc": 0.8794210139755247,
+    "macro_f1": 0.7373634171708717,
+    "accuracy": 0.8372093023255814,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        1219,
+        182
+      ],
+      [
+        91,
+        185
+      ]
+    ]
+  },
+  "val_at_0.5": {
+    "threshold": 0.5,
+    "roc_auc": 0.8371085754806684,
+    "macro_f1": 0.6790902029174176,
+    "accuracy": 0.7671641791044777,
+    "confusion_matrix_[[tn,fp],[fn,tp]]": [
+      [
+        865,
+        253
+      ],
+      [
+        59,
+        163
+      ]
+    ]
+  },
+  "val_selected_threshold": 0.65,
+  "best_epoch": 21,
+  "epochs_completed": 31,
+  "best_val_score": 0.13811291296090653,
+  "fit_seconds": 31.587090166052803,
+  "predict_test_seconds": 0.2498792500118725,
+  "seconds_per_epoch_mean": 0.9512903225806453,
+  "peak_rss_mb_process": 884.9375,
+  "peak_rss_mb_before_fit": 417.90625,
+  "trainable_parameters": 202496,
+  "network_input_features_after_preprocessing": 241,
+  "selected_variables_per_estimator": 50,
+  "n_estimators": 64,
+  "depth": 5,
+  "effective_batch_size": 256,
+  "compiled": false,
+  "torch_threads": 6,
+  "preprocessing": {
+    "num_columns": 59,
+    "binary_cat": 3,
+    "one_hot_cat": 57,
+    "loo_target_encoded_cat": [
+      "field"
+    ],
+    "numeric_imputation_value_(GRANDE: mean of first numeric column)": 11.459242678604738,
+    "first_numeric_column": "wave"
+  }
+}

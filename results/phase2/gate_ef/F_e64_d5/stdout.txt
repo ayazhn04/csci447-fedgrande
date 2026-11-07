@@ -1,0 +1,33 @@
+Epoch 001 | TrainLoss: 0.6776 | ValLoss: 0.1822 | Time: 0.93s
+Epoch 002 | TrainLoss: 0.6337 | ValLoss: 0.1703 | Time: 0.92s
+Epoch 003 | TrainLoss: 0.5879 | ValLoss: 0.1600 | Time: 0.94s
+Epoch 004 | TrainLoss: 0.5542 | ValLoss: 0.1532 | Time: 0.93s
+Epoch 005 | TrainLoss: 0.5263 | ValLoss: 0.1489 | Time: 0.91s
+Epoch 006 | TrainLoss: 0.5074 | ValLoss: 0.1453 | Time: 0.90s
+Epoch 007 | TrainLoss: 0.4980 | ValLoss: 0.1447 | Time: 0.92s
+Epoch 008 | TrainLoss: 0.4856 | ValLoss: 0.1431 | Time: 0.92s
+Epoch 009 | TrainLoss: 0.4783 | ValLoss: 0.1428 | Time: 0.92s
+Epoch 010 | TrainLoss: 0.4789 | ValLoss: 0.1447 | Time: 0.91s
+Epoch 011 | TrainLoss: 0.4765 | ValLoss: 0.1420 | Time: 0.91s
+Epoch 012 | TrainLoss: 0.4690 | ValLoss: 0.1432 | Time: 0.89s
+Epoch 013 | TrainLoss: 0.4666 | ValLoss: 0.1427 | Time: 0.89s
+Epoch 014 | TrainLoss: 0.4684 | ValLoss: 0.1422 | Time: 0.89s
+Epoch 015 | TrainLoss: 0.4651 | ValLoss: 0.1415 | Time: 0.88s
+Epoch 016 | TrainLoss: 0.4589 | ValLoss: 0.1401 | Time: 0.93s
+Epoch 017 | TrainLoss: 0.4574 | ValLoss: 0.1412 | Time: 0.93s
+Epoch 018 | TrainLoss: 0.4588 | ValLoss: 0.1418 | Time: 0.90s
+Epoch 019 | TrainLoss: 0.4488 | ValLoss: 0.1418 | Time: 0.90s
+Epoch 020 | TrainLoss: 0.4540 | ValLoss: 0.1392 | Time: 0.95s
+Epoch 021 | TrainLoss: 0.4479 | ValLoss: 0.1381 | Time: 1.54s
+Epoch 022 | TrainLoss: 0.4470 | ValLoss: 0.1410 | Time: 1.19s
+Epoch 023 | TrainLoss: 0.4416 | ValLoss: 0.1395 | Time: 0.96s
+Epoch 024 | TrainLoss: 0.4434 | ValLoss: 0.1400 | Time: 0.99s
+Epoch 025 | TrainLoss: 0.4409 | ValLoss: 0.1428 | Time: 0.96s
+Epoch 026 | TrainLoss: 0.4387 | ValLoss: 0.1414 | Time: 0.95s
+Epoch 027 | TrainLoss: 0.4369 | ValLoss: 0.1431 | Time: 0.94s
+Epoch 028 | TrainLoss: 0.4322 | ValLoss: 0.1400 | Time: 0.93s
+Epoch 029 | TrainLoss: 0.4347 | ValLoss: 0.1437 | Time: 0.93s
+Epoch 030 | TrainLoss: 0.4262 | ValLoss: 0.1411 | Time: 0.92s
+Epoch 031 | TrainLoss: 0.4267 | ValLoss: 0.1401 | Time: 0.91s
+Restoring best model from epoch with val score: 0.13811291296090653
+[F_e64_d5] fit 31.6s epochs 31 best 21 | test AUC 0.8794 F1@0.5 0.7082 | params 202496 | V 50 | RSS 885 MB

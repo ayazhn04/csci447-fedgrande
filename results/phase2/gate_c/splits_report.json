@@ -1,0 +1,364 @@
+{
+  "C1_rowwise": {
+    "method": "StratifiedKFold(n_splits=5, shuffle=True, random_state=42)",
+    "all_rows_assigned_once": true,
+    "n_folds": 5,
+    "folds": [
+      {
+        "fold": 0,
+        "n_train": 6702,
+        "n_test": 1676,
+        "row_overlap": 0,
+        "train_plus_test_equals_n": true,
+        "dyad_group_overlap": 1334,
+        "test_pos": 276,
+        "test_neg": 1400,
+        "test_pos_rate": 0.16467780429594273,
+        "train_pos_rate": 0.1647269471799463,
+        "test_rows_with_mirror": 1670,
+        "test_rows_whose_mirror_is_in_train": 1332,
+        "test_rows_whose_mirror_is_in_train_frac": 0.7947494033412887
+      },
+      {
+        "fold": 1,
+        "n_train": 6702,
+        "n_test": 1676,
+        "row_overlap": 0,
+        "train_plus_test_equals_n": true,
+        "dyad_group_overlap": 1330,
+        "test_pos": 276,
+        "test_neg": 1400,
+        "test_pos_rate": 0.16467780429594273,
+        "train_pos_rate": 0.1647269471799463,
+        "test_rows_with_mirror": 1671,
+        "test_rows_whose_mirror_is_in_train": 1327,
+        "test_rows_whose_mirror_is_in_train_frac": 0.7917661097852029
+      },
+      {
+        "fold": 2,
+        "n_train": 6702,
+        "n_test": 1676,
+        "row_overlap": 0,
+        "train_plus_test_equals_n": true,
+        "dyad_group_overlap": 1359,
+        "test_pos": 276,
+        "test_neg": 1400,
+        "test_pos_rate": 0.16467780429594273,
+        "train_pos_rate": 0.1647269471799463,
+        "test_rows_with_mirror": 1671,
+        "test_rows_whose_mirror_is_in_train": 1357,
+        "test_rows_whose_mirror_is_in_train_frac": 0.8096658711217184
+      },
+      {
+        "fold": 3,
+        "n_train": 6703,
+        "n_test": 1675,
+        "row_overlap": 0,
+        "train_plus_test_equals_n": true,
+        "dyad_group_overlap": 1307,
+        "test_pos": 276,
+        "test_neg": 1399,
+        "test_pos_rate": 0.1647761194029851,
+        "train_pos_rate": 0.16470237207220648,
+        "test_rows_with_mirror": 1668,
+        "test_rows_whose_mirror_is_in_train": 1304,
+        "test_rows_whose_mirror_is_in_train_frac": 0.7785074626865671
+      },
+      {
+        "fold": 4,
+        "n_train": 6703,
+        "n_test": 1675,
+        "row_overlap": 0,
+        "train_plus_test_equals_n": true,
+        "dyad_group_overlap": 1369,
+        "test_pos": 276,
+        "test_neg": 1399,
+        "test_pos_rate": 0.1647761194029851,
+        "train_pos_rate": 0.16470237207220648,
+        "test_rows_with_mirror": 1670,
+        "test_rows_whose_mirror_is_in_train": 1366,
+        "test_rows_whose_mirror_is_in_train_frac": 0.8155223880597015
+      }
+    ],
+    "total_test_rows_whose_mirror_is_in_train": 6686,
+    "total_dyad_group_overlap": 6699,
+    "max_abs_pos_rate_deviation": 5.900314612186652e-05,
+    "fold_hash": "ca9d1164c5100d5b310dbb644672d9dad2d0cdaceb38055b0e6f80ee3d1c1755"
+  },
+  "C2_dyad_grouped": {
+    "method": "group-level StratifiedKFold(n_splits=5, shuffle=True, random_state=42) over dyad_id groups (dyads_v1), stratified by group label",
+    "all_rows_assigned_once": true,
+    "n_folds": 5,
+    "folds": [
+      {
+        "fold": 0,
+        "n_train": 6701,
+        "n_test": 1677,
+        "row_overlap": 0,
+        "train_plus_test_equals_n": true,
+        "dyad_group_overlap": 0,
+        "test_pos": 276,
+        "test_neg": 1401,
+        "test_pos_rate": 0.16457960644007155,
+        "train_pos_rate": 0.1647515296224444,
+        "test_rows_with_mirror": 1672,
+        "test_rows_whose_mirror_is_in_train": 0,
+        "test_rows_whose_mirror_is_in_train_frac": 0.0
+      },
+      {
+        "fold": 1,
+        "n_train": 6703,
+        "n_test": 1675,
+        "row_overlap": 0,
+        "train_plus_test_equals_n": true,
+        "dyad_group_overlap": 0,
+        "test_pos": 276,
+        "test_neg": 1399,
+        "test_pos_rate": 0.1647761194029851,
+        "train_pos_rate": 0.16470237207220648,
+        "test_rows_with_mirror": 1674,
+        "test_rows_whose_mirror_is_in_train": 0,
+        "test_rows_whose_mirror_is_in_train_frac": 0.0
+      },
+      {
+        "fold": 2,
+        "n_train": 6697,
+        "n_test": 1681,
+        "row_overlap": 0,
+        "train_plus_test_equals_n": true,
+        "dyad_group_overlap": 0,
+        "test_pos": 276,
+        "test_neg": 1405,
+        "test_pos_rate": 0.16418798334324808,
+        "train_pos_rate": 0.1648499328057339,
+        "test_rows_with_mirror": 1670,
+        "test_rows_whose_mirror_is_in_train": 0,
+        "test_rows_whose_mirror_is_in_train_frac": 0.0
+      },
+      {
+        "fold": 3,
+        "n_train": 6702,
+        "n_test": 1676,
+        "row_overlap": 0,
+        "train_plus_test_equals_n": true,
+        "dyad_group_overlap": 0,
+        "test_pos": 276,
+        "test_neg": 1400,
+        "test_pos_rate": 0.16467780429594273,
+        "train_pos_rate": 0.1647269471799463,
+        "test_rows_with_mirror": 1670,
+        "test_rows_whose_mirror_is_in_train": 0,
+        "test_rows_whose_mirror_is_in_train_frac": 0.0
+      },
+      {
+        "fold": 4,
+        "n_train": 6709,
+        "n_test": 1669,
+        "row_overlap": 0,
+        "train_plus_test_equals_n": true,
+        "dyad_group_overlap": 0,
+        "test_pos": 276,
+        "test_neg": 1393,
+        "test_pos_rate": 0.16536848412222888,
+        "train_pos_rate": 0.16455507527202265,
+        "test_rows_with_mirror": 1664,
+        "test_rows_whose_mirror_is_in_train": 0,
+        "test_rows_whose_mirror_is_in_train_frac": 0.0
+      }
+    ],
+    "total_test_rows_whose_mirror_is_in_train": 0,
+    "total_dyad_group_overlap": 0,
+    "max_abs_pos_rate_deviation": 0.000651367865365654,
+    "fold_hash": "07d5e166899477e78332c9eeca41e5fbf570164f0613c06ebaf88b5da45808c8"
+  },
+  "alternatives": {
+    "sklearn StratifiedGroupKFold(shuffle=True, random_state=42)": {
+      "max_abs_pos_rate_deviation": 0.020153197499396064,
+      "test_sizes": [
+        1671,
+        1678,
+        1674,
+        1676,
+        1679
+      ],
+      "dyad_group_overlap": 0,
+      "seedable": true
+    },
+    "sklearn StratifiedGroupKFold(shuffle=False)": {
+      "max_abs_pos_rate_deviation": 0.0002355906311182765,
+      "test_sizes": [
+        1675,
+        1675,
+        1675,
+        1678,
+        1675
+      ],
+      "dyad_group_overlap": 0,
+      "seedable": false
+    },
+    "group-level StratifiedKFold (chosen)": {
+      "max_abs_pos_rate_deviation": 0.000651367865365654,
+      "test_sizes": [
+        1677,
+        1675,
+        1681,
+        1676,
+        1669
+      ],
+      "dyad_group_overlap": 0,
+      "seedable": true
+    }
+  },
+  "inner_validation": {
+    "method": "fold 0 of the group-level StratifiedKFold(5, shuffle=True, random_state=42) on the outer-training rows; C2 groups=dyad_id, C1 groups=row (row-wise)",
+    "checks": [
+      {
+        "scheme": "C1",
+        "outer_fold": 0,
+        "n_fit": 5361,
+        "n_val": 1341,
+        "n_test": 1676,
+        "val_pos_rate": 0.16480238627889635,
+        "fit_pos_rate": 0.1647080768513337,
+        "fit_val_dyad_group_overlap": 872,
+        "test_equals_outer_test": true
+      },
+      {
+        "scheme": "C1",
+        "outer_fold": 1,
+        "n_fit": 5361,
+        "n_val": 1341,
+        "n_test": 1676,
+        "val_pos_rate": 0.16480238627889635,
+        "fit_pos_rate": 0.1647080768513337,
+        "fit_val_dyad_group_overlap": 859,
+        "test_equals_outer_test": true
+      },
+      {
+        "scheme": "C1",
+        "outer_fold": 2,
+        "n_fit": 5361,
+        "n_val": 1341,
+        "n_test": 1676,
+        "val_pos_rate": 0.16480238627889635,
+        "fit_pos_rate": 0.1647080768513337,
+        "fit_val_dyad_group_overlap": 872,
+        "test_equals_outer_test": true
+      },
+      {
+        "scheme": "C1",
+        "outer_fold": 3,
+        "n_fit": 5362,
+        "n_val": 1341,
+        "n_test": 1675,
+        "val_pos_rate": 0.16480238627889635,
+        "fit_pos_rate": 0.16467735919433046,
+        "fit_val_dyad_group_overlap": 884,
+        "test_equals_outer_test": true
+      },
+      {
+        "scheme": "C1",
+        "outer_fold": 4,
+        "n_fit": 5362,
+        "n_val": 1341,
+        "n_test": 1675,
+        "val_pos_rate": 0.16480238627889635,
+        "fit_pos_rate": 0.16467735919433046,
+        "fit_val_dyad_group_overlap": 849,
+        "test_equals_outer_test": true
+      },
+      {
+        "scheme": "C2",
+        "outer_fold": 0,
+        "n_fit": 5361,
+        "n_val": 1340,
+        "n_test": 1677,
+        "val_pos_rate": 0.16567164179104477,
+        "fit_pos_rate": 0.16452154448796866,
+        "fit_val_dyad_group_overlap": 0,
+        "test_equals_outer_test": true
+      },
+      {
+        "scheme": "C2",
+        "outer_fold": 1,
+        "n_fit": 5353,
+        "n_val": 1350,
+        "n_test": 1675,
+        "val_pos_rate": 0.16444444444444445,
+        "fit_pos_rate": 0.16476742013824025,
+        "fit_val_dyad_group_overlap": 0,
+        "test_equals_outer_test": true
+      },
+      {
+        "scheme": "C2",
+        "outer_fold": 2,
+        "n_fit": 5357,
+        "n_val": 1340,
+        "n_test": 1681,
+        "val_pos_rate": 0.16567164179104477,
+        "fit_pos_rate": 0.16464439051708046,
+        "fit_val_dyad_group_overlap": 0,
+        "test_equals_outer_test": true
+      },
+      {
+        "scheme": "C2",
+        "outer_fold": 3,
+        "n_fit": 5363,
+        "n_val": 1339,
+        "n_test": 1676,
+        "val_pos_rate": 0.16579536967886482,
+        "fit_pos_rate": 0.16446019019205668,
+        "fit_val_dyad_group_overlap": 0,
+        "test_equals_outer_test": true
+      },
+      {
+        "scheme": "C2",
+        "outer_fold": 4,
+        "n_fit": 5364,
+        "n_val": 1345,
+        "n_test": 1669,
+        "val_pos_rate": 0.16505576208178438,
+        "fit_pos_rate": 0.1644295302013423,
+        "fit_val_dyad_group_overlap": 0,
+        "test_equals_outer_test": true
+      }
+    ]
+  },
+  "historical_fold_hash_check": {
+    "C1_hash": "ca9d1164c5100d5b310dbb644672d9dad2d0cdaceb38055b0e6f80ee3d1c1755",
+    "phase1_audit_hash": "ca9d1164c5100d5b310dbb644672d9dad2d0cdaceb38055b0e6f80ee3d1c1755",
+    "same_as_phase1": true
+  },
+  "outputs": {
+    "outer": "/Users/aya_uzbekbay/csci447-fedgrande/data/derived/phase2/splits_outer_v1.csv",
+    "outer_sha256": "29ec0dda0de5d78d9ebf5743cc736c8813cf2b6ebe84dd1cf00df3288b7820cf",
+    "inner": "/Users/aya_uzbekbay/csci447-fedgrande/data/derived/phase2/splits_inner_v1.csv",
+    "inner_sha256": "bd148a13482e1aed2794f1f01a1bfcf1a8c0f4d1bd4492870dcf97309178ddab"
+  },
+  "inputs": {
+    "dyads_csv_sha256": "db2d81ad4341dc3e6b3d683780e59194ef67c7932184be431b443958e739450f"
+  },
+  "meta": {
+    "created_utc": "2026-11-07T05:24:07.606978+00:00",
+    "project_commit": "1f4a0384a201af9a375fd961034f13e7cca447b7",
+    "project_tracked_changes": [],
+    "conda_env": "fedgrande-dev",
+    "python": "3.12.14",
+    "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-dev/bin/python",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "GRANDE": "1.0.0",
+      "torch": "2.7.1",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "category-encoders": "2.9.0",
+      "openml": "0.15.1"
+    },
+    "torch_threads": 6,
+    "torch_float32_matmul_precision": "highest",
+    "seed": 42
+  }
+}

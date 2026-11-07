@@ -1,0 +1,100 @@
+{
+  "spec": {
+    "run_id": "F_e512_d5",
+    "label": "runtime benchmark (GRANDE 1.0.0)",
+    "scheme": "C2",
+    "outer_fold": 0,
+    "estimator_params": {
+      "use_numeric_embeddings": false,
+      "use_class_weights": true,
+      "compile_model": false,
+      "random_state": 42,
+      "verbose": 1,
+      "n_estimators": 512,
+      "depth": 5
+    }
+  },
+  "resolved_estimator_params": {
+    "batch_size": 256,
+    "bootstrap": false,
+    "compile_model": false,
+    "cosine_decay_restarts": false,
+    "data_subset_fraction": 1.0,
+    "depth": 5,
+    "device": null,
+    "dropout": 0.2,
+    "early_stopping_epochs": 10,
+    "embedding_dim_cat": 8,
+    "embedding_dim_num": 4,
+    "embedding_threshold": 1,
+    "epochs": 200,
+    "es_metric": false,
+    "focal_loss": false,
+    "label_smoothing": 0.0,
+    "learning_rate_embedding": 0.001,
+    "learning_rate_index": 0.01,
+    "learning_rate_leaf": 0.01,
+    "learning_rate_values": 0.01,
+    "learning_rate_weights": 0.005,
+    "loo_cardinality": 10,
+    "matmul_precision": "high",
+    "missing_values": false,
+    "n_estimators": 512,
+    "n_threads": null,
+    "num_emb_n_bins": 8,
+    "optimizer": "adam",
+    "predict_batch_size": 256,
+    "random_state": 42,
+    "reduce_on_plateau_scheduler": false,
+    "selected_variables": 0.8,
+    "swa": false,
+    "use_category_embeddings": false,
+    "use_class_weights": true,
+    "use_freq_enc": false,
+    "use_numeric_embeddings": false,
+    "use_robust_scale_smoothing": true,
+    "validation_fraction": 0.2,
+    "verbose": 1
+  },
+  "non_default_params": {
+    "compile_model": false,
+    "n_estimators": 512,
+    "use_class_weights": true,
+    "use_numeric_embeddings": false,
+    "verbose": 1
+  },
+  "inputs": {
+    "splits_inner_sha256": "bd148a13482e1aed2794f1f01a1bfcf1a8c0f4d1bd4492870dcf97309178ddab",
+    "dyads_sha256": "db2d81ad4341dc3e6b3d683780e59194ef67c7932184be431b443958e739450f"
+  },
+  "meta": {
+    "created_utc": "2026-11-07T05:40:38.392097+00:00",
+    "project_commit": "1f4a0384a201af9a375fd961034f13e7cca447b7",
+    "project_tracked_changes": [],
+    "conda_env": "fedgrande-dev",
+    "python": "3.12.14",
+    "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-dev/bin/python",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "GRANDE": "1.0.0",
+      "torch": "2.7.1",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "category-encoders": "2.9.0",
+      "openml": "0.15.1"
+    },
+    "grande": {
+      "impl": "dev",
+      "worktree": "/Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_dev_db79c860",
+      "expected_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "head_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "commit_matches": true,
+      "tracked_changes": []
+    },
+    "torch_threads": 6,
+    "torch_float32_matmul_precision": "highest"
+  }
+}
