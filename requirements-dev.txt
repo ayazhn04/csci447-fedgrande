@@ -1,0 +1,14 @@
+# Minimal direct dependencies of this repository, pinned to the versions of the verified `fedgrande-dev` environment
+# (env/snapshots/fedgrande-dev.pip-freeze.txt is the exact full snapshot). Python 3.12.14 (conda-forge).
+# GRANDE itself is installed from the pinned worktree, not from PyPI:
+#   pip install --no-deps -e third_party/grande_dev_db79c860
+torch==2.7.1
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.16.3
+scikit-learn==1.7.2
+matplotlib==3.11.2
+category-encoders==2.9.0
+rtdl-num-embeddings==0.0.12
+openml==0.15.1
+liac-arff==2.5.0

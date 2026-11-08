@@ -1,0 +1,13 @@
+# Minimal, teammate-friendly environment (the same versions as the verified fedgrande-dev environment).
+# Exact historical snapshots live in env/snapshots/ (conda-explicit, conda-export, pip-freeze, metadata JSON).
+#   conda env create -f environment.yml
+#   conda activate fedgrande-dev
+#   make grande && pip install --no-deps -e third_party/grande_dev_db79c860
+name: fedgrande-dev
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12.14
+  - pip=26.2.2
+  - pip:
+      - -r requirements-dev.txt
