@@ -11,6 +11,7 @@
 | Documentation / packaging | commits after `experiments-final`; the final packaging commit carries the tag **`documentation-ready`** (`git rev-parse documentation-ready`) |
 | Pinned GRANDE (experiments) | 1.0.0 @ `db79c86060f06c15f46c3bfb9207dc30c3cb91ae` |
 | Pinned GRANDE (historical reference) | 0.2.0 @ `07f7278b30ab9ebbbdc544e5f9a91f1b5df7fecb` |
+| GitHub | https://github.com/ayazhn04/csci447-fedgrande (**private**), default branch `main`; tags `experiments-final`, `documentation-ready` |
 | Environment | `fedgrande-dev`: Python 3.12.14, torch 2.7.1 (see `environment.yml`, `env/snapshots/`) |
 
 ## Snapshot
@@ -41,7 +42,8 @@
 - Write the final course report (blueprint: `docs/REPORT_HANDOFF.md`).
 - Prepare the final presentation (storyline: `docs/PRESENTATION_HANDOFF.md`).
 - Prepare the defense / Q&A (`docs/CLAIMS_AND_LIMITATIONS.md`).
-- Invite the teammate to the private GitHub repository and coordinate contributions (`docs/TEAMMATE_ONBOARDING.md`).
+- Invite the teammate to the private GitHub repository once her GitHub username is known, and coordinate contributions
+  (`docs/TEAMMATE_ONBOARDING.md`, section "Getting access").
 - Package the final submission.
 
 No further experiments.
