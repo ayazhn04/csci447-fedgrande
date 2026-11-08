@@ -1,0 +1,1 @@
+[fedavg_grande_frzstruct_int8__iid__f0__s42] 201s best 99/100 valAUC 0.8268989024802978 testAUC 0.8823 F1@.5 0.7070 RSS 2521MB

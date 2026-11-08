@@ -1,0 +1,1 @@
+[fedavg_grande_frzidx__natural__f4__s42] 297s best 96/100 valAUC 0.8590727860540861 testAUC 0.8257 F1@.5 0.6696 RSS 2643MB

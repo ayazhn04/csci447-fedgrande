@@ -1,0 +1,89 @@
+fedavg_grande__natural__f0__s42 True {'feature_stability_40': 0.9395, 'thr_drift_numeric_sd_mean_40': 0.0693, 'rel_drift_leaf_classes_array_40': 0.8139, 'rel_drift_estimator_weights_40': 0.5453, 'feature_stability_60': 0.916, 'thr_drift_numeric_sd_mean_60': 0.1198, 'rel_drift_leaf_classes_array_60': 1.4899, 'rel_drift_estimator_weights_60': 0.964, 'feature_stability_best': 0.8901, 'thr_drift_numeric_sd_mean_best': 0.1649, 'rel_drift_leaf_classes_array_best': 2.2824, 'rel_drift_estimator_weights_best': 1.4347}
+fedavg_grande__natural__f1__s42 True {'feature_stability_40': 0.9481, 'thr_drift_numeric_sd_mean_40': 0.076, 'rel_drift_leaf_classes_array_40': 0.8208, 'rel_drift_estimator_weights_40': 0.5536, 'feature_stability_60': 0.9243, 'thr_drift_numeric_sd_mean_60': 0.1271, 'rel_drift_leaf_classes_array_60': 1.5037, 'rel_drift_estimator_weights_60': 0.9678, 'feature_stability_best': 0.9094, 'thr_drift_numeric_sd_mean_best': 0.1609, 'rel_drift_leaf_classes_array_best': 2.0392, 'rel_drift_estimator_weights_best': 1.2821}
+fedavg_grande__natural__f2__s42 True {'feature_stability_40': 0.9475, 'thr_drift_numeric_sd_mean_40': 0.0722, 'rel_drift_leaf_classes_array_40': 0.8304, 'rel_drift_estimator_weights_40': 0.5341, 'feature_stability_60': 0.9239, 'thr_drift_numeric_sd_mean_60': 0.1248, 'rel_drift_leaf_classes_array_60': 1.5321, 'rel_drift_estimator_weights_60': 0.9502, 'feature_stability_best': 0.9037, 'thr_drift_numeric_sd_mean_best': 0.1806, 'rel_drift_leaf_classes_array_best': 2.4586, 'rel_drift_estimator_weights_best': 1.4898}
+fedavg_grande__natural__f3__s42 True {'feature_stability_40': 0.9459, 'thr_drift_numeric_sd_mean_40': 0.0787, 'rel_drift_leaf_classes_array_40': 0.827, 'rel_drift_estimator_weights_40': 0.5547, 'feature_stability_60': 0.9239, 'thr_drift_numeric_sd_mean_60': 0.1363, 'rel_drift_leaf_classes_array_60': 1.5092, 'rel_drift_estimator_weights_60': 0.9868, 'feature_stability_best': 0.9181, 'thr_drift_numeric_sd_mean_best': 0.1515, 'rel_drift_leaf_classes_array_best': 1.7073, 'rel_drift_estimator_weights_best': 1.1099}
+fedavg_grande__natural__f4__s42 True {'feature_stability_40': 0.9502, 'thr_drift_numeric_sd_mean_40': 0.074, 'rel_drift_leaf_classes_array_40': 0.8239, 'rel_drift_estimator_weights_40': 0.5578, 'feature_stability_60': 0.9264, 'thr_drift_numeric_sd_mean_60': 0.1255, 'rel_drift_leaf_classes_array_60': 1.5028, 'rel_drift_estimator_weights_60': 0.9964, 'feature_stability_best': 0.9166, 'thr_drift_numeric_sd_mean_best': 0.1483, 'rel_drift_leaf_classes_array_best': 1.8361, 'rel_drift_estimator_weights_best': 1.2062}
+fedavg_grande__iid__f0__s42 True {'feature_stability_40': 0.9437, 'thr_drift_numeric_sd_mean_40': 0.0775, 'rel_drift_leaf_classes_array_40': 0.839, 'rel_drift_estimator_weights_40': 0.5548, 'feature_stability_60': 0.9161, 'thr_drift_numeric_sd_mean_60': 0.1296, 'rel_drift_leaf_classes_array_60': 1.5011, 'rel_drift_estimator_weights_60': 0.9768, 'feature_stability_best': 0.8884, 'thr_drift_numeric_sd_mean_best': 0.1749, 'rel_drift_leaf_classes_array_best': 2.2836, 'rel_drift_estimator_weights_best': 1.4908}
+fedavg_grande__iid__f1__s42 True {'feature_stability_40': 0.948, 'thr_drift_numeric_sd_mean_40': 0.0763, 'rel_drift_leaf_classes_array_40': 0.8274, 'rel_drift_estimator_weights_40': 0.556, 'feature_stability_60': 0.9168, 'thr_drift_numeric_sd_mean_60': 0.129, 'rel_drift_leaf_classes_array_60': 1.4865, 'rel_drift_estimator_weights_60': 0.9717, 'feature_stability_best': 0.8948, 'thr_drift_numeric_sd_mean_best': 0.1767, 'rel_drift_leaf_classes_array_best': 2.1942, 'rel_drift_estimator_weights_best': 1.4391}
+fedavg_grande__iid__f2__s42 True {'feature_stability_40': 0.9531, 'thr_drift_numeric_sd_mean_40': 0.083, 'rel_drift_leaf_classes_array_40': 0.8416, 'rel_drift_estimator_weights_40': 0.5519, 'feature_stability_60': 0.927, 'thr_drift_numeric_sd_mean_60': 0.1411, 'rel_drift_leaf_classes_array_60': 1.541, 'rel_drift_estimator_weights_60': 0.9668, 'feature_stability_best': 0.9071, 'thr_drift_numeric_sd_mean_best': 0.1821, 'rel_drift_leaf_classes_array_best': 2.1201, 'rel_drift_estimator_weights_best': 1.3023}
+fedavg_grande__iid__f3__s42 True {'feature_stability_40': 0.9509, 'thr_drift_numeric_sd_mean_40': 0.0822, 'rel_drift_leaf_classes_array_40': 0.8424, 'rel_drift_estimator_weights_40': 0.5626, 'feature_stability_60': 0.9284, 'thr_drift_numeric_sd_mean_60': 0.1424, 'rel_drift_leaf_classes_array_60': 1.5247, 'rel_drift_estimator_weights_60': 0.9923, 'feature_stability_best': 0.9187, 'thr_drift_numeric_sd_mean_best': 0.1617, 'rel_drift_leaf_classes_array_best': 1.7889, 'rel_drift_estimator_weights_best': 1.1586}
+fedavg_grande__iid__f4__s42 True {'feature_stability_40': 0.9461, 'thr_drift_numeric_sd_mean_40': 0.0788, 'rel_drift_leaf_classes_array_40': 0.8376, 'rel_drift_estimator_weights_40': 0.5731, 'feature_stability_60': 0.9141, 'thr_drift_numeric_sd_mean_60': 0.1336, 'rel_drift_leaf_classes_array_60': 1.5101, 'rel_drift_estimator_weights_60': 1.0215, 'feature_stability_best': 0.8885, 'thr_drift_numeric_sd_mean_best': 0.1865, 'rel_drift_leaf_classes_array_best': 2.3343, 'rel_drift_estimator_weights_best': 1.5684}
+partition                                    iid  natural
+best_round_mean                          89.2000  82.4000
+best_round_std                           12.4780  13.9032
+best_round_count                          5.0000   5.0000
+feature_stability_40_mean                 0.9483   0.9462
+feature_stability_40_std                  0.0038   0.0041
+feature_stability_40_count                5.0000   5.0000
+thr_drift_numeric_sd_mean_40_mean         0.0796   0.0740
+thr_drift_numeric_sd_mean_40_std          0.0029   0.0036
+thr_drift_numeric_sd_mean_40_count        5.0000   5.0000
+thr_drift_numeric_sd_median_40_mean       0.0233   0.0130
+thr_drift_numeric_sd_median_40_std        0.0036   0.0024
+thr_drift_numeric_sd_median_40_count      5.0000   5.0000
+thr_drift_onehot_mean_40_mean             0.0783   0.0679
+thr_drift_onehot_mean_40_std              0.0009   0.0022
+thr_drift_onehot_mean_40_count            5.0000   5.0000
+rel_drift_leaf_classes_array_40_mean      0.8376   0.8232
+rel_drift_leaf_classes_array_40_std       0.0060   0.0063
+rel_drift_leaf_classes_array_40_count     5.0000   5.0000
+rel_drift_estimator_weights_40_mean       0.5597   0.5491
+rel_drift_estimator_weights_40_std        0.0085   0.0096
+rel_drift_estimator_weights_40_count      5.0000   5.0000
+rel_drift_split_values_40_mean            0.3914   0.3669
+rel_drift_split_values_40_std             0.0036   0.0087
+rel_drift_split_values_40_count           5.0000   5.0000
+rel_drift_split_index_array_40_mean       0.9976   1.0166
+rel_drift_split_index_array_40_std        0.0060   0.0052
+rel_drift_split_index_array_40_count      5.0000   5.0000
+feature_stability_60_mean                 0.9205   0.9229
+feature_stability_60_std                  0.0067   0.0040
+feature_stability_60_count                5.0000   5.0000
+thr_drift_numeric_sd_mean_60_mean         0.1351   0.1267
+thr_drift_numeric_sd_mean_60_std          0.0063   0.0060
+thr_drift_numeric_sd_mean_60_count        5.0000   5.0000
+thr_drift_numeric_sd_median_60_mean       0.0334   0.0186
+thr_drift_numeric_sd_median_60_std        0.0042   0.0026
+thr_drift_numeric_sd_median_60_count      5.0000   5.0000
+thr_drift_onehot_mean_60_mean             0.1377   0.1211
+thr_drift_onehot_mean_60_std              0.0028   0.0038
+thr_drift_onehot_mean_60_count            5.0000   5.0000
+rel_drift_leaf_classes_array_60_mean      1.5127   1.5076
+rel_drift_leaf_classes_array_60_std       0.0211   0.0154
+rel_drift_leaf_classes_array_60_count     5.0000   5.0000
+rel_drift_estimator_weights_60_mean       0.9858   0.9730
+rel_drift_estimator_weights_60_std        0.0221   0.0185
+rel_drift_estimator_weights_60_count      5.0000   5.0000
+rel_drift_split_values_60_mean            0.7051   0.6706
+rel_drift_split_values_60_std             0.0111   0.0149
+rel_drift_split_values_60_count           5.0000   5.0000
+rel_drift_split_index_array_60_mean       1.7881   1.8519
+rel_drift_split_index_array_60_std        0.0198   0.0143
+rel_drift_split_index_array_60_count      5.0000   5.0000
+feature_stability_best_mean               0.8995   0.9076
+feature_stability_best_std                0.0132   0.0113
+feature_stability_best_count              5.0000   5.0000
+thr_drift_numeric_sd_mean_best_mean       0.1764   0.1612
+thr_drift_numeric_sd_mean_best_std        0.0094   0.0127
+thr_drift_numeric_sd_mean_best_count      5.0000   5.0000
+thr_drift_numeric_sd_median_best_mean     0.0313   0.0214
+thr_drift_numeric_sd_median_best_std      0.0046   0.0043
+thr_drift_numeric_sd_median_best_count    5.0000   5.0000
+thr_drift_onehot_mean_best_mean           0.1874   0.1612
+thr_drift_onehot_mean_best_std            0.0165   0.0215
+thr_drift_onehot_mean_best_count          5.0000   5.0000
+rel_drift_leaf_classes_array_best_mean    2.1442   2.0647
+rel_drift_leaf_classes_array_best_std     0.2150   0.3095
+rel_drift_leaf_classes_array_best_count   5.0000   5.0000
+rel_drift_estimator_weights_best_mean     1.3919   1.3045
+rel_drift_estimator_weights_best_std      0.1625   0.1575
+rel_drift_estimator_weights_best_count    5.0000   5.0000
+rel_drift_split_values_best_mean          0.9981   0.9181
+rel_drift_split_values_best_std           0.1006   0.1337
+rel_drift_split_values_best_count         5.0000   5.0000
+rel_drift_split_index_array_best_mean     2.5623   2.5343
+rel_drift_split_index_array_best_std      0.2861   0.3889
+rel_drift_split_index_array_best_count    5.0000   5.0000
+frac_nodes_numeric_at20_mean              0.1595   0.1580
+frac_nodes_numeric_at20_std               0.0017   0.0015
+frac_nodes_numeric_at20_count             5.0000   5.0000

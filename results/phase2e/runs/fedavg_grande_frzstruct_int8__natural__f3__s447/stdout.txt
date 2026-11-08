@@ -1,0 +1,1 @@
+[fedavg_grande_frzstruct_int8__natural__f3__s447] 182s best 99/100 valAUC 0.8399549952817634 testAUC 0.8367 F1@.5 0.6669 RSS 2536MB

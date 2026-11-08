@@ -1,0 +1,1 @@
+[fedavg_grande_frzidx__iid__f0__s2026] 295s best 98/100 valAUC 0.8337886186723396 testAUC 0.8813 F1@.5 0.7075 RSS 2595MB

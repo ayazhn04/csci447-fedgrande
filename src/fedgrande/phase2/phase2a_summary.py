@@ -21,7 +21,11 @@ def md_table(df: pd.DataFrame) -> str:
     df = df.reset_index() if not isinstance(df.index, pd.RangeIndex) else df
     cols = [" / ".join(map(str, c)) if isinstance(c, tuple) else str(c) for c in df.columns]
     lines = ["| " + " | ".join(cols) + " |", "|" + "---|" * len(cols)]
-    lines += ["| " + " | ".join("" if pd.isna(v) else str(v) for v in row) + " |" for row in df.itertuples(index=False)]
+    def cell(v):
+        if isinstance(v, (list, tuple, dict)) or hasattr(v, "shape") and getattr(v, "ndim", 0) > 0:
+            return str(v)
+        return "" if pd.isna(v) else str(v)
+    lines += ["| " + " | ".join(cell(v) for v in row) + " |" for row in df.itertuples(index=False)]
     return "\n".join(lines)
 
 

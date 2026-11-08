@@ -1,0 +1,213 @@
+{
+  "job_id": "fedavg_grande_frzstruct__iid__f0__s2026",
+  "method": "fedavg_grande_frzstruct",
+  "kind": "grande",
+  "procedure": "fedavg",
+  "partition": "iid",
+  "fold": 0,
+  "seed": 2026,
+  "split_id": "C2/outer0/splits_inner_v1",
+  "partition_file": "partitions_v1.csv",
+  "partition_file_sha256": "a4dced57c3b8524a6711a62ceebc3875bfc06b2c90c0776677780d232e57e771",
+  "prep_file_sha256": "77b2fcc8ad4c5cd115d7f2100f4ce3373efb5f1a707972fe2bba6066af450867",
+  "encoded_dim": 502,
+  "n_clients": 21,
+  "n_fit": 5361,
+  "n_val": 1340,
+  "n_test": 1677,
+  "class_weights": [
+    0.16452154517173767,
+    0.8354784846305847
+  ],
+  "val_threshold": 0.72,
+  "val_at_0.5": {
+    "n": 1340,
+    "pos": 222,
+    "roc_auc": 0.8270963270963271,
+    "macro_f1": 0.6703286020559782,
+    "accuracy": 0.7544776119402985,
+    "confusion_[[tn,fp],[fn,tp]]": [
+      [
+        844,
+        274
+      ],
+      [
+        55,
+        167
+      ]
+    ]
+  },
+  "test_at_0.5": {
+    "n": 1677,
+    "pos": 276,
+    "roc_auc": 0.8826847282996618,
+    "macro_f1": 0.7102669889163724,
+    "accuracy": 0.7817531305903399,
+    "confusion_[[tn,fp],[fn,tp]]": [
+      [
+        1072,
+        329
+      ],
+      [
+        37,
+        239
+      ]
+    ]
+  },
+  "test_at_val_threshold": {
+    "n": 1677,
+    "pos": 276,
+    "roc_auc": 0.8826847282996618,
+    "macro_f1": 0.7362119649303764,
+    "accuracy": 0.8545020870602266,
+    "confusion_[[tn,fp],[fn,tp]]": [
+      [
+        1278,
+        123
+      ],
+      [
+        121,
+        155
+      ]
+    ]
+  },
+  "best_step": 100,
+  "steps_executed": 100,
+  "best_val_auc": 0.8270963270963271,
+  "info": {
+    "best_step": 100,
+    "steps_executed": 100,
+    "best_val_auc": 0.8270963270963271,
+    "client_weights": [
+      115.0,
+      376.0,
+      139.0,
+      395.0,
+      109.0,
+      30.0,
+      344.0,
+      113.0,
+      528.0,
+      94.0,
+      587.0,
+      232.0,
+      128.0,
+      458.0,
+      433.0,
+      66.0,
+      176.0,
+      54.0,
+      300.0,
+      48.0,
+      636.0
+    ],
+    "inactive_clients": []
+  },
+  "communication": {
+    "trainable_parameters": 809984,
+    "payload_bytes_per_model": 3239936,
+    "bytes_once_at_init_buffers": 2150400,
+    "bytes_server_to_clients_per_round": 68038656,
+    "bytes_clients_to_server_per_round": 68038656,
+    "bytes_per_round_total": 136077312,
+    "cumulative_bytes_to_best_round": 13609881600,
+    "cumulative_bytes_to_final_round": 13609881600,
+    "buffers_policy": "features_by_estimator sent once at init; structural index lists regenerated from depth",
+    "v2": {
+      "uplink": "fp32",
+      "trainable_parameters": 809984,
+      "n_tensors": 4,
+      "downlink_bytes_per_client_per_round": 3239936,
+      "uplink_bytes_per_client_per_round": 3239936,
+      "bytes_once_at_init_buffers": 2150400,
+      "downlink_bytes_per_round": 68038656,
+      "uplink_bytes_per_round": 68038656,
+      "total_bytes_per_round": 136077312,
+      "cum_downlink_to_best": 6806016000,
+      "cum_uplink_to_best": 6803865600,
+      "cum_total_to_best": 13609881600,
+      "cum_downlink_to_final": 6806016000,
+      "cum_uplink_to_final": 6803865600,
+      "cum_total_to_final": 13609881600,
+      "definition": "conceptual tensor communication bytes (no serialization/protocol overhead)"
+    },
+    "v3": {
+      "bytes_once_at_init_buffers": 2150400,
+      "per_round_total_pre_freeze": 136077312,
+      "per_round_total_post_freeze": 2752512,
+      "cum_total_to_freeze_round": 2723696640,
+      "cum_total_to_best": 3010560000,
+      "cum_total_to_final": 3010560000,
+      "cum_down_to_best": 1539686400,
+      "cum_up_to_best": 1470873600,
+      "definition": "once + sum over rounds of (bytes_down + bytes_up)"
+    }
+  },
+  "trainable_parameters": 809984,
+  "seconds_total": 181.88901579199592,
+  "peak_rss_mb": 2537.546875,
+  "resolved_training_config": {
+    "batch_size": 256,
+    "batch_rule": "max(1, min(256, n//2)), shuffled, drop_last",
+    "class_weights": "global training-fold counts: w_k = (1/n_k) / sum_j (1/n_j)",
+    "loss": "class-weighted cross-entropy",
+    "max_epochs": 100,
+    "max_rounds": 100,
+    "local_epochs": 1,
+    "patience": 10,
+    "warmup": 10,
+    "min_delta_auc": 0.0001,
+    "selection": "pooled validation ROC-AUC (centralized/FedAvg); local-only: client validation ROC-AUC, or weighted validation loss if the client's validation has one class; if a client has no validation rows: train for the median best epoch of the other clients",
+    "fedavg": "full participation; weights = client training-row counts; trainable params only; fresh local Adam per round; clients with < 2 training rows get weight 0 for that fold (recorded)",
+    "model_kwargs": {
+      "n_estimators": 256,
+      "depth": 5,
+      "selected_variables": 0.8
+    },
+    "uplink": "fp32",
+    "freeze": {
+      "after_round": 20,
+      "params": [
+        "split_index_array",
+        "split_values"
+      ],
+      "uplink_after": "fp32"
+    }
+  },
+  "config_file": "configs/phase2e/structure.json",
+  "config_sha256": "d918e50f97721f37f53f77e9ff47663dfe1fb6f5bcb1b6afa437b93232f288e6",
+  "smoke_overrides": {
+    "max_rounds": null,
+    "max_epochs": null
+  },
+  "meta": {
+    "created_utc": "2026-11-08T03:25:29.218805+00:00",
+    "project_commit": "ff3302f6ae26ddb0229f3036b18da1cefeb37036",
+    "project_tracked_changes": [],
+    "conda_env": "fedgrande-dev",
+    "python": "3.12.14",
+    "python_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/fedgrande-dev/bin/python",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "packages": {
+      "GRANDE": "1.0.0",
+      "torch": "2.7.1",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "category-encoders": "2.9.0",
+      "openml": "0.15.1"
+    },
+    "grande": {
+      "impl": "dev",
+      "worktree": "/Users/aya_uzbekbay/csci447-fedgrande/third_party/grande_dev_db79c860",
+      "expected_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "head_commit": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
+      "commit_matches": true,
+      "tracked_changes": []
+    },
+    "torch_threads": 6,
+    "torch_float32_matmul_precision": "highest"
+  }
+}

@@ -1,0 +1,1 @@
+[fedavg_grande_frzstruct__iid__f3__s447] 183s best 99/100 valAUC 0.8418342245558001 testAUC 0.8377 F1@.5 0.6771 RSS 2523MB
