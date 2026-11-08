@@ -104,18 +104,26 @@ def main():
             final_models = models
             comm_rec = {"bytes_per_round_total": 0, "note": "no communication"}
         else:
-            model, info = train.fedavg(kind, cd, Z[val], y[val], a.seed, tcfg, w, n_numeric=n_numeric)
+            if m.get("adaptive"):                                                  # Phase 2F CGSF
+                from fedgrande.fl.adaptive import fedavg_adaptive
+                tcfg["adaptive"] = m["adaptive"]
+                model, info = fedavg_adaptive(cd, Z[val], y[val], a.seed, tcfg, w, n_numeric, feature_sd=Z[fit].astype(np.float64).std(0))
+                np.savez_compressed(os.path.join(out, "freeze_rounds.npz"), feat=info.pop("feat_freeze_round").astype(np.int16),
+                                    full=info.pop("full_freeze_round").astype(np.int16))
+            else:
+                model, info = train.fedavg(kind, cd, Z[val], y[val], a.seed, tcfg, w, n_numeric=n_numeric)
             p[val | test] = train.predict(model, torch.as_tensor(Z[val | test]))
             once = {"features_by_estimator": info["init_buffers"]["features_by_estimator"]} if kind == "grande" else {}
             comm_rec = comm.accounting(trainable_state(model), once, n_clients=int(sum(np.array(info["client_weights"]) > 0)),
                                        rounds_executed=info["steps_executed"], best_round=info["best_step"])
             comm_rec["v2"] = comm.accounting_v2(trainable_state(model), once, n_clients=int(sum(np.array(info["client_weights"]) > 0)),
                                                 rounds_executed=info["steps_executed"], best_round=info["best_step"], uplink=tcfg["uplink"])
-            if tcfg.get("freeze"):                                             # Phase 2E: per-round exact accounting
+            if tcfg.get("freeze") or tcfg.get("adaptive"):                     # Phase 2E/2F: per-round exact accounting
                 rdf = pd.DataFrame(info["rounds"])
                 once = comm.tensor_bytes(once) * int(sum(np.array(info["client_weights"]) > 0))
                 cum = once + (rdf.bytes_down + rdf.bytes_up).cumsum()
-                b_, e_, fr_ = info["best_step"], info["steps_executed"], tcfg["freeze"]["after_round"]
+                b_, e_ = info["best_step"], info["steps_executed"]
+                fr_ = tcfg["freeze"]["after_round"] if tcfg.get("freeze") else (info.get("trigger_round") or 20)
                 comm_rec["v3"] = {"bytes_once_at_init_buffers": once, "per_round_total_pre_freeze": int((rdf.bytes_down + rdf.bytes_up).iloc[0]),
                                   "per_round_total_post_freeze": int((rdf.bytes_down + rdf.bytes_up).iloc[-1]) if e_ > fr_ + 1 else None,
                                   "cum_total_to_freeze_round": int(cum.iloc[min(fr_, e_) - 1]), "cum_total_to_best": int(cum.iloc[b_ - 1]),

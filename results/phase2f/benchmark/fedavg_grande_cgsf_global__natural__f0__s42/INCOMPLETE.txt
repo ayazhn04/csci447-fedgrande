@@ -1,0 +1,2 @@
+INCOMPLETE: engineering-gate run interrupted by the user-requested pause on 2026-11-08 12:38 +05 (process stopped ~2.5 min into training).
+No result.json/predictions were written (run_job writes outputs only at the end). This run must be rerun when Phase 2F resumes.
