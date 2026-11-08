@@ -78,10 +78,11 @@ def main():
                                     "never_feat_frozen": float((fr == -1).mean()), "never_full_frozen": float((tr == -1).mean()),
                                     "threshold_lag_median": float(np.median(tr[both] - fr[both])) if both.any() else np.nan})
                         frz.append(pd.DataFrame({"config": c, "partition": part, "feat": fr, "full": tr}).sample(frac=0.2, random_state=0))
-                    runs.append(rec)
                     p = pd.read_csv(d / "predictions.csv")
+                    runs.append(rec)
                     preds.append(p[p.role == "test"].assign(config=c, partition=part, fold=f, seed=s, pred_vt=lambda x: (x.p1 >= r["val_threshold"]).astype(int)))
-                    cv = pd.DataFrame({"round": np.arange(1, e + 1), "mb": per / 1e6}).assign(config=c, partition=part)
+                    rec["mean_test_p1"] = float(p[p.role == "test"].p1.mean())
+                    cv = pd.DataFrame({"round": np.arange(1, e + 1), "mb": per / 1e6, "cum_gb": cum / GB}).assign(config=c, partition=part, fold=f, seed=s)
                     if "frac_feat_frozen" in rd:
                         cv["frac_feat"], cv["frac_full"] = rd.frac_feat_frozen.to_numpy(), rd.frac_full_frozen.to_numpy()
                     curves.append(cv)
@@ -182,6 +183,35 @@ def main():
     fig.savefig(FIG / "A_progressive_freezing.png", dpi=150)
     plt.close(fig)
 
+    # Figure D: cumulative communication per round (a stopped run sends nothing more: its total is carried forward)
+    fig, ax = plt.subplots(figsize=(6.6, 4.2))
+    for part, ls in (("natural", "-"), ("iid", "--")):
+        for c, colr in (("F0", "k"), ("F2", "#7a3db8"), ("G1", "#2ca02c"), ("G2", "#d62728"), ("G3", "#8c564b")):
+            g = C[(C.config == c) & (C.partition == part)]
+            if not len(g):
+                continue
+            w = g.pivot_table(index="round", columns=["fold", "seed"], values="cum_gb").reindex(range(1, 101)).ffill()
+            ax.plot(w.index, w.mean(1), color=colr, linestyle=ls, label=f"{c} {part}")
+    ax.set_xlabel("communication round")
+    ax.set_ylabel("cumulative tensor GB (21 clients, down + up, incl. init)")
+    ax.set_title("Cumulative communication (mean over 15 runs; stopped runs carried forward)", fontsize=9)
+    ax.legend(fontsize=7, ncol=2)
+    fig.tight_layout()
+    fig.savefig(FIG / "D_cumulative_communication.png", dpi=150)
+    plt.close(fig)
+
+    # POST-HOC DIAGNOSTIC (added after the final results; no run changed): early-stopped runs and score-level shift
+    early = R[R.best_round < 40][["config", "partition", "fold", "seed", "best_round", "rounds", "test_auc_fold", "mean_test_p1"]].copy()
+    ref = R.set_index(["config", "partition", "fold", "seed"])
+    for k in ("F0", "G1", "F2"):
+        early[f"{k}_test_auc_fold"] = [ref.test_auc_fold.get((k, x.partition, x.fold, x.seed), np.nan) for x in early.itertuples()]
+        early[f"{k}_mean_test_p1"] = [ref.mean_test_p1.get((k, x.partition, x.fold, x.seed), np.nan) for x in early.itertuples()]
+    early.to_csv(OUT / "posthoc_early_stopped.csv", index=False)
+    p1sd = R.groupby(["config", "partition"]).mean_test_p1.agg(["mean", "std", "min", "max"]).round(4).reset_index()
+    fold_sd = R.groupby(["config", "partition"]).test_auc_fold.agg(["mean", "std", "min"]).round(4).reset_index()
+    tim = R[R.config.isin(["G1", "G2", "G3"])].groupby(["config", "partition"])[["feat_freeze_q25", "feat_freeze_median", "feat_freeze_q75", "full_freeze_q25", "full_freeze_median", "full_freeze_q75", "threshold_lag_median", "never_feat_frozen", "never_full_frozen"]].mean().round(4).reset_index()
+    rt = R.groupby(["config", "partition"]).agg(seconds_median=("seconds", "median"), seconds_total_h=("seconds", lambda x: x.sum() / 3600), peak_rss_mb_max=("peak_rss_mb", "max"), gb_to_final=("gb_to_final", "mean")).round(4).reset_index()
+
     if frz:
         Fz = pd.concat(frz)
         fig, axes = plt.subplots(1, 2, figsize=(11, 3.8), sharey=True)
@@ -213,7 +243,11 @@ def main():
          "\n## Paired fold test-AUC differences\n", "\n".join(f"- {k}: {v}" for k, v in pair.items()),
          f"\n\nPaired GB-to-best ratios: {pair_gb}\n", f"\n## G1 trigger rounds\n\n{trig}\n", f"\n## G3 eligibility\n\n{g3_elig}\n",
          "\n## Frontier (with Phase 2D/2E)\n", md_table(front.round(4)),
-         "\nFigures: `reports/figures/phase2f/A_progressive_freezing.png`, `B_frontier.png`, `C_freeze_timing.png`\n"]
+         "\n## Freeze timing (run means of per-run quantiles; rounds are decision rounds, effective one round later)\n", md_table(tim),
+         "\n## Runtime, memory, cumulative GB to final round\n", md_table(rt),
+         "\n## POST-HOC DIAGNOSTIC (added after results; no run changed): early-stopped runs (best round < 40)\n", md_table(early.round(4)),
+         "\nPer-run mean test probability (score level) by config:\n", md_table(p1sd), "\nPer-fold test AUC by config (all fold x seed runs):\n", md_table(fold_sd),
+         "\nFigures: `reports/figures/phase2f/A_progressive_freezing.png`, `B_frontier.png`, `C_freeze_timing.png`, `D_cumulative_communication.png`\n"]
     (ROOT / "reports" / "phase2f_report.md").write_text("\n".join(L) + "\n")
     print(show.T.to_string())
     print(json.dumps({"pair": pair, "gb": pair_gb, "trig": {k: v for k, v in (trig or {}).items() if k != "per_run"}, "g3": g3_elig}, indent=1))

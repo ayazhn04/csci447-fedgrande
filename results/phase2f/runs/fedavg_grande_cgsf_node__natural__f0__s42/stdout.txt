@@ -1,0 +1,1 @@
+[fedavg_grande_cgsf_node__natural__f0__s42] 353s best 99/100 valAUC 0.8242920917339521 testAUC 0.8818 F1@.5 0.7097 RSS 2062MB

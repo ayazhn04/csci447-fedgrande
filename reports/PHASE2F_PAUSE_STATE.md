@@ -1,3 +1,7 @@
+> **Superseded (2026-11-08).** Phase 2F was resumed from this checkpoint. The interrupted engineering run was rerun, the
+> protocol was frozen in `1f243a3`, and the 60-job matrix completed. See `reports/PHASE2F_PROTOCOL.md` and
+> `reports/phase2f_report.md`.
+
 # Phase 2F pause state (user-requested pause, 2026-11-08)
 
 ## Current stage

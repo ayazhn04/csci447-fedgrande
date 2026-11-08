@@ -1,0 +1,1 @@
+[fedavg_grande_cgsf_global__natural__f0__s2026] 197s best 100/100 valAUC 0.8267780302664024 testAUC 0.8824 F1@.5 0.7153 RSS 2116MB

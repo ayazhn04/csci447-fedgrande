@@ -227,3 +227,26 @@ matrix is run with `--min-free-gib 3`. This has no scientific effect.
 ## Amendments
 
 None at freeze time.
+
+### Decision record D1: G3 not run (predeclared rule; after the final 60 runs; no protocol change)
+
+`G3_eligibility` in `results/phase2f/summary/phase2f_summary.json` shows that both conditions fail.
+
+| | Natural | IID | Threshold |
+|---|---|---|---|
+| G2 ΔAUC against F0 | −0.0078 | −0.0057 | ≥ −0.005 |
+| G2 GB to best | 3.63 | 3.65 | below F2: 3.01 / 3.01 |
+
+So G3 was **not run**, and the 30 G3 jobs were not created.
+
+### A1: post-hoc diagnostic (added after the final results; no run changed, no rule changed)
+
+- **What happened.** Two G2 runs (seed 447: natural fold 0, IID fold 4) stopped early, at best rounds 21 and 15. Validation
+  AUC flattened after most nodes froze at rounds 14–16.
+- **Effect on scores.** The selected early models have a higher score level: mean test probability 0.47–0.48, against
+  0.38–0.39 for F0, F2 and G1 in the same cells. Pooled-OOF AUC combines folds, so this shift lowers the seed-447 pooled
+  AUC much more than the fold AUC (fold AUC −0.004 to −0.006 against F0).
+- **Reporting.** The aggregator now adds an early-stopped-run table, the per-run score level, the spread of per-fold AUC,
+  freeze-timing quantiles, runtime, and a cumulative-communication figure (D).
+- **What is unchanged.** The primary metric is still pooled-OOF AUC, and the predeclared decisions above use it as
+  frozen.

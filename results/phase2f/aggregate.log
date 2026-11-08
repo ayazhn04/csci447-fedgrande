@@ -1,0 +1,139 @@
+                                0          1          2          3          4          5          6          7
+config                         F0         F0         F2         F2         G1         G1         G2         G2
+partition                     iid    natural        iid    natural        iid    natural        iid    natural
+auc                        0.8446     0.8438     0.8424      0.842     0.8425     0.8422     0.8389     0.8359
+auc_sd                     0.0005     0.0009     0.0001     0.0004     0.0001     0.0005     0.0066     0.0119
+d_auc                         0.0        0.0    -0.0022    -0.0018    -0.0021    -0.0015    -0.0057    -0.0078
+d_auc_sd                      0.0        0.0     0.0005     0.0009     0.0005      0.001      0.007     0.0117
+retention                   100.0      100.0    99.7447     99.787    99.7497    99.8199    99.3263    99.0709
+fold_auc                   0.8456     0.8447     0.8431     0.8426     0.8431     0.8428     0.8432     0.8428
+f1_05                      0.6806     0.6828     0.6814      0.684     0.6805     0.6841     0.6795     0.6843
+f1_vt                       0.702      0.705     0.7046     0.7007     0.7046     0.7017     0.7068     0.7046
+best_round                91.7333       78.8    99.3333    99.2667    99.3333    99.0667    91.7333       93.2
+gb_to_best                 12.485     10.725     3.0087     3.0085     2.9643     3.1591     3.6457     3.6278
+compression_to_best_x         1.0        1.0     4.1496     3.5649     4.2118      3.395     3.4245     2.9563
+mb_round_last            136.0773   136.0773     2.7525     2.7525     2.7525     2.7525    14.6802    14.4551
+seconds                  349.9105   306.9636    181.889   180.7354   178.1623   186.0782   322.6589    316.029
+peak_rss_mb             2694.3438  2550.2969  2723.1719  2771.9688  2432.9062  2508.6562  2540.3281  2596.3594
+trigger_round                 NaN        NaN        NaN        NaN    19.6667    21.1333        NaN        NaN
+feat_freeze_median            NaN        NaN        NaN        NaN    19.6667    21.1333       13.0       13.0
+full_freeze_median            NaN        NaN        NaN        NaN    19.6667    21.1333       16.0       16.0
+threshold_lag_median          NaN        NaN        NaN        NaN        0.0        0.0        3.0        3.0
+never_feat_frozen             NaN        NaN        NaN        NaN        0.0        0.0     0.0048     0.0039
+never_full_frozen             NaN        NaN        NaN        NaN        0.0        0.0     0.1711     0.1691
+feat_frozen_frac_10           NaN        NaN        NaN        NaN        0.0        0.0        0.0        0.0
+feat_frozen_frac_20           NaN        NaN        NaN        NaN     0.6667        0.4     0.9428     0.9362
+feat_frozen_frac_30           NaN        NaN        NaN        NaN        1.0        1.0     0.9765     0.9734
+feat_frozen_frac_40           NaN        NaN        NaN        NaN        1.0        1.0     0.9863     0.9849
+feat_frozen_frac_60           NaN        NaN        NaN        NaN        1.0        1.0     0.9923     0.9926
+feat_frozen_frac_best         NaN        NaN        NaN        NaN        1.0        1.0     0.9899     0.9937
+feat_frozen_frac_final        NaN        NaN        NaN        NaN        1.0        1.0     0.9952     0.9961
+full_frozen_frac_10           NaN        NaN        NaN        NaN        0.0        0.0        0.0        0.0
+full_frozen_frac_20           NaN        NaN        NaN        NaN     0.6667        0.4     0.6388      0.662
+full_frozen_frac_30           NaN        NaN        NaN        NaN        1.0        1.0     0.6813     0.7053
+full_frozen_frac_40           NaN        NaN        NaN        NaN        1.0        1.0     0.7003     0.7228
+full_frozen_frac_60           NaN        NaN        NaN        NaN        1.0        1.0     0.7424     0.7582
+full_frozen_frac_best         NaN        NaN        NaN        NaN        1.0        1.0     0.7819      0.826
+full_frozen_frac_final        NaN        NaN        NaN        NaN        1.0        1.0     0.8289     0.8309
+{
+ "pair": {
+  "G1-F0": {
+   "iid": {
+    "mean": -0.0024773088303254123,
+    "n_negative": 13,
+    "n": 15
+   },
+   "natural": {
+    "mean": -0.0019441040417972788,
+    "n_negative": 12,
+    "n": 15
+   }
+  },
+  "G2-F0": {
+   "iid": {
+    "mean": -0.002456442278084851,
+    "n_negative": 14,
+    "n": 15
+   },
+   "natural": {
+    "mean": -0.00190018427863962,
+    "n_negative": 15,
+    "n": 15
+   }
+  },
+  "G2-F2": {
+   "iid": {
+    "mean": 9.693415364709542e-05,
+    "n_negative": 5,
+    "n": 15
+   },
+   "natural": {
+    "mean": 0.0002476990488409066,
+    "n_negative": 6,
+    "n": 15
+   }
+  },
+  "G1-F2": {
+   "iid": {
+    "mean": 7.606760140653387e-05,
+    "n_negative": 4,
+    "n": 15
+   },
+   "natural": {
+    "mean": 0.00020377928568324766,
+    "n_negative": 1,
+    "n": 15
+   }
+  },
+  "G2-G1": {
+   "iid": {
+    "mean": 2.0866552240561555e-05,
+    "n_negative": 8,
+    "n": 15
+   },
+   "natural": {
+    "mean": 4.391976315765896e-05,
+    "n_negative": 7,
+    "n": 15
+   }
+  }
+ },
+ "gb": {
+  "G2/F2": {
+   "iid": 1.2117169282468119,
+   "natural": 1.205861811603693
+  },
+  "G1/F2": {
+   "iid": 0.9852219960562583,
+   "natural": 1.0500185377651403
+  },
+  "G2/G1": {
+   "iid": 1.2358343156517475,
+   "natural": 1.152473130611339
+  }
+ },
+ "trig": {
+  "mean": 20.4,
+  "sd": 1.4044264997156126,
+  "never_triggered": 0,
+  "n": 30
+ },
+ "g3": {
+  "G2_abs_auc_loss_le_0.005": false,
+  "G2_gb_to_best_lt_F2": false,
+  "values": {
+   "natural": {
+    "G2_d_auc": -0.007838109024938792,
+    "G2_gb": 3.6278172784000002,
+    "F2_gb": 3.0085414912
+   },
+   "iid": {
+    "G2_d_auc": -0.005692326862195192,
+    "G2_gb": 3.6457462608,
+    "F2_gb": 3.008724992
+   }
+  },
+  "eligible": false,
+  "rule": "G2 pooled-AUC loss vs F0 <= 0.005 (both partitions, mean over seeds) AND G2 mean GB to best < F2 (both partitions)"
+ }
+}

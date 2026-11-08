@@ -1,0 +1,1 @@
+[fedavg_grande_cgsf_global__iid__f1__s42] 185s best 98/100 valAUC 0.8353819244776689 testAUC 0.8354 F1@.5 0.6663 RSS 2155MB
