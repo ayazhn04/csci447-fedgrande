@@ -1,0 +1,22 @@
+old_sha	new_sha	subject
+1f4a0384a201af9a375fd961034f13e7cca447b7	2552fcbc47c5ce9ea8271eab13605d46634a35fa	Phase 0-1: archive Checkpoint 1 evidence, pin GRANDE envs, audit SpeedDating
+20aad5eee03fda7fdaa4fb88565bca8f3b6281c4	5166c1ac6b6bacbcd0263547d6aacfd03f7318f4	Phase 2A: GRANDE version equivalence, dyads, leakage-safe splits, wave audit, baseline, benchmarks
+615aeeb238b581970f2c8449238805deac87e0cf	570ce34e96c73f0a1b346f6434110ddce16f7fdd	Phase 2B protocol freeze: federated-safe preprocessing, partitions, FedAvg/local/central GRANDE and MLP
+f286965a575a66e1ce1573d4faf54f7524c30fc2	bccbd458ae5982fa474505d408f7a9de7702b5a1	Phase 2B amendment A1: size-matched Dirichlet(0.1) label-skew stress-test partition (after B2 verified)
+834eb07bac378f7f441e0e179c4860c475edd7e2	e05bb9cae636d841fdffff8a0a34e63bd5629cdd	Phase 2B amendment A2: post-hoc within-client AUC (client-identity shortcut under Dirichlet)
+01709223d41dfb0e29c7ccca98ae1d79f1124395	30765cb19f71d89a04369d5dd6887dd51911a90f	Phase 2B results: core matrix (natural, IID), Dirichlet stress test, auxiliary analyses, report
+53f718a35d107e253d261dfc6da983da64c138c3	74a3a1b68ca6c36f41df82288ae60c8bd67b8f2e	Phase 2C protocol freeze: P0-P3 personalization on Dirichlet(0.1), regenerated bitwise-verified checkpoints
+cd4ab906a1b180de53429fa43c2f24fb53a91a64	81a4fcd398969118fd37b82d8dbb6648de953312	Phase 2C results: P0-P3 personalization on Dirichlet(0.1), post-hoc per-fold within-client AUC (A1), report
+e17dcf4cbb7c60e832c4e1512129ff6d68db00db	aba6cbba73fa06ffc127ddc3a9fbb7592729d4b2	Phase 2D protocol freeze: 64-tree and INT8-uplink FedAvg-GRANDE, communication accounting v2
+db0f831c3a7e2d850b5416e767bdeb2cbb8b95a6	20c63931d0d5b6c154c97d89843b11ab694e68a5	Phase 2D results: 64-tree and INT8-uplink FedAvg-GRANDE (90 jobs), communication frontier, report
+2da1d8f28bc34c0a2b53a7d246b4001e03058208	cd687a688f7dc369b41a5b1e53e211b379e1e5e7	Phase 2E pre-freeze: Gate 0 (structure = 97.98% of payload), freeze scheduler, per-round accounting, tests, benchmark (runtime gate reached)
+ff3302f6ae26ddb0229f3036b18da1cefeb37036	80a55c3fc9bc075e67697a86fa7c64b09ab293c8	Phase 2E protocol freeze: F1/F2/F3 structure freezing after round 20 (full matrix approved)
+26b1c0cdf4a2f82f9b906060f22fef3680d86dd0	2fe710ba5f7ea309d720c533fbc40a1f5265d5bf	Phase 2E results: structure freezing after round 20 (F1/F2/F3, 90 jobs), drift diagnostics, Phase 2D comparison, report
+906aef5fec5b077b4b42c1756b3a8387334e158d	279fcac443919870970eb8d05806e69a2a8d7239	checkpoint: pause Phase 2F before final execution
+1f243a32bcb63dddb0305dbea43800a34ac21a21	c552f66dd8b83d29a6f8e4a6c1d6363d445e0326	Phase 2F protocol freeze: CGSF G1 (global) and G2 (node-wise) consensus-gated structural freezing
+7f7f6a42fd1929efc4fbfef3749e304c607eeaab	e38c7a9b84c6a40dadd3049b9ff1c5c9ba4329e2	Phase 2F results: CGSF G1/G2 final matrix (60 jobs), aggregation, figures, report; G3 not eligible
+40ad41c92c58ff88a88c94b3150c81f2c9b9d8bf	b6d106954330204ce4aebfb8b579439ab7a1ef45	style: standardize scientific figures
+3d4d6fdf306de3b1a602a91d7f750e58b488381a	0824c8cd652b97af2929d7e52873008eec5f5d10	chore: prepare reproducible teammate workflow
+4d2f1e1c5760f9c41f21009fca9975c876c2c9e9	beb043e429b23877a2d95584422ee578db16eaac	fix: precise fig08 title wording and curated role labels
+7ab12f7bb8911b3e5120df581c8d3cb9b5eb15da	eda57f46dbc9edb6cde3a1d7b7e802deb07d0ec9	docs: add final project handoff and research map
+42d1f01f6a92c03fb043aba4b17546b6eae7c1e6	3cc71ca562d7e2fdc6f96e6bd41c26827b74ace0	docs: finalize repository packaging

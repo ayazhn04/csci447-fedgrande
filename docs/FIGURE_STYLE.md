@@ -8,7 +8,7 @@ export settings. We do **not** copy its composite multi-panel layouts.
 ## Reference inspected
 
 - **Repository:** `https://github.com/ayazhn04/benchmark_figures` (private).
-  - Read-only shallow clone on 2026-11-08 of branch `claude/figure-4-1-composite-tkphge`, the only branch.
+  - Read-only shallow clone on 2026-11-08 of the repository's only branch (its default branch).
   - Nothing in that repository was modified.
 - **Files inspected:**
   - `scripts/make_fig4_1_composite_magma_final.py` (and its `_v4_before_final` variant)

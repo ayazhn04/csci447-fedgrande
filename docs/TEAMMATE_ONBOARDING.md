@@ -87,7 +87,7 @@ changed any code, `git status` stays clean afterwards.
 - **Open a pull request** on GitHub and ask Ayazhan to review. Merge after review, then delete the branch.
 - **Branch prefixes:** `report/`, `slides/`, `figures/`, `docs/`.
 - Keep pull requests small and focused.
-- **Never move or delete the `experiments-final` tag.** It marks the frozen experimental state (7f7f6a4).
+- **Never move or delete the `experiments-final` tag.** It marks the frozen experimental state (e38c7a9).
 - If you change plotting code, run `make check`. It fails if figure *data* would change; data should never change.
 
 ## Getting access (for the repository owner)

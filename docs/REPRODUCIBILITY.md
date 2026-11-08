@@ -100,4 +100,4 @@ the repository if you really want to recompute.
 
 ## Protocol and result commits
 
-See [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md). The experiment boundary is the tag `experiments-final` = `7f7f6a4`.
+See [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md). The experiment boundary is the tag `experiments-final` = `e38c7a9`.

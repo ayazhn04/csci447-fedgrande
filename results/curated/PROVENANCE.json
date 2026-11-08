@@ -4,32 +4,32 @@
   "2B": {
    "path": "configs/phase2b/core.json",
    "sha256": "c0d578fff58858dd5f7021aaad46ac908124fa929e101ed67eb3b2174eae9226",
-   "committed_in": "615aeeb"
+   "committed_in": "570ce34"
   },
   "2B-A1": {
    "path": "configs/phase2b/amendment_A1_dirichlet.json",
    "sha256": "25f2601aa8d6beb68cd46f49ed445f5f9abbf276aff0156aad061e28fe710cfa",
-   "committed_in": "f286965"
+   "committed_in": "bccbd45"
   },
   "2C": {
    "path": "configs/phase2c/personalization.json",
    "sha256": "66811b2ac3d943349d47bca3e4bb237cb7d81293d836663ee1e00e415152106b",
-   "committed_in": "53f718a"
+   "committed_in": "74a3a1b"
   },
   "2D": {
    "path": "configs/phase2d/compression.json",
    "sha256": "1774791b30748317eb08302ceb3ef5357e71e9345fbd3a0a3f1c90286dc05b69",
-   "committed_in": "e17dcf4"
+   "committed_in": "aba6cbb"
   },
   "2E": {
    "path": "configs/phase2e/structure.json",
    "sha256": "d918e50f97721f37f53f77e9ff47663dfe1fb6f5bcb1b6afa437b93232f288e6",
-   "committed_in": "2da1d8f"
+   "committed_in": "cd687a6"
   },
   "2F": {
    "path": "configs/phase2f/cgsf.json",
    "sha256": "cec304bd39fc86b79de1b38f82a46a8d539d5478a2f38dd5b1281619c68bb906",
-   "committed_in": "906aef5"
+   "committed_in": "279fcac"
   }
  }
 }

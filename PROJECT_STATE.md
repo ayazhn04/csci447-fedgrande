@@ -6,8 +6,8 @@
 
 | Item | Value |
 |---|---|
-| Final experiment commit | `7f7f6a42fd1929efc4fbfef3749e304c607eeaab` (`7f7f6a4`), annotated tag **`experiments-final`** |
-| Final Phase 2F protocol commit | `1f243a3` |
+| Final experiment commit | `e38c7a9b84c6a40dadd3049b9ff1c5c9ba4329e2` (`e38c7a9`), annotated tag **`experiments-final`** |
+| Final Phase 2F protocol commit | `c552f66` |
 | Documentation / packaging | commits after `experiments-final`; the final packaging commit carries the tag **`documentation-ready`** (`git rev-parse documentation-ready`) |
 | Pinned GRANDE (experiments) | 1.0.0 @ `db79c86060f06c15f46c3bfb9207dc30c3cb91ae` |
 | Pinned GRANDE (historical reference) | 0.2.0 @ `07f7278b30ab9ebbbdc544e5f9a91f1b5df7fecb` |

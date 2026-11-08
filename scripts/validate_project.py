@@ -2,7 +2,7 @@
 """Validate the repository without training anything.
 
 Checks:
-1. the `experiments-final` tag, when tags are present, points to 7f7f6a4;
+1. the `experiments-final` tag, when tags are present, points to e38c7a9;
 2. key experiment artifacts exist;
 3. the curated results and figure data are up to date with the saved results (both builders run in --check mode);
 4. the safe tooling never imports training code or torch;
@@ -24,7 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-FINAL = "7f7f6a42fd1929efc4fbfef3749e304c607eeaab"
+FINAL = "e38c7a9b84c6a40dadd3049b9ff1c5c9ba4329e2"
 PINS = {"third_party/grande_dev_db79c860": "db79c86060f06c15f46c3bfb9207dc30c3cb91ae",
         "third_party/grande_ref_07f7278b": "07f7278b30ab9ebbbdc544e5f9a91f1b5df7fecb"}
 ARTIFACTS = ["reports/PHASE2B_PROTOCOL.md", "reports/PHASE2C_PROTOCOL.md", "reports/PHASE2D_PROTOCOL.md", "reports/PHASE2E_PROTOCOL.md",

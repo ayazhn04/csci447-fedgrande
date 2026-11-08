@@ -5,7 +5,7 @@ Team: **Ayazhan Uzbekbay**, **Nuray Amanzholova**
 Base model: **GRANDE**, gradient-based decision-tree ensembles for tabular data (Marton et al.)
 
 > **Status: the experimental stage is complete through Phase 2F. No further experiments are planned.**
-> The frozen experimental state is tag `experiments-final` (commit `7f7f6a4`). Everything after it is documentation and
+> The frozen experimental state is tag `experiments-final` (commit `e38c7a9`). Everything after it is documentation and
 > packaging. See [PROJECT_STATE.md](PROJECT_STATE.md).
 
 ## Overview
