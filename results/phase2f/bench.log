@@ -1,0 +1,81 @@
+== fedavg_grande_cgsf_global natural 17:59:21
+[fedavg_grande_cgsf_global__natural__f0__s42] 202s best 100/100 valAUC 0.8245781559735048 testAUC 0.8833 F1@.5 0.7130 RSS 2017MB
+      226.43 real       328.29 user       197.54 sys
+          2115256320  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+            15039988  page reclaims
+                7646  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                6331  voluntary context switches
+             3263566  involuntary context switches
+       3987940346849  instructions retired
+       1591171159394  cycles elapsed
+          1821264992  peak memory footprint
+== fedavg_grande_cgsf_global iid 18:03:07
+[fedavg_grande_cgsf_global__iid__f0__s42] 189s best 99/100 valAUC 0.8268505535947396 testAUC 0.8827 F1@.5 0.7070 RSS 1894MB
+      192.39 real       308.65 user       183.25 sys
+          1986445312  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+            14740286  page reclaims
+                 470  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                5265  voluntary context switches
+             3216218  involuntary context switches
+       3767010675784  instructions retired
+       1490455788455  cycles elapsed
+          1837960168  peak memory footprint
+== fedavg_grande_cgsf_node natural 18:06:20
+[fedavg_grande_cgsf_node__natural__f0__s42] 338s best 99/100 valAUC 0.8242920917339521 testAUC 0.8818 F1@.5 0.7097 RSS 1899MB
+      341.42 real       646.99 user       302.81 sys
+          1990852608  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+            18793163  page reclaims
+                 473  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                5212  voluntary context switches
+             5332502  involuntary context switches
+       7569507563426  instructions retired
+       2884668884552  cycles elapsed
+          1855540272  peak memory footprint
+== fedavg_grande_cgsf_node iid 18:12:01
+[fedavg_grande_cgsf_node__iid__f0__s42] 331s best 98/100 valAUC 0.8270157456203968 testAUC 0.8825 F1@.5 0.7038 RSS 2340MB
+      334.25 real       652.84 user       294.50 sys
+          2453372928  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+            18334779  page reclaims
+                 496  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                5224  voluntary context switches
+             4996531  involuntary context switches
+       7548754911538  instructions retired
+       2876962739543  cycles elapsed
+          1870072928  peak memory footprint
+DONE

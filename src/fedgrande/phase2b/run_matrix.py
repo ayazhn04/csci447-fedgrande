@@ -35,6 +35,7 @@ def main():
     ap.add_argument("--stage", default="core")
     ap.add_argument("--config", default=str(ROOT / "configs" / "phase2b" / "core.json"))
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--min-free-gib", type=float, default=8.0, help="stop before a job if free disk is below this (operational guard only)")
     a = ap.parse_args()
     cfg = json.load(open(a.config))
     out_root = ROOT / "results" / {"compression": "phase2d", "structure": "phase2e", "adaptive": "phase2f"}.get(a.stage, "phase2b") / "runs"
@@ -47,8 +48,8 @@ def main():
         if (out_root / jid / "result.json").exists():
             continue
         free = shutil.disk_usage(os.path.expanduser("~")).free / 2**30
-        if free < 8:
-            print(f"STOP: free disk {free:.1f} GiB < 8", flush=True)
+        if free < a.min_free_gib:
+            print(f"STOP: free disk {free:.1f} GiB < {a.min_free_gib}", flush=True)
             sys.exit(3)
         t0 = time.time()
         os.makedirs(out_root / jid, exist_ok=True)
