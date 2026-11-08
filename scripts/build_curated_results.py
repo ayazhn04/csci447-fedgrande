@@ -65,9 +65,15 @@ def main_performance():
     p_oof, p_fold = "results/phase2b/summary/oof_summary_all.csv", "results/phase2b/summary/per_fold_summary_all.csv"
     o, f = pd.read_csv(ROOT / p_oof), pd.read_csv(ROOT / p_fold)
     df = o.merge(f, on=["method", "partition"])
-    role = {"none": "primary (centralized reference)", "natural": "primary", "iid": "control (size-matched IID)",
-            "dirichlet0.1": "stress test (amendment A1)"}
-    df.insert(2, "role", df.partition.map(role))
+    def role(m, p):
+        if m == "central_grande":
+            return "primary reference (centralized)"
+        if m == "fedavg_grande":
+            return "primary" if p == "natural" else "primary, IID control partition"
+        if m == "local_grande":
+            return "control (no collaboration)"
+        return "control (MLP model class)"
+    df.insert(2, "role", [role(m, p) for m, p in zip(df.method, df.partition)])
     df = df[df.partition != "dirichlet0.1"].reset_index(drop=True)
     return prov(df, [p_oof, p_fold], "2B", "2B")
 

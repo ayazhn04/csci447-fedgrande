@@ -267,7 +267,7 @@ def fig08_frontier():
                 Line2D([], [], color=T.SUBTEXT, marker="o", ls="none", mfc="white", label="open = size-matched IID")]
     T.legend(ax, handles=handles, loc="lower right", ncol=2, fontsize=6.3)
     T.style_axis(ax)
-    T.title(ax, "Freezing tree structure after it stabilizes cuts communication ~4× at ≤0.002 AUC")
+    T.title(ax, "Freezing tree structure after it stabilizes cuts communication ~4× for ≈0.002 AUC")
     return _save(fig, "fig08_communication_frontier", d)
 
 
