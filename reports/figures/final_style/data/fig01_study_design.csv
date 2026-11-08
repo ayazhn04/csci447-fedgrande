@@ -1,0 +1,6 @@
+stage
+"SpeedDating | OpenML 40536 | 8,378 rows | 120 predictors"
+Leakage groups | mirror pairs → | grouped 5-fold CV | (no group split)
+21 clients | natural waves | + IID control | + Dirichlet stress
+"FedAvg GRANDE | 256 trees, depth 5 | local Adam | ≤100 rounds"
+Extensions | calibration · INT8 | fixed / consensus | structure freeze

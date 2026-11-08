@@ -1,0 +1,9 @@
+label,method,partition,oof_auc_mean,oof_auc_sd
+Centralized GRANDE,central_grande,none,0.8567269047,0.0009099852041
+FedAvg GRANDE · natural,fedavg_grande,natural,0.8437510614,0.0008775013769
+FedAvg GRANDE · IID,fedavg_grande,iid,0.8445675472,0.0004758373604
+Local-only GRANDE · natural,local_grande,natural,0.7408275208,0.01191536515
+Local-only GRANDE · IID,local_grande,iid,0.7371151592,0.004860806813
+Centralized MLP,central_mlp,none,0.8478742374,0.004649202325
+FedAvg MLP · natural,fedavg_mlp,natural,0.8501328364,0.001323954882
+FedAvg MLP · IID,fedavg_mlp,iid,0.847150359,0.002378714671

@@ -1,0 +1,5 @@
+tensor,params,pct_payload
+split_values,396800,48.988622
+split_index_array,396800,48.988622
+estimator_weights,8192,1.011378003
+leaf_classes_array,8192,1.011378003
