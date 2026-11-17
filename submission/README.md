@@ -5,11 +5,18 @@ Ayazhan Uzbekbay (202268516), Nuray Amanzholova (202184732)
 
 ## Files
 
+Upload these three files to Moodle:
+
 | File | Content |
 |---|---|
 | `CSCI447P016.ipynb` | Project notebook with saved outputs |
 | `SpeedDating_openml40536_v1.arff` | Complete dataset |
-| `artifacts/` | Small snapshot of the frozen experiment outputs read by the notebook (3.4 MB) |
+| `CSCI447P016_artifacts.zip` | Saved predictions, training logs and summaries (1.4 MB) |
+
+The ZIP holds the saved predictions and logs needed to reproduce every table and figure without rerunning about 21
+CPU-hours of training. If an `artifacts/` folder is not present beside the notebook, the notebook extracts the ZIP into
+`artifacts/` automatically; it never downloads anything. In this repository the same 13 files are also unpacked in
+`artifacts/`. The notebook runs from this folder or from the repository root.
 
 ## Dataset source
 
