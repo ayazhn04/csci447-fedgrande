@@ -62,6 +62,14 @@ There are seven research questions: [docs/RESEARCH_QUESTIONS.md](docs/RESEARCH_Q
 Exact numbers: [docs/RESULTS_LEDGER.md](docs/RESULTS_LEDGER.md). What we can and cannot claim:
 [docs/CLAIMS_AND_LIMITATIONS.md](docs/CLAIMS_AND_LIMITATIONS.md).
 
+## Submission package
+
+The Moodle code submission is in [`submission/`](submission/README.md):
+
+- [`submission/CSCI447P016.ipynb`](submission/CSCI447P016.ipynb): project notebook with saved outputs
+- [`submission/SpeedDating_openml40536_v1.arff`](submission/SpeedDating_openml40536_v1.arff): complete dataset (OpenML 40536)
+- [`submission/README.md`](submission/README.md): files, dataset checksum, and how the notebook works
+
 ## Repository map
 
 ```text

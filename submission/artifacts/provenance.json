@@ -1,0 +1,80 @@
+{
+ "experiments_tag": "experiments-final",
+ "experiments_commit": "e38c7a9b84c6a40dadd3049b9ff1c5c9ba4329e2",
+ "built_from_commit": "47276315dd9fe433a04f6ef34bcfd10ddc38f586",
+ "files": {
+  "core_predictions.csv": {
+   "sources": "results/phase2b/runs/{central_grande,fedavg_grande,local_grande,central_mlp,fedavg_mlp}__*__f*__s*/predictions.csv (120 runs)",
+   "method": "copied/selected by scripts/build_submission_artifacts.py (no training)",
+   "bytes": 2958122,
+   "sha256": "56eb4ea361d7b3e4266b87b9fc4d354611b0e1833500af38e797f8ee64295e8c"
+  },
+  "core_run_info.csv": {
+   "sources": "results/phase2b/runs/*/result.json (same 120 runs)",
+   "method": "copied/selected by scripts/build_submission_artifacts.py (no training)",
+   "bytes": 10953,
+   "sha256": "95ab1d0d6e3ec9a1266910e68cf3e157b1009eebf5061a1af2cdfb88cf6e7220"
+  },
+  "frozen_groups_and_splits.csv": {
+   "sources": "data/derived/phase2/dyads_v1.csv, splits_outer_v1.csv, splits_inner_v1.csv",
+   "method": "copied/selected by scripts/build_submission_artifacts.py (no training)",
+   "bytes": 290566,
+   "sha256": "83127a0256f744af2a7810152b121c42ddc5aef4d03f3cf4ef9f48597f57006c"
+  },
+  "holdout_training_curves.csv": {
+   "sources": "results/phase2b/runs/central_grande__none__f0__s42/curve.csv, fedavg_grande__natural__f0__s42/rounds.csv",
+   "method": "copied/selected by scripts/build_submission_artifacts.py (no training)",
+   "bytes": 9287,
+   "sha256": "abf9801d30f9e4389029d6e67064f169299998f797d61cae44c501e836829bcf"
+  },
+  "heterogeneity_summary.csv": {
+   "sources": "results/curated/heterogeneity.csv, results/phase2b/summary/oof_summary_all.csv",
+   "method": "copied/selected by scripts/build_submission_artifacts.py (no training)",
+   "bytes": 446,
+   "sha256": "4c4ccdd9b7be1d28f1c6bfc53576761752af147a66ec37665f8fb6e4699f0d48"
+  },
+  "consensus_rounds.csv": {
+   "sources": "reports/figures/final_style/data/fig03_consensus_by_round.csv (from results/phase2b/runs/fedavg_grande__*/rounds.csv)",
+   "method": "copied/selected by scripts/build_submission_artifacts.py (no training)",
+   "bytes": 10506,
+   "sha256": "ddcf1bbd91c75ea972850d2e42a08bd03698d0414a3afcabe20b4a7fea8d81f3"
+  },
+  "calibration_summary.csv": {
+   "sources": "results/curated/personalization.csv",
+   "method": "copied/selected by scripts/build_submission_artifacts.py (no training)",
+   "bytes": 688,
+   "sha256": "3735415e274a19c8aa0fefd0810884d42b94e53bb1afe5b9c1b195d0a88bcbd3"
+  },
+  "communication_summary.csv": {
+   "sources": "results/curated/{structure_freezing,compression,adaptive_freezing}.csv",
+   "method": "copied/selected by scripts/build_submission_artifacts.py (no training)",
+   "bytes": 1393,
+   "sha256": "b88f73f1f129995fd523117072ab64123b49f27188f598e53eb4466ee533c210"
+  },
+  "adaptive_freezing_summary.csv": {
+   "sources": "results/curated/adaptive_freezing.csv",
+   "method": "copied/selected by scripts/build_submission_artifacts.py (no training)",
+   "bytes": 3394,
+   "sha256": "fb8ea411f4f282cd02d67389a2716028505b2680f4f08a4dea70b5f25129e3e6"
+  },
+  "g1_trigger_rounds.csv": {
+   "sources": "results/phase2f/summary/phase2f_summary.json",
+   "method": "copied/selected by scripts/build_submission_artifacts.py (no training)",
+   "bytes": 544,
+   "sha256": "db1250191908cb0e5d5cdad63f437e408918202d752317b00f01683a1f514a93"
+  },
+  "grande_tensors.csv": {
+   "sources": "results/phase2e/gate0.json",
+   "method": "copied/selected by scripts/build_submission_artifacts.py (no training)",
+   "bytes": 200,
+   "sha256": "bccc660f376cbc886d983e060f423bd582ba40c036995be46f11042d733a63e1"
+  },
+  "g1_round_logs.csv": {
+   "sources": "results/phase2f/runs/fedavg_grande_cgsf_global__*/rounds.csv (30 runs; consensus and bytes per round)",
+   "method": "copied/selected by scripts/build_submission_artifacts.py (no training)",
+   "bytes": 127830,
+   "sha256": "4b5cd6600417ff2db0059099c73ec1282d93e78517796512ab86713d50e538f7"
+  }
+ },
+ "fold1_encoded_matrix_sha256": "44dcbd57b3a53b6328e9e5ccb1619e9e13461c8c3d8331fceba6b6f2ec9b80cf"
+}

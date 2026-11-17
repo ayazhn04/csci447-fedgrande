@@ -1,0 +1,5 @@
+tensor,shape,params,share_pct
+split_values,256x31x50,396800,48.988622
+split_index_array,256x31x50,396800,48.988622
+estimator_weights,256x32,8192,1.011378003
+leaf_classes_array,256x32,8192,1.011378003
