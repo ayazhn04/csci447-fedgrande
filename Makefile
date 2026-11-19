@@ -5,6 +5,7 @@
 #   make check      : verify curated tables and figure data are unchanged versus the saved results
 #   make summaries  : rebuild results/curated/*.csv|json and the tables in docs/RESULTS_LEDGER.md from saved results
 #   make figures    : rebuild reports/figures/final_style/* (PNG + PDF + plotted data) from saved results
+#   make slide-figures : rebuild reports/figures/presentation/* (the two regenerated deck figures) from saved results
 #   make test       : unit tests only
 #   make data       : download the OpenML 40536 ARFF (MD5-checked) and rebuild the gitignored preprocessing caches
 #   make grande     : clone the pinned GRANDE commits as worktrees in third_party/ (needed for tests and experiments)
@@ -17,10 +18,10 @@
 PY ?= $(if $(CONDA_PREFIX),$(CONDA_PREFIX)/bin/python,python)
 
 .DEFAULT_GOAL := help
-.PHONY: help validate check summaries figures test data grande experiments-phase2b experiments-phase2d experiments-phase2e experiments-phase2f _confirm
+.PHONY: help validate check summaries figures slide-figures test data grande experiments-phase2b experiments-phase2d experiments-phase2e experiments-phase2f _confirm
 
 help:
-	@sed -n '1,16p' Makefile | sed 's/^# \{0,1\}//'
+	@sed -n '1,17p' Makefile | sed 's/^# \{0,1\}//'
 
 validate:
 	$(PY) -I scripts/validate_project.py
@@ -35,6 +36,9 @@ summaries:
 
 figures:
 	$(PY) -I scripts/regenerate_figures.py
+
+slide-figures:
+	$(PY) -I scripts/make_presentation_figures.py
 
 test:
 	$(PY) -m unittest discover -s tests

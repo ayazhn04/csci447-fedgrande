@@ -29,6 +29,18 @@ Final-style versions (PNG + PDF + plotted data) are in `reports/figures/final_st
 | `fig12_g2_progressive_freezing` | RQ7 | Fraction of nodes feature- and threshold-frozen over rounds (G2) | SUPPORTING | – |
 | `fig13_g2_freeze_timing` | RQ7 | Freeze decisions per round, all G2 runs | SUPPLEMENTARY | Symlog y-axis. |
 
+## Presentation figures
+
+Two figures in the final deck were regenerated after the professor's review. They use the deck's chart style, not the
+final-style theme. Files are in `reports/figures/presentation/` (PNG = the exact image in the deck, PDF = vector, plotted
+data in `data/`). Rebuild them with `make slide-figures` (`scripts/make_presentation_figures.py`); the script reads only
+saved results.
+
+| File (`reports/figures/presentation/`) | Slide | What it shows | Caveat |
+|---|---|---|---|
+| `slide19_training_curves` | 19 | Hold-out loss and validation ROC-AUC, centralized vs FedAvg GRANDE (fold 0, seed 42) | Centralized best checkpoint is epoch 51; training stops at epoch 61 (patience 10). FedAvg runs to the 100-round budget; the selected checkpoint is round 93. Accuracy was not logged per round. |
+| `slide21_consensus_by_round` | 21 | Mean node consensus per round for natural, IID and Dirichlet(0.1) | Mean over runs still active (same data as fig03). Natural and IID reach round 100 and nearly overlap; the last Dirichlet run ends at round 53. |
+
 ## Phase-time originals
 
 | File | RQ | What it shows | Status | Caveat |
